@@ -1,0 +1,72 @@
+
+button{font:inherit}
+
+/*Font size alterations*/
+h4{font-size:22px}
+
+h5{font-size:16px}
+
+
+
+/*Button style*/
+
+.button-style{border:none;display:inline-block;padding:20px 30px;vertical-align:middle;color:inherit;background-color:inherit;text-align:center;}
+
+
+
+
+/* Sections and contents*/
+.section{display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0.1,0.1,0.1,0.5)}
+
+.section-info{margin:auto;background-color:#fff;position:relative;padding:2;outline:2;width:800px}
+
+.section-padding{padding:40px}
+
+
+
+.box{font-size:25px}
+
+
+
+
+
+/* Positioning methods*/
+.position-middleleft{position:absolute;top:20%;left:0%}
+
+.position-downleft{position:absolute;left:0;bottom:0}
+
+.position-downright{position:absolute;right:0;bottom:0}
+
+.position-upleft{position:absolute;left:0;top:0}
+
+.position-upleft{position:absolute;right:0;top:0}
+
+
+
+
+
+
+
+
+
+/*Style colors*/
+
+.sand:hover{color:#000;background-color:#fdf5e6}
+
+.brown{color:#000;background-color:#B08964}
+
+.white:hover{color:#000;background-color:#fff}
+
+
+
+
+
+/*Text modes*/
+
+.text-white{color:#fff}
+
+.text-black{color:#000}
+
+
+
+

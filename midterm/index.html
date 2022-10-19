@@ -1,6 +1,478 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        MIDTERM
-    </body>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+        href="assets/css/style.css" />
+
+
+
+
+
+
+<style>
+
+  body,h1,h5 {font-family: "Serif", cambria}
+  body, html {height: 100%}
+
+  .bgimg {
+  background-image: url("assets/img/front.png");
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+</style>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body>
+
+<div class="bgimg text-white">
+
+
+
+
+  <div class="position-middleleft section-padding box">
+
+    <p><button onclick="document.getElementById('Menu').style.display='block'" class="button-style sand">Menu</button></p>
+
+    <p><button onclick="document.getElementById('Catering').style.display='block'" class="button-style sand">Catering</button></p>
+
+    <p><button onclick="document.getElementById('Location').style.display='block'" class="button-style sand">Location</button></p>
+
+    <p><button onclick="document.getElementById('Testimonials').style.display='block'" class="button-style sand">Testimonials</button></p>
+
+    <p><button onclick="document.getElementById('Contact').style.display='block'" class="button-style sand">Contact</button></p>
+
+  </div>
+
+
+
+
+  <div class="position-downright section-padding">
+
+    <p>2519 Durant Ave, Berkeley, CA 94704</p>
+    
+  </div>
+
+
+
+  <div class="position-downleft section-padding">
+    
+    <p>Every day working hours: 10AM - 12AM</p>
+    
+  </div>
+
+
+
+  <div class="-position-upleft section-padding">
+    
+    <p>Gypsy's Trattoria Italiana</p>
+    
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Menu section -->
+<div id="Menu" class="section">
+  <div class="section-info">
+
+    <div class="section-padding brown">
+      <span onclick="document.getElementById('Menu').style.display='none'" class="button-style position-upright">x</span>
+
+
+      <h1>Chicken Plates</h1>
+    </div>
+
+
+    <div class="section-padding">
+      <h5> <h4><b>Crazy Alfredo</b></h4> Chicken, Sausage, Roasted red peppers in Alfredo sauce tossed w/ Fettuccine </h5>
+
+      <h5> <h4><b>Melanzana Con Pollo</b></h4> Chicken, Spinach, Gilled eggplant, Garlic, Tomato sauce, tossed w/ Penne</h5>
+
+      <h5> <h4><b>Godfather's favorite</b></h4> Chicken, Pancetta, Egg, Parmigiano cheese, tossed w/ Penne </h5>
+
+      <h5> <h4><b>Pollo Gorgonzola</b></h4> Tri color Tortellini, Chicken, Garlic, Gorgonzola cheese w/ pink sauce </h5>
+
+
+      <h5> <h4><b>Chicken and Broccoli</b></h4> Chicken, Broccoli, Garlic, Parmigiano cheese tossed w/ Penne </h5>
+
+      <h5> <h4><b>Chicken Piccata</b></h4> Chicken breast sautèed in a light buttery lemon </h5>
+
+
+      <h5> <h4><b>Chicken Marsala</b></h4> Chicken breast sautèed with mushrooms in a sweet Sicilian sauce over Linguine </h5>
+
+      <h5> <h4><b>Chicken Parmigiano</b></h4> Chicken breast with marinara sauce & Mozzarella cheese over Spaghetti </h5>
+
+      <h5> <h4><b>Pollo Con Pesto</b></h4> Chicken, Pesto sauce, Parmigiano, trace of cream tossed w/ Fettuccine </h5>
+
+      <h5> <h4><b>Chicken Gnocchi</b></h4> Tri color potato pasta, Chicken, and cream sauce </h5>
+
+      <h5> <h4><b>Gypsy's Chicken</b></h4> Chicken, Garlic, Mushrooms, Cream & Parmigiano cheese tossed w/ Penne </h5>
+    </div>
+
+
+
+
+    <div class="section-padding brown">
+      <h1>Beef Plates</h1>
+    </div>
+
+
+    <div class="section-padding">
+      <h5> <h4><b>Bronx Tale</b></h4> Meatball & Sausage, Tomato sauce, Cheese, tossed w/ Penne </h5>
+
+      <h5> <h4><b>Victor's Spaghetti</b></h4> Beef, Roasted red peppers, Oregano, Red wine, Tomato sauce tossed w/ Spaghetti </h5>
+
+      <h5> <h4><b>Spaghetti with Meatballs</b></h4> Home made meatballs, Marinara sauce, cheese tossed w/ Spaghetti </h5>
+
+      <h5> <h4><b>Ravioli Bolognese</b></h4> Home made meat sauce tossed w/ cheese Ravioli </h5>
+
+      <h5> <h4><b>Lasagna</b></h4> Home made meat Lasagna topped with Marinara sauce & Mozzarella cheese </h5>
+
+      <h5> <h4><b>Carbonara</b></h4> Pancetta, Egg, and Parmigiano tossed w/ Spaghetti </h5>
+    </div>
+
+
+    
+    <div class="section-padding brown">
+      <h1>Seafood Plates</h1>
+    </div>
+
+
+    <div class="section-padding">
+
+      <h5> <h4><b>Linguine Clams</b></h4> Clams, Onion, Mix Veggie, Basil, White wine pink cream sauce w/Linguine </h5>
+
+      <h5> <h4><b>Shrimp Alfredo</b></h4> Baby Shrimp, Mushrooms, Garlic with cream and Parmigiano cheese sauce over Fettuccine </h5>
+
+      <h5> <h4><b>Fettuccine Al Salmon</b></h4> Smoked salmon, Capers, Red onions, Tomato sauce tossed w/ Fettuccine </h5>
+
+      <h5> <h4><b>Tortellini Georgio</b></h4> Tri color Tortellini & Baby shrimp in cream and Parmigiano cheese sauce </h5>
+
+      <h5> <h4><b>Mediterranean</b></h4> Jumbo Shrimp, Sundried Tomato, Garlic over Angel Hair Pasta topped w/ Feta Cheese </h5>
+
+      <h5> <h4><b>Shrimp Alla Primavera</b></h4> Jumbo Shrimp, Garlic, Assorted Vegetables, Tomato sauce w/ Angel Hair Pasta </h5>
+
+      <h5> <h4><b>Frutti Di Mare</b></h4> Fresh Calamari, Jumbo Shrimp, Mussels, Clams, Garlic, Tomato sauce w/ Angel Hair Pasta </h5>
+
+      <h5> <h4><b>Gamberi e Capesante</b></h4> Jumbo shrimp, Scallops, garlic in creamy tomato sauce w/ Linguine </h5>
+
+      <h5> <h4><b>Scampi</b></h4> Jumbo Shrimp, Scallops, garlic, Capers in white wine lemon sauce w/ Spaghetti </h5>
+
+      <h5> <h4><b>Ravioli Bolognese</b></h4> Home made meat sauce tossed w/ cheese Ravioli </h5>
+
+      <h5> <h4><b>Gambaretti e pollo</b></h4> Pepperoni, Bacon, Mushroom, Pepper, Onion, cheese, Tomato sauce </h5>
+
+      <h5> <h4><b>Salmone Alfredo</b></h4> Salmon, Garlic, Mushroom, Bell pepper, White wine cream sauce </h5>
+    </div>
+
+
+
+    
+    <div class="section-padding brown">
+
+      <h1>Vegetarian Plates</h1>
+
+    </div>
+
+
+
+
+
+    <div class="section-padding">
+
+      <h5> <h4><b>Penne Gorgonzola </b></h4> Spinach, Fresh Tomato, Gorgonzola cheese & Cream tossed w/ Penne </h5>
+
+      <h5> <h4><b>Spaghetti Alla Primavera</b></h4> Assorted Vegetables sautèed in Garlic, Olive oil, Tomato sauce w/ Spaghetti </h5>
+
+      <h5> <h4><b>Capricciosa</b></h4> Spinach, Roasted red peppers, Garlic, Tomato sauce, Trace of cream & cheese tossed w/ Penne </h5>
+
+      <h5> <h4><b>Funghi</b></h4> Mushrooms, Garlic, White wine, Tomato sauce & Smoked Mozzarella, tossed w/ Fettuccine </h5>
+
+      <h5> <h4><b>Ravioli Alfredo</b></h4> Cheese Ravioli with Alfredo & Parmigiano cheese sauce </h5>
+
+      <h5> <h4><b>Fettuccine Con Pesto</b></h4> Fettuccine tossed with Pesto sauce & Parmigiano cheese </h5>
+
+      <h5> <h4><b>Frutti Di Mare</b></h4> Fresh Calamari, Jumbo Shrimp, Mussels, Clams, Garlic, Tomato sauce w/ Angel Hair Pasta </h5>
+
+      <h5> <h4><b>Fettuccine Alfredo</b></h4> Alfredo sauce, Mushrooms, tossed w/ Fettuccine </h5>
+
+      <h5> <h4><b>Gnocchi Marinara</b></h4> Tri color potato pasta with Marinara sauce & Parmigiano cheese </h5>
+
+      <h5> <h4><b>Pomodoro</b></h4> Fresh Tomato, Fresh Basil, Garlic, Topped with shredded Parmigiano cheese w/ Angel hair pasta </h5>
+
+      <h5> <h4><b>Gnocchi Primavera</b></h4> Tri Color Gnocchi, Assorted Vegetables, Basil, Smoke Mozzarella & Pink sauce </h5>
+
+    </div>
+
+
+
+    
+    <div class="section-padding brown">
+
+      <h1>Pasta Filled Calzone</h1>
+
+    </div>
+
+
+    <div class="section-padding">
+
+       <h5> <h4><b>Godfather</b></h4> Chicken, Pancetta, Egg, Parmigiano Mozzarella cheese, tossed w/ Penne </h5>
+
+      <h5> <h4><b>Pollo Pesto</b></h4> Chicken, Pesto sauce (Pine, Walnut, Pistachio nuts), Parmigiano Mozzarella cheese, tossed w/ Penne </h5>
+
+      <h5> <h4><b>Meatball & Sausage</b></h4> Tomato sauce, Parmigiano Mozzarella cheese, tossed w/ Penne </h5>
+
+      <h5> <h4><b>Shrimp</b></h4> with Alfredo Parmigiano Mozzarella cheese, tossed w/ Penne </h5>
+
+      <h5> <h4><b>Chicken Alfredo</b></h4> with Chicken, Parmigiano Mozzarella cheese, tossed w/ Penne </h5>
+
+      <h5> <h4><b>Penne Primavera</b></h4> Alfredo sauce, Mushrooms, tossed w/ Fettuccine </h5>
+
+    </div>
+
+
+
+    <div class="section-padding brown">
+
+      <h1>Calzone</h1>
+
+    </div>
+
+
+
+    <div class="section-padding">
+      <h5> <h4><b>Primavera</b></h4> Assorted Vegetables, Mozzarella cheese, Tomato sauce </h5>
+
+      <h5> <h4><b>Pollo</b></h4> Chicken, Mushrooms, Onions, Cheese, Tomato sauce </h5>
+
+      <h5> <h4><b>Margarita</b></h4> Mozzarella & Cheddar cheese with Tomato sauce </h5>
+
+      <h5> <h4><b>Sicilia</b></h4> Steak, Mushrooms, Onions, Cheese, Tomato sauce </h5>
+
+      <h5> <h4><b>Sausage</b></h4> Italian Sausage, Mushrooms, Onions, Cheese, Tomato sauce </h5>
+
+      <h5> <h4><b>Ham</b></h4> Ham, Mushrooms, Cheese, Tomato sauce </h5>
+
+      <h5> <h4><b>Pesto</b></h4> Chicken, Ricotta and Mozzarella cheese, and Pesto sauce </h5>
+
+    </div>
+
+
+
+    
+    <div class="section-padding brown">
+
+      <h1>Gypsy's 10" Pizza</h1>
+
+    </div>
+
+
+
+    <div class="section-padding">
+      <h5> <h4><b>Margarita</b></h4> Mozzarella & Cheddar cheese with Tomato sauce </h5>
+
+      <h5> <h4><b>Milano</b></h4> Pepperoni, Mushroom, Mozzarella & Cheddar cheese with Tomato sauce </h5>
+
+      <h5> <h4><b>Caprese</b></h4> Mozzarella & Cheddar cheese, Tomato sauce topped with fresh Mozzarella, fresh Tomato & Basil </h5>
+
+      <h5> <h4><b>Hawaiian</b></h4> Ham, Mozzarella & Cheddar cheese, Pineapple and Tomato sauce </h5>
+
+      <h5> <h4><b>Primavera</b></h4> Mushroom, Green pepper, Kalamata olives, Onion, Broccoli, cheese and Tomato sauce </h5>
+      
+      <h5> <h4><b>Pesto</b></h4> Mozzarella & Cheddar cheese, Pesto sauce, topped with sautèed Chicken </h5>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+    
+
+
+<!-- Catering section -->  
+
+<div id="Catering" class="section">
+  <div class="section-info">
+
+    <div class="section-padding brown">
+      <span onclick="document.getElementById('Catering').style.display='none'" class="button-style position-upright">x</span>
+
+
+      <h1>Catering</h1>
+    </div>
+
+
+    <div class="section-padding">
+      <h5> Let us plan and prepare the best and most affordable menu for your meetings and parties!</h5>
+      <h5> You can customize your order any which way you like or ask us to help you to choose what would work for you. For orders of 20 or more, you get:</h5>
+
+      <ul>
+        <li><h5>10% off the menu price</h5></li>
+        <li><h5>complimentary salad and bread</h5></li>
+        <li><h5>Forks, knives, and napkins. You may need to purchase your own plates.</h5></li>
+      </ul>
+
+      <h5> Please note that our orders are large enough to accommodate far more than what you may need. Our 20 person order serves 25 people easily. That's extra savings for you! <b>Place your order now by calling us at (510) 548-4860.</b> Large orders must be prepaid at least 3 days in advance.
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Testimonials section -->  
+
+<div id="Testimonials" class="section">
+  <div class="section-info">
+
+    <div class="section-padding brown">
+      <span onclick="document.getElementById('Testimonials').style.display='none'" class="button-style position-upright">x</span>
+
+
+      <h1>Testimonials</h1>
+    </div>
+
+
+    <div class="section-padding">
+      <h5>Gypsy's Trattoria Italiana is also a <a href = "http://www.yelp.com/biz/gypsys-trattoria-italiano-berkeley"> Yelp </a> favorite! We have four stars based on over 2010 reviews. Here are just a few things that people are saying about us: <br><br>
+
+"I love, love Gypsy's Chicken and Godfather's favorite." (in 24 reviews)<br><br>
+
+"their calzones are delicious and plumped as ever." (in 103 reviews)<br><br>
+
+"This place is not a full service restaurant. It's one of those places where you order at the counter, pay and then wait for your number to be called to pickup your food. They do serve the food on real plates and silverware. The food is amazing though. The price is extremely reasonable. We paid $25 for 2 plates of pastas and a pizza. Ok then, here's the low down on the food we had. This place is hands-down the best place to eat near the Berkeley Campus. "<br><br>
+
+"Their Calzones are amazing, and the Godfather's Favorite is to DIE FOR! + their salad, soda deal is good too. Definitely a place to try if you're visiting Berkeley! :)"<br><br>
+
+"Bomb place! I am glad I found this place on yelp. Fast service and nice people working. Kind of a fast food italian place. Nothing fancy. great prices and good food. Ordered: Frutti di Mare $7.45. chicken with pesto $6.99 ? The Frutti Di Mare-awesomely delicious-good amount of seafood (about 4 clams, some squid/octopus, coupel shrimps)-sauce was good not too sweet,sour or salty Chicken w/ Pesto-decent-pesto was a nice touch maybe a little creamy-portion was a little small"<br>
+
+"You can call me bias, you can call me a bear lover but I LOVE GYPSY!!! Although I graduated from CAL about 4 years ago, I always try my best to make a trip out to Berkeley, especially Gypsy to grab some pasta. My favorites are God Father's Fav, Pollo con Pesto and if you want something a little more healthier, the Chicken Salad with Caesar dressing. I miss all the yummy food around Berkeley. The portions size on everything is pretty good. I normally share with my bf when we order something different."<br><br>
+
+"Delicious chicken alfredo! All pasta dishes are truly scrumptious. Garlic bread (with actual garlic chunks) makes a great side. Convenient location and decent service."<br><br>
+
+"Gypsy's is reasonably priced, filling, yummy, and carbilicious - its sure to make your tummy feel warm and happy. I've left Gypsy's with a smile on my face every single time. Their calzones are huge and you can easily share (unless you're feeling greedy) and their servings are enough to feed two people or for two servings (lunch & dinner if you're low on $). My favorite is the Pollo Con Pesto. Yay pesto! I love how they serve their garlic bread with oven baked garlic pieces. Mmmm. The only thing that bothers me is the long line and crowded restaurant but waiting is never a huge problem. They try to get order ready as fast as they can! I know I will enjoy going to Gypsy's for tasty Italian food throughout my years in college!"<br><br>
+
+"I gotta say, this place is a great combination making this a solid 4+star place. First of all the value. The prices are great. $20 can feed two people very well. Second the quantity. They give you a lot of food for the few bucks you spend there. For instance, I got a Combo Calzone and spent under $7. According to their signs you can get a salad and soda added on to any plate for a total of $8.99. NOW THAT'S A DEAL!!!! Third and most importantly, is the quality. It was quite busy when I went so I waited a few minutes, but it was because you can see,every place is made to order, not because they were falling behind..... IT'S ALL FRESH!!! So the quality is amazing!! I will be going back to this place many more times, that's for sure."<br><br>
+
+"best italian you can get for the price and the portions are very filling. i usually dont try anything new but when i do im always satified."<br><br>
+
+"One of my favorite restaurants anywhere. Food tastes great. Prices are low. Portions are huge. The calzones look like footballs. That's all you need to know from me."<br><br>
+
+"This is some of the most delicious down-home Italian I have ever had. Seriously - what a delicious dive in the Berkeley Asian ghetto of all places. I had the pollo gorgonzola tortellini meal deal. I was so impressed with EVERYTHING - from the pasta/sauce - scrumdillyumptious, the garlic bread with roasted garlic smeared on it, and the generously portioned side salad. If you're a local, and you are looking for yumminess, you should go!"<br><br>
+
+"wish i could give 6 stars for their gnocchi and garlic bread. this is in the asian ghetto of berkeley, but the taste is second to none. i miss this place. I wish San Francisco had a place like Gypsy's! A friend brought me here after rock climbing, swearing that the combination of price and quality was unbeatable. We both had Gypsy's Chicken by his recommendation. Penne, cream sauce, mushroom, garlic and chicken. Amazing! The garlic bread was awesome, too - actual roasted garlic on bread. I'll be coming back to Gypsy's anytime I'm in Berkeley!"<br><br>
+
+"My favorite ITALIAN restaurant. For 7 bucks, you can't ask for anything better. Try the Gypsy's Chicken, I get it every time I go! The cal zones can't get any bigger. They put it in the pink Chinese bakery boxes just for to-go orders. I've been going there for a good 5 years. I've taken all my friends there and they all love it!!!"<br></h5>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Location -->
+
+<div id="Location" class="section">
+  <div class="section-info">
+
+    <div class="section-padding brown">
+      <span onclick="document.getElementById('Location').style.display='none'" class="button-style position-upright">x</span>
+
+
+      <h1>Location</h1>
+    </div>
+
+
+    <div class="section-padding">
+
+      <img src = "assets/img/location.jpeg" alt = "Our restaurant on map" width = 400 height = 400>
+      <h5> 2519-A Durant Ave, Berkeley, CA 94704   <a href = "https://www.google.com/maps/place/Gypsy's+Trattoria+Italiana/@37.868046,-122.2603537,17z/data=!3m1!4b1!4m5!3m4!1s0x80857c2f6ba1fc31:0x66be74dc48f642b3!8m2!3d37.868053!4d-122.2581692"> View in Maps </a>></h5>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Contact section -->
+
+<div id="Contact" class="section">
+  <div class="section-info">
+    <div class="section-padding brown">
+      <span onclick="document.getElementById('Contact').style.display='none'" class="button-style position-upright">x</span>
+      <h1>Contact</h1>
+    </div>
+    
+
+    <div class="section-padding">
+      <h5> Gypsy's Trattoria Italiana </h5>
+      <h5> 2519-A Durant Ave., Berkeley, CA 94704 </h5>
+      <h5> Tel: 510 548 4860 </h5>
+      <h5> Fax: 510 548 4875 </h5>
+      <h5> Please contact the managers, Johan or Gustavo, at <b>(510) 548-4860</b> if you require help in deciding what to order for your event. We would be more than glad to spend some time with you to ensure your order is properly taken care of.</h5>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
 </html>
+
