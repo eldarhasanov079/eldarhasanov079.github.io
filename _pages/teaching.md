@@ -2,11 +2,21 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: 
 nav: true
 nav_order: 6
 ---
+Course Staff:
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+Spring 2024: Reader for ENGIN 125 - Ethics, Engineering and Society (UC Berkeley)
 
-Organize your courses by years, topics, or universities, however you like!
+
+
+[Computer Science Mentors](https://csmentors.studentorg.berkeley.edu/#/):
+
+Spring 2024: Senior Mentor for CSM 61B - Data Structures and Algorithms (UC Berkeley)
+
+Fall 2023: Junior Mentor for CSM 61B - Data Structures and Algorithms (UC Berkeley)
+
+
+

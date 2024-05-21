@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
-importance: 3
-category: fun
+title: Scheme Interpreter
+description: Designed an interpriter for Scheme functional language in Python
+img: 
+importance: 5
+category: academic
 ---
 
 Every project has a beautiful feature showcase page.

@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
+title: Movie Classifier
+description: Model to classify movies by genre based on the string transcript of the scenario
 img:
-importance: 4
-category: fun
+importance: 7
+category: academic
 ---
 
 Every project has a beautiful feature showcase page.
