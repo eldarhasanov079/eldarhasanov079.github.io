@@ -1,8 +1,9 @@
 ---
 layout: page
-title: Snek in C
-description: Modified Snake Game written in C with optimized memory
-img: assets/img/snake.png
+title: Instabot
+description: GPT-powered AI post generating bot for Instagram in Python
+img: 
+redirect: https://github.com/eldarhasanov079/ai_insta_post_generator
 importance: 10
 category: academic
 ---

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Snek in C
-description: Modified Snake Game written in C with optimized memory
-img: assets/img/snake.png
+title: ClubHub
+description: University club social network full-stack web-application
+img: 
 importance: 10
 category: academic
 ---
