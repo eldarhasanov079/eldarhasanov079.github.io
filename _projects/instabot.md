@@ -2,7 +2,7 @@
 layout: page
 title: Instabot
 description: GPT-powered AI post generating bot for Instagram in Python
-img: 
+img: assets/img/gpt.jpg
 redirect: https://github.com/eldarhasanov079/ai_insta_post_generator
 importance: 10
 category: academic
