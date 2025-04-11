@@ -5,7 +5,7 @@ permalink: /projects/
 description: Highlights of growing collection of my projects
 nav: true
 nav_order: 3
-display_categories: [academic, extracurricular]
+display_categories: [favourite, academic, hackathons, research, extracurricular]
 horizontal: false
 ---
 
