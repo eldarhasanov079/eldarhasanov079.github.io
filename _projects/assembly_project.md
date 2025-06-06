@@ -3,7 +3,7 @@ layout: page
 title: Digit Classification (RISC-V)
 description: Machine Learning Model built in RISC-V ASSEMBLY language
 img: assets/img/digits.png
-importance: 3
+importance: 6
 category: academic
 ---
 

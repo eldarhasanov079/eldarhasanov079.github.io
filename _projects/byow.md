@@ -3,7 +3,7 @@ layout: page
 title: Build Your Own World
 description: 2D Random World Generating Game in Java
 img: assets/img/world.png
-importance: 1
+importance: 3
 category: academic
 related_publications: false
 ---

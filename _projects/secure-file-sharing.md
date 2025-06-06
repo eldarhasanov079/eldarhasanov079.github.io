@@ -3,7 +3,7 @@ layout: page
 title: Secure File Sharing System
 description: Fully secure end-to-end encrypted system for creating and sharing files through an insecure database
 img: assets/img/files.png
-importance: 1
+importance: 2
 category: academic
 giscus_comments: false
 ---

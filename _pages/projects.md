@@ -5,7 +5,7 @@ permalink: /projects/
 description: Collection of my software projects
 nav: true
 nav_order: 3
-display_categories: [academic, research, hackathon, extracurricular]
+display_categories: [research, academic, hackathon]
 horizontal: false
 ---
 
