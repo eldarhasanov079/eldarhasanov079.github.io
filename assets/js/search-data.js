@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-resume",
           title: "resume",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "Resume Link https://drive.google.com/file/d/1Y0u5EiR-c0DRxJmdhEAQAE0D5BHGvIQt/view?usp=sharing",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -86,6 +86,11 @@ ninja.data = [{
           description: "Pipelined version of logic circuit of a 1 clock cycle CPU",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cpu/";
+            },},{id: "projects-gradeview-instructor-grade-analytics-dashboard",
+          title: 'GradeView Instructor Grade Analytics Dashboard',
+          description: "GCP hosted web platform for instructors of 4 microservices, built using React, Node.js, Python Flask, and Redis for analyzing grades, assignment completion rates, and student performance trends of the class. Currently deployed at UC Berkeley&#39;s CS10 course across 3 semesters, supporting 750+ students and 40+ instructors with 94% satisfaction. Completed within CS Ed R&amp;D group, where I was the research lead of the Instructor Dashboard project.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/instructordash/";
             },},{id: "projects-pintos-operating-system",
           title: 'PintOS Operating System',
           description: "A fully functional single-coreoperating system in C for the x86 architecture. It supports multithreading, loading and running user programs, dynamic stack alloction, buffer cache and an inode-based FFS file system.",
@@ -100,7 +105,7 @@ ninja.data = [{
           title: 'pl-interactive-graph',
           description: "An Interactive Tool for Randomized Autogradable Graph Assessments + Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab and published by ACM at SIGCSE 2025",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/pl-interactive-graoh/";
+              window.location.href = "/projects/pl-interactive-graph/";
             },},{id: "projects-qalam-ai-intelligent-writing-assistant",
           title: 'Qalam AI - Intelligent Writing Assistant',
           description: "BBuilt and presented at CalHacks 11.0, Qalam AI is a full-stack writing assistant developed using Python, Reflex, and SingleStore, with a custom pipeline featuring three Groq-hosted LLMs for entity detection, story summarization, and prompt generation with voice integration via Cortesia.",
