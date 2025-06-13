@@ -28,7 +28,7 @@ latest_posts:
 Hi! I'm **Eldar** — a software systems and security engineer currently pursuing my Master's in Advanced Computing (Security & Reliability) at [Imperial College London](https://www.imperial.ac.uk/).  
 Previously, I earned my B.A. in Computer Science from [UC Berkeley](https://eecs.berkeley.edu/) in May 2025, where I focused on systems, theory, and security — while also teaching, researching, and building educational tools. 🌉
 
-In recent years, I’ve focused on building **secure and scalable systems** that serve real users and contribute to research. At UC Berkeley’s [CS Ed R&D Group](https://csed.berkeley.edu/) (under Prof. Dan Garcia), I led a team of five engineers to develop a **cloud-native grade analytics platform** for instructors, deployed in Berkeley's CS10 course. I built microservices, real-time dashboards, security defenses, and an ETL pipeline for HTTP packet logging and analysis. 
+In recent years, I’ve focused on building **secure and scalable systems** that serve real users and contribute to research. At UC Berkeley’s CS Ed R&D Group (under Prof. Dan Garcia), I led a team of five engineers to develop a **cloud-native grade analytics platform** for instructors, deployed in Berkeley's CS10 course. I built microservices, real-time dashboards, security defenses, and an ETL pipeline for HTTP packet logging and analysis. 
 
 Alongside that, I was a **tech lead** in the [ACE Lab](https://acelab.berkeley.edu/), where I co-authored a tool for interactive graph assessments, published and presented our work at [ACM SIGCSE](https://sigcse.org/), and deployed it to three universities via the [PrairieLearn](https://prairielearn.readthedocs.io/en/latest/) platform open-source contribution.
 
