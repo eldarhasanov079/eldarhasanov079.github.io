@@ -66,9 +66,9 @@ ninja.data = [{
           description: "Built at SFHacks 2025, AIna is an AI-powered web accessibility platform that scans websites, analyzes HTML/CSS using Gemini Flash 2.0, and provides a 7-point WCAG-based accessibility grade with actionable feedback. Developed with React, TypeScript, Express, AWS and MongoDB Atlas, it features a public rankings dashboard, an accessible UI with high-contrast mode, and plans for blockchain-based compliance certificates.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/aina/";
-            },},{id: "projects-digit-classification-risc-v",
-          title: 'Digit Classification (RISC-V)',
-          description: "Machine Learning Model built in RISC-V ASSEMBLY language",
+            },},{id: "projects-risc-v-classifier",
+          title: 'RISC-V Classifier',
+          description: "A RISC‑V assembly-based MNIST classifier that ingests image and weight files, executes a fully-connected neural net (matrix multiply → ReLU → matrix multiply → argmax), and outputs digit predictions",
           section: "Projects",handler: () => {
               window.location.href = "/projects/assembly_project/";
             },},{id: "projects-build-your-own-world",
@@ -86,9 +86,14 @@ ninja.data = [{
           description: "Pipelined version of logic circuit of a 1 clock cycle CPU",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cpu/";
+            },},{id: "projects-rookiedbms",
+          title: 'RookieDBMS',
+          description: "A lightweight, Java-based DBMS built throughout UC Berkeley’s CS 186 curriculum, implementing core systems concepts across projects 2–5—from B+ tree indexing and joins to concurrency control and ARIES-style crash recovery. It supports efficient query processing, ACID-compliant multi-transaction execution, and fast restart after failures.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/dbms/";
             },},{id: "projects-gradeview-instructor-grade-analytics-dashboard",
           title: 'GradeView Instructor Grade Analytics Dashboard',
-          description: "GCP hosted web platform for instructors of 4 microservices, built using React, Node.js, Python Flask, and Redis for analyzing grades, assignment completion rates, and student performance trends of the class. Currently deployed at UC Berkeley&#39;s CS10 course across 3 semesters, supporting 750+ students and 40+ instructors with 94% satisfaction. Completed within CS Ed R&amp;D group, where I was the research lead of the Instructor Dashboard project.",
+          description: "GCP-hosted instructor dashboard built with React, Node.js, Flask, and Redis to analyze grades and student trends. Deployed in UC Berkeley&#39;s CS10 for 3 semesters, serving 750+ students and 40+ staff with 94% satisfaction. Led development as research lead in CS Ed R&amp;D group at Berkeley.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/instructordash/";
             },},{id: "projects-pintos-operating-system",
@@ -113,7 +118,7 @@ ninja.data = [{
               window.location.href = "/projects/qalamai/";
             },},{id: "projects-scheme-interpreter",
           title: 'Scheme Interpreter',
-          description: "Designed an interpriter for Scheme functional language in Python",
+          description: "A Python-based interpreter for a Scheme functional language, implementing a full read‑eval‑print loop and core language features (special forms, user-defined procedures, tokenization, and parsing).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/scheme/";
             },},{id: "projects-secure-file-sharing-system",
