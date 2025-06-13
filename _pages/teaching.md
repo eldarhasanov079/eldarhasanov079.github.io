@@ -7,12 +7,12 @@ nav: true
 nav_order: 6
 ---
 
-Course Staff:
+##Course Staff:
 
 Spring 2024: Reader for ENGIN 125 - Ethics, Engineering and Society (UC Berkeley)
 
 
-[Computer Science Mentors](https://csmentors.studentorg.berkeley.edu/#/):
+##[Computer Science Mentors](https://csmentors.studentorg.berkeley.edu/#/):
 
 Fall 2024: Spring 2024: Senior Mentor for CSM 61B - Data Structures and Algorithms (UC Berkeley)
 
@@ -21,7 +21,7 @@ Spring 2024: Senior Mentor for CSM 61B - Data Structures and Algorithms (UC Berk
 Fall 2023: Junior Mentor for CSM 61B - Data Structures and Algorithms (UC Berkeley)
 
 
-Tutoring:
+##Tutoring:
 
 Spring 2025: CS 161 - Computer Security - SEED Scholars Exellence Tutor (UC Berkeley)
 

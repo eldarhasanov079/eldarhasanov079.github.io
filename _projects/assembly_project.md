@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Digit Classification (RISC-V)
-description: Machine Learning Model built in RISC-V ASSEMBLY language
+title: RISC-V Classifier
+description: A RISC‑V assembly-based MNIST classifier that ingests image and weight files, executes a fully-connected neural net (matrix multiply → ReLU → matrix multiply → argmax), and outputs digit predictions
 img: assets/img/digits.png
 importance: 6
 category: academic
@@ -9,7 +9,17 @@ category: academic
 
 This project was fully written in RISC-V ASSEMLY language for CS61C - Computer Architecture course. It is a written number classifier machine learning model which is split across multiple file-functions such as ReLu, matrix multiplication, dot product, convolution and finally classification. 
 
-Some of the concepts taken into account while developing this project are: calling convention, stack/heap memory layout, 32-bit architecture and CALL framework. 
+• Implemented MNIST handwritten-digit classifier in RISC‑V assembly (CS 61C Project 2, UC Berkeley): built end-to-end inference pipeline on the Venus simulator.
+
+• Authored core computation routines: dot-product, matrix multiplication, ReLU activation, and argmax—all abiding by calling conventions and performing manual memory management.
+
+• Optimized register usage and stack frame management for callee/caller-saved registers, ensuring correctness under Venus-regulated calling-convention checks.
+
+• Constructed thorough unit + integration tests using Venus’s automated framework, achieving 100 % code coverage on custom routines and robust testing across edge cases.
+
+• Gained low-level systems experience: manual memory allocation on heap/stack, pointer arithmetic, function call mechanics, and debugging in assembly-level simulator—bridging machine architecture and software logic.
+
+• Some of the concepts taken into account while developing this project are: calling convention, stack/heap memory layout, 32-bit architecture and CALL framework. 
 
 
 {% raw %}
