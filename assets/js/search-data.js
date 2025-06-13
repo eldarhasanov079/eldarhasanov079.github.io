@@ -136,6 +136,11 @@ ninja.data = [{
           description: "An Interactive Tool for Randomized Autogradable Graph Assessments + Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab and published by ACM at SIGCSE 2025",
           section: "Projects",handler: () => {
               window.location.href = "/projects/soterio/";
+            },},{id: "projects-reliable-tcp-socket",
+          title: 'Reliable TCP Socket',
+          description: "A Python‑based transport-layer socket built atop the POX network simulator to implement a TCP-like protocol (3‑way handshake, byte-stream transfer, FIN teardown, retransmission strategy with RTT/RTO estimation, and flow-control)",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/tcp/";
             },},{
         id: 'social-acm',
         title: 'ACM DL',
