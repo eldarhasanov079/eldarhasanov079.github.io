@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-projects",
           title: "projects",
-          description: "Collection of my software projects",
+          description: "A collection of my highlighted software projects. Code and demos for most projects are available upon request.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -30,29 +30,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
-        
-          title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
-          
-        },
-      },{id: "post-displaying-external-posts-on-your-al-folio-blog",
-        
-          title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
-          
-        },
-      },{id: "news-participated-in-sf-hacks-2025-we-built-an-ai-powered-web-accessibility-complience-platform",
+        },{id: "news-participated-in-sf-hacks-2025-we-built-an-ai-powered-web-accessibility-complience-platform",
           title: 'Participated in SF Hacks 2025 - We built an AI-powered web accessibility complience...',
           description: "",
           section: "News",},{id: "news-accepted-an-offer-to-study-advanced-computing-at-imperial-college-london",
@@ -96,6 +74,11 @@ ninja.data = [{
           description: "GCP-hosted instructor dashboard built with React, Node.js, Flask, and Redis to analyze grades and student trends. Deployed in UC Berkeley&#39;s CS10 for 3 semesters, serving 750+ students and 40+ staff with 94% satisfaction. Led development as research lead in CS Ed R&amp;D group at Berkeley.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/instructordash/";
+            },},{id: "projects-pacman-ai-agents",
+          title: 'Pacman AI Agents',
+          description: "Developed and trained a suite of intelligent agents for playing Pac-Man, making use of search algorithms, probabilistic reasoning, adversarial planning, and reinforcement learning",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pacman/";
             },},{id: "projects-pintos-operating-system",
           title: 'PintOS Operating System',
           description: "A fully functional single-coreoperating system in C for the x86 architecture. It supports multithreading, loading and running user programs, dynamic stack alloction, buffer cache and an inode-based FFS file system.",
@@ -103,12 +86,12 @@ ninja.data = [{
               window.location.href = "/projects/pintos/";
             },},{id: "projects-pl-graph-constructor",
           title: 'pl-graph-constructor',
-          description: "A custom interactive element for PrairieLearn which enables students to construct graphs in a drag-and-drop interface and converts the student-entered graph into a DOT-language form to facilitate autograding. Open-source contribution to PrairieLearn, developed within UC Berkeley ACE Lab.",
+          description: "A custom tool enabling students to build graphs in a simple interface and converts them into a DOT-language form for autograding. Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab, published at ACM CompEd 2025 Conference to be presented in San Francisco, USA and Gaborone, Botswana.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pl-graph-constructor/";
             },},{id: "projects-pl-interactive-graph",
           title: 'pl-interactive-graph',
-          description: "An Interactive Tool for Randomized Autogradable Graph Assessments + Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab and published by ACM at SIGCSE 2025",
+          description: "An Interactive Tool for Randomized Autogradable Graph Assessments + Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab and published by ACM at SIGCSE 2025 Technical Symposium in Pittsburgh, PA.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pl-interactive-graph/";
             },},{id: "projects-qalam-ai-intelligent-writing-assistant",
@@ -133,7 +116,7 @@ ninja.data = [{
               window.location.href = "/projects/snek/";
             },},{id: "projects-hybrid-detection-of-vulnerabilities-in-smart-contracts",
           title: 'Hybrid Detection of Vulnerabilities in Smart Contracts',
-          description: "An Interactive Tool for Randomized Autogradable Graph Assessments + Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab and published by ACM at SIGCSE 2025",
+          description: "A hybrid tool for auditing smart contracts using signature-based detection and machine learning, achieving highest score at UC Berkeley&#39;s Decentralized Finance Research Seminar.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/soterio/";
             },},{id: "projects-reliable-tcp-socket",
