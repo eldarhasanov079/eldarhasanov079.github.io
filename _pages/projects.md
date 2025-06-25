@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Collection of my software projects
+description: A collection of my highlighted software projects. Code and demos for most projects are available upon request. 
 nav: true
 nav_order: 3
 display_categories: [research, academic, hackathon]

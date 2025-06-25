@@ -9,7 +9,7 @@ nav_order: 6
 
 **Course Staff**:
 
-Spring 2024: Reader for ENGIN 125 - Ethics, Engineering and Society (UC Berkeley)
+Spring 2024: Teaching Assisstant for ENGIN 125 - Ethics, Engineering and Society (UC Berkeley)
 
 
 **[Computer Science Mentors](https://csmentors.studentorg.berkeley.edu/#/)**:

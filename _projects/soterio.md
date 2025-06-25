@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Hybrid Detection of Vulnerabilities in Smart Contracts
-description: An Interactive Tool for Randomized Autogradable Graph Assessments + Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab and published by ACM at SIGCSE 2025
+description: A hybrid tool for auditing smart contracts using signature-based detection and machine learning, achieving highest score at UC Berkeley's Decentralized Finance Research Seminar.
 img: assets/img/soterio.jpg
 redirect: https://docs.google.com/presentation/d/1GaPeBagcx9uTzC8QbfVg2jdVX9mL7dCnCD-lzZEftuM/edit?usp=sharing
 importance: 3
