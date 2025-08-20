@@ -52,6 +52,11 @@ ninja.data = [{
           description: "A RISC‑V assembly-based MNIST classifier that ingests image and weight files, executes a fully-connected neural net (matrix multiply → ReLU → matrix multiply → argmax), and outputs digit predictions",
           section: "Projects",handler: () => {
               window.location.href = "/projects/assembly_project/";
+            },},{id: "projects-bearrank-course-reviews-and-ranking-platform",
+          title: 'BearRank - course reviews and ranking platform',
+          description: "Launched in 2025, this platform allows students at Berkeley to share their experiences about different classes. This was built in Python Fast API, React.js, Typescript and PostrgeSQL. The app is deployed on GCP through Cloud Run, featuring paginated REST APIs and CORS-safe architecture.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/bearrank/";
             },},{id: "projects-build-your-own-world",
           title: 'Build Your Own World',
           description: "2D Random World Generating Game in Java",
@@ -112,6 +117,11 @@ ninja.data = [{
           description: "Fully secure end-to-end encrypted system for creating and sharing files through an insecure database",
           section: "Projects",handler: () => {
               window.location.href = "/projects/secure-file-sharing/";
+            },},{id: "projects-snapbite-web-app-for-cuisine-exploration",
+          title: 'SnapBite - Web App for Cuisine Exploration',
+          description: "Achieved 1st place on the CulTech 2025 hackathon among ~100 participants. This is a full-stack application, built using Python Flask and React.js with a MySQL database. The application allows users to explore local dishes by encouraging tourists to &quot;collect&quot; them through QR code scanning at partner restaurants.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/snapbite/";
             },},{id: "projects-snek-in-c",
           title: 'Snek in C',
           description: "Modified Snake Game written in C with optimized memory",
