@@ -34,6 +34,7 @@ I'm also an open-source contributer to [PrairieLearn](https://prairielearn.readt
 
 During my time in the US, I also had a chance to work with startups and research labs in Silicon Valley, from designing Ethereum-based dynamic NFT music shareables at Anthems Inc. to building full-stack music analytics platforms at 1PR as a Software Engeering Intern. I was also an ML Research Assistant for NASA’s Stardust Mission at the [Lawrence Space Sciences Laboratory](https://www.ssl.berkeley.edu/), and NLP Research Assisstant fas a summer researcher at [Information Sciences Institute of USC](https://military.usc.edu/research/information-sciences-institute-isi/).
 
+I am also a frequent participant in hackathons around the world. With over 10 competitions, including such prestigious venues as Berkeley CalHacks, Stanford TreeHacks, and SFHacks, my teams have regularly received winning places and honorable mentions.
 
 I’m originally from Baku, Azerbaijan. In the last year of high school, I moved to Oxford, UK to complete my A Levels, followed by my undergrad in Bay Area, California, and now grad school in London. That journey across cultures has shaped not only how I think as an engineer, but also how I see education, global issues, and people.   
 
