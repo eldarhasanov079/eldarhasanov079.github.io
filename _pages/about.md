@@ -25,8 +25,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi! I'm **Eldar** — a software systems engineer currently pursuing my Master's in Advanced Computing (Security & Reliability) at [Imperial College London](https://www.imperial.ac.uk/).  
-Previously, I earned my B.A. in Computer Science from [UC Berkeley](https://eecs.berkeley.edu/) in May 2025, where I focused on systems, theory, and security, while also contributing to teaching, research, and the development of educational technology infrastructure.
+Hi! I'm **Eldar** — a software systems engineer currently pursuing my Master's in Advanced Computing (Security & Reliability) at [Imperial College London](https://www.imperial.ac.uk/). Previously, I earned my B.A. in Computer Science from [UC Berkeley](https://eecs.berkeley.edu/), where I focused on systems, theory, and security, while also contributing to teaching, research, and the development of educational technology infrastructure.
 
 Recently, I’ve focused on building secure and scalable systems that support real users and contribute to research. At UC Berkeley’s CS Ed R&D Group (under [Prof. Dan Garcia](https://people.eecs.berkeley.edu/~ddgarcia/#6)), I was a lead developer of a cloud-native learning management system (LMS) platform called GradeView, deployed in CS10 and other Berkeley courses. 
 
