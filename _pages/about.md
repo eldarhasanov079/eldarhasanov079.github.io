@@ -25,18 +25,17 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi! I'm **Eldar** — a software systems and security engineer currently pursuing my Master's in Advanced Computing (Security & Reliability) at [Imperial College London](https://www.imperial.ac.uk/).  
-Previously, I earned my B.A. in Computer Science from [UC Berkeley](https://eecs.berkeley.edu/) in May 2025, where I focused on systems, theory, and security — while also teaching, researching, and building educational infrastructure tools. 🌉
+Hi! I'm **Eldar** — a software systems engineer currently pursuing my Master's in Advanced Computing (Security & Reliability) at [Imperial College London](https://www.imperial.ac.uk/).  
+Previously, I earned my B.A. in Computer Science from [UC Berkeley](https://eecs.berkeley.edu/) in May 2025, where I focused on systems, theory, and security, while also contributing to teaching, research, and the development of educational technology infrastructure.
 
-In recent years, I’ve focused on building **secure and scalable systems** that serve real users and contribute to research. At UC Berkeley’s CS Ed R&D Group (under Prof. Dan Garcia), I led a team of five engineers to develop a **cloud-native grade analytics platform** for instructors, deployed in Berkeley's CS10 course. I built microservices, real-time dashboards, security defenses, and an ETL pipeline for HTTP packet logging and analysis. 
+Recently, I’ve focused on building secure and scalable systems that support real users and contribute to research. At UC Berkeley’s CS Ed R&D Group (under [Prof. Dan Garcia](https://people.eecs.berkeley.edu/~ddgarcia/#6)), I was a lead developer of a cloud-native learning management system (LMS) platform called GradeView, deployed in CS10 and other Berkeley courses. 
 
-Alongside that, I am a **tech lead** in the [ACE Lab](https://acelab.berkeley.edu/), where I co-authored two tools for interactive graph assessments, published and presented our work at [ACM SIGCSE](https://sigcse.org/) and [ACM CompEd](https://comped.acm.org/2025/), and deployed them to three universities via the [PrairieLearn](https://prairielearn.readthedocs.io/en/latest/) platform open-source contribution.
+I'm also an open-source contributer to [PrairieLearn](https://prairielearn.readthedocs.io/en/latest/) and the creator of two tools for interactive graph assessments: Graph Construction User Interface (GCUI) and Interactive Graph Assessment Tool (IGAT), both published and presented at [ACM SIGCSE](https://dl.acm.org/doi/10.1145/3641555.3705123) and [ACM CompEd](https://comped.acm.org/2025/).
 
-Outside academia, I've worked across several **startups and research labs in Silicon Valley**. At **Anthems Inc.**, I led the design of Ethereum-based **dynamic NFT smart contracts** for a music sharables platform of 60,000+ listeners. At **1PR**, I built full-stack music analytics apps using React, Django, and Flask to provide data-insight support for 10,000+ independent artists.  
-At the [Lawrence Space Sciences Laboratory](https://www.ssl.berkeley.edu/), I worked on **machine learning models** for NASA Stardust Mission data, improving autoencoder performance on EDS scans. I’ve also engineered a novel **smart contract vulnerability detection tool** under Prof. Dawn Song, and helped develop new class of **BERT-based LLM models** used for editorial tools for **New York Times** as a summer researcher at [USC](https://www.cs.usc.edu/). 
+During my time in the US, I also had a chance to work with startups and research labs in Silicon Valley, from designing Ethereum-based dynamic NFT music shareables at Anthems Inc. to building full-stack music analytics platforms at 1PR as a Software Engeering Intern. I was also an ML Research Assistant for NASA’s Stardust Mission at the [Lawrence Space Sciences Laboratory](https://www.ssl.berkeley.edu/), and NLP Research Assisstant fas a summer researcher at [Information Sciences Institute of USC](https://military.usc.edu/research/information-sciences-institute-isi/).
 
-I’m originally from **Baku, Azerbaijan 🇦🇿**, where I lived until I was 16. I then moved to **Oxford, UK 🇬🇧** for high school, followed by my undergrad in **Bay Area, California 🇺🇸**, and now grad school in **London, UK**. That journey across cultures has shaped not only how I think as an engineer, but also how I see education, global issues, and people. 🌍  
 
-Outside of tech, I’m into **football (the real one ⚽️)**, playing **guitar 🎸**, and overly competitive **board game nights 🎲**.
+I’m originally from Baku, Azerbaijan. In the last year of high school, I moved to Oxford, UK to complete my A Levels, followed by my undergrad in Bay Area, California, and now grad school in London. That journey across cultures has shaped not only how I think as an engineer, but also how I see education, global issues, and people.   
+
 
 

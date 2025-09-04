@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Participated in SF Hacks 2025 - We built an AI-powered web accessibility complience platform
+Participated in SF Hacks 2025 - We built an [AI-powered web accessibility complience platform](https://devpost.com/software/aina-your-intelligent-ally-for-an-accessible-web)
