@@ -4,9 +4,9 @@ permalink: /cv/
 title: resume
 nav: true
 nav_order: 5
-cv_pdf: https://drive.google.com/file/d/1Y0u5EiR-c0DRxJmdhEAQAE0D5BHGvIQt/view?usp=sharing # you can also use external links here
-redirect: https://drive.google.com/file/d/1Y0u5EiR-c0DRxJmdhEAQAE0D5BHGvIQt/view?usp=sharing
-description: <p>Resume Link <a>https://drive.google.com/file/d/1Y0u5EiR-c0DRxJmdhEAQAE0D5BHGvIQt/view?usp=sharing</a></p>
+cv_pdf: https://drive.google.com/file/d/1p-GupeWgnVkmVggqkAp1zwutnh-f3a11/view?usp=sharing
+redirect: https://drive.google.com/file/d/1p-GupeWgnVkmVggqkAp1zwutnh-f3a11/view?usp=sharing
+description: (Resume Link)[https://drive.google.com/file/d/1p-GupeWgnVkmVggqkAp1zwutnh-f3a11/view?usp=sharing]
 toc:
   sidebar: left
 ---
