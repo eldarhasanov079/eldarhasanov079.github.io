@@ -16,9 +16,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-resume",
-          title: "resume",
-          description: "(Resume Link)[https://drive.google.com/file/d/1p-GupeWgnVkmVggqkAp1zwutnh-f3a11/view?usp=sharing]",
+        },{id: "nav-cv",
+          title: "cv",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
