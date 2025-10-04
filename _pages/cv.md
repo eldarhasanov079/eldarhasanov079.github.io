@@ -1,12 +1,12 @@
 ---
-layout: page
+title: cv
 permalink: /cv/
-title: resume
 nav: true
 nav_order: 5
-cv_pdf: https://drive.google.com/file/d/1p-GupeWgnVkmVggqkAp1zwutnh-f3a11/view?usp=sharing
-redirect: https://drive.google.com/file/d/1p-GupeWgnVkmVggqkAp1zwutnh-f3a11/view?usp=sharing
-description: (Resume Link)[https://drive.google.com/file/d/1p-GupeWgnVkmVggqkAp1zwutnh-f3a11/view?usp=sharing]
-toc:
-  sidebar: left
+layout: none
 ---
+<!-- Redirect to your local PDF -->
+<!doctype html>
+<meta http-equiv="refresh" content="0; url={{ '/assets/pdf/Resume.pdf' | relative_url }}">
+<link rel="canonical" href="{{ '/assets/pdf/Resume.pdf' | relative_url }}">
+<p>If you are not redirected, <a href="{{ '/assets/pdf/Resume.pdf' | relative_url }}">click here</a>.</p>

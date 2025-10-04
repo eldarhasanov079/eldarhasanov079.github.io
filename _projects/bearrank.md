@@ -5,5 +5,5 @@ description: Launched in 2025, this platform allows students at Berkeley to shar
 img: assets/img/bearrank.png
 redirect: https://bearrank.com/
 importance: 1
-category: personal
+category: [personal, highlighted]
 ---

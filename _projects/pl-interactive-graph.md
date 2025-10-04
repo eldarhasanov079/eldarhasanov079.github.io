@@ -5,5 +5,5 @@ description: An Interactive Tool for Randomized Autogradable Graph Assessments +
 img: assets/img/sigcse.jpg
 redirect: https://github.com/eldarhasanov079/pl-interactive-graph-v2
 importance: 1
-category: research
+category: [research, highlighted]
 ---

@@ -5,5 +5,5 @@ description: GCP-hosted instructor dashboard built with React, Node.js, Flask, a
 img: assets/img/gv.png
 redirect: https://gradeview.eecs.berkeley.edu/
 importance: 2
-category: research
+category: [research, highlighted]
 ---

@@ -5,5 +5,5 @@ description: A custom tool enabling students to build graphs in a simple interfa
 img: assets/img/plgraphconstructor.jpg
 redirect: https://github.com/chris-rau/pl-ucb-cs170/tree/master/elements/pl-graph-constructor
 importance: 1
-category: research
+category: [research, highlighted]
 ---

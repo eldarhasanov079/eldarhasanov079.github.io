@@ -3,8 +3,8 @@ layout: page
 title: PintOS Operating System
 description: A fully functional single-coreoperating system in C for the x86 architecture. It supports multithreading, loading and running user programs, dynamic stack alloction, buffer cache and an inode-based FFS file system.
 img: https://hackaday.com/wp-content/uploads/2022/03/gdb.png
-importance: 1
-category: academic
+importance: 2
+category: [academic, highlighted]
 giscus_comments: false
 ---
 
