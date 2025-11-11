@@ -4,7 +4,7 @@ title: Pipelined CPU in Logisim (Circuits)
 description: Pipelined version of logic circuit of a 1 clock cycle CPU
 img: assets/img/cpu.png
 importance: 7
-category: academic
+category: undergraduate
 ---
 This was a project done in partnership with Nurzhan Abdrassilov for CS61C - Computer Architecture course. As a part of this project, we have engineered the optimal pipelined version of the CPU cycle circuit, including all the subcircuits, such as ALU, ReFile, Immediate Generator, Branch Comparator, Store, Load and Program Counter. 
 

@@ -4,7 +4,7 @@ title: Pacman AI Agents
 description: Developed and trained a suite of intelligent agents for playing Pac-Man, making use of search algorithms, probabilistic reasoning, adversarial planning, and reinforcement learning 
 img: https://inst.eecs.berkeley.edu/~cs188/fa24/assets/projects/maze.png
 importance: 5
-category: academic
+category: undergraduate
 ---
 
 Implemented multiple AI agents as part of UC Berkeley’s CS 188 course. 

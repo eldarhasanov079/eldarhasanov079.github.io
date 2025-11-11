@@ -4,7 +4,7 @@ title: Reliable TCP Socket
 description: A Python‑based transport-layer socket built atop the POX network simulator to implement a TCP-like protocol (3‑way handshake, byte-stream transfer, FIN teardown, retransmission strategy with RTT/RTO estimation, and flow-control)
 img: https://textbook.cs168.io/assets/transport/3-045-state-diagram.png
 importance: 4
-category: academic
+category: undergraduate
 related_publications: false
 ---
 

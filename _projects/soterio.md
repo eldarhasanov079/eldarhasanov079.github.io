@@ -5,7 +5,7 @@ description: A hybrid tool for auditing smart contracts using signature-based de
 img: assets/img/soterio.jpg
 redirect: https://docs.google.com/presentation/d/1GaPeBagcx9uTzC8QbfVg2jdVX9mL7dCnCD-lzZEftuM/edit?usp=sharing
 importance: 3
-category: research
+category: undergraduate
 ---
 
 • Developed a hybrid tool for auditing smart contracts using signature-based detection and machine learning, leveraging a dataset of 36,670 contracts to identify vulnerabilities like reentrancy and integer overflows.

@@ -23,6 +23,7 @@ Fall 2023: Junior Mentor for CSM 61B - Data Structures and Algorithms (UC Berkel
 
 
 **Tutoring**:
+
 Summer 2025: CCS 161 - Computer Security - EECS Department Private Tutor (UC Berkeley)
 
 Spring 2025: CS 161 - Computer Security - SEED Scholars Exellence Tutor (UC Berkeley)

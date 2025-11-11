@@ -4,7 +4,7 @@ title: RISC-V Classifier
 description: A RISC‑V assembly-based MNIST classifier that ingests image and weight files, executes a fully-connected neural net (matrix multiply → ReLU → matrix multiply → argmax), and outputs digit predictions
 img: assets/img/digits.png
 importance: 6
-category: academic
+category: undergraduate
 ---
 
 This project was fully written in RISC-V ASSEMLY language for CS61C - Computer Architecture course. It is a written number classifier machine learning model which is split across multiple file-functions such as ReLu, matrix multiplication, dot product, convolution and finally classification. 

@@ -4,7 +4,7 @@ title: Build Your Own World
 description: 2D Random World Generating Game in Java
 img: assets/img/world.png
 importance: 3
-category: academic
+category: undergraduate
 related_publications: false
 ---
 Skills: Java, Data Structures, Graph Theory, Algorithms, Testing

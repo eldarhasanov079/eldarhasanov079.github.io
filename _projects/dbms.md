@@ -4,7 +4,7 @@ title: RookieDBMS
 description: A lightweight, Java-based DBMS built throughout UC Berkeley’s CS 186 curriculum, implementing core systems concepts across projects 2–5—from B+ tree indexing and joins to concurrency control and ARIES-style crash recovery. It supports efficient query processing, ACID-compliant multi-transaction execution, and fast restart after failures.
 img: https://cs186.gitbook.io/~gitbook/image?url=https%3A%2F%2F678656433-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-MFVQnrLlCBowpNWJo1E%252F-MGv2sBScKfZ0PuPbu2f%252F-MGv2xZpFxxZXBGetCxm%252Fb_tree.jpg%3Falt%3Dmedia%26token%3Dec3fb0c7-14ac-4da6-acbb-35c3e8bb550b&width=768&dpr=2&quality=100&sign=386fd245&sv=2
 importance: 4
-category: academic
+category: undergraduate
 giscus_comments: false
 ---
 
