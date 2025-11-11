@@ -51,6 +51,12 @@ ninja.data = [{
           section: "News",},{id: "news-started-my-msc-at-imperial-college-today",
           title: 'Started my MSc at Imperial College today!',
           description: "",
+          section: "News",},{id: "news-participated-at-imperial-s-learning-analytics-hackathon-2025-built-imperium",
+          title: 'Participated at Imperial’s Learning Analytics Hackathon 2025 - built Imperium',
+          description: "",
+          section: "News",},{id: "news-an-instructor-dashboard-to-support-mastery-learning-was-accepted-for-publication-at-acm-sigcse-2026",
+          title: '“An Instructor Dashboard to Support Mastery Learning” was accepted for publication at ACM...',
+          description: "",
           section: "News",},{id: "projects-aina-ai-powered-web-accessibility-platform",
           title: 'AIna - AI-powered Web Accessibility Platform',
           description: "Built at SFHacks 2025, AIna is an AI-powered web accessibility platform that scans websites, analyzes HTML/CSS using Gemini Flash 2.0, and provides a 7-point WCAG-based accessibility grade with actionable feedback. Developed with React, TypeScript, Express, AWS and MongoDB Atlas, it features a public rankings dashboard, an accessible UI with high-contrast mode, and plans for blockchain-based compliance certificates.",
@@ -86,11 +92,21 @@ ninja.data = [{
           description: "A lightweight, Java-based DBMS built throughout UC Berkeley’s CS 186 curriculum, implementing core systems concepts across projects 2–5—from B+ tree indexing and joins to concurrency control and ARIES-style crash recovery. It supports efficient query processing, ACID-compliant multi-transaction execution, and fast restart after failures.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/dbms/";
+            },},{id: "projects-mutation-based-grammar-aware-fuzzer-for-sat-solvers",
+          title: 'Mutation-based Grammar Aware Fuzzer for SAT Solvers',
+          description: "A high-performance SAT fuzzer built to uncover bugs and stability issues in C-based SAT solvers. The tool generates and mutates Boolean formulas in DIMACS CNF format, aggressively probing solvers for undefined behavior, logic inconsistencies, and sanitizer violations.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/fuzzer/";
             },},{id: "projects-gradeview-instructor-grade-analytics-dashboard",
           title: 'GradeView Instructor Grade Analytics Dashboard',
           description: "GCP-hosted instructor dashboard built with React, Node.js, Flask, and Redis to analyze grades and student trends. Deployed in UC Berkeley&#39;s CS10 for 3 semesters, serving 750+ students and 40+ staff with 94% satisfaction. Led development as research lead in CS Ed R&amp;D group at Berkeley.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/instructordash/";
+            },},{id: "projects-symbolic-execution-engine-extension-and-analysis-with-klee",
+          title: 'Symbolic Execution Engine Extension and Analysis with KLEE',
+          description: "Symbolic-execution workflow around KLEE with containerized runs, live Grafana telemetry, introducing a custom SymLoadSearcher heuristic that delivered higher instruction coverage with controlled memory growth.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/klee/";
             },},{id: "projects-pacman-ai-agents",
           title: 'Pacman AI Agents',
           description: "Developed and trained a suite of intelligent agents for playing Pac-Man, making use of search algorithms, probabilistic reasoning, adversarial planning, and reinforcement learning",
@@ -111,6 +127,11 @@ ninja.data = [{
           description: "An Interactive Tool for Randomized Autogradable Graph Assessments + Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab and published by ACM at SIGCSE 2025 Technical Symposium in Pittsburgh, PA.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pl-interactive-graph/";
+            },},{id: "projects-data-de-identification-for-public-health-analytics",
+          title: 'Data De-Identification for Public Health Analytics',
+          description: "A privacy-preserving data release applying k-anonymity, ℓ-diversity, and statistical disclosure control to a 150k-record health dataset, mitigating re-identification and inference attacks.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/privacy/";
             },},{id: "projects-qalam-ai-intelligent-writing-assistant",
           title: 'Qalam AI - Intelligent Writing Assistant',
           description: "BBuilt and presented at CalHacks 11.0, Qalam AI is a full-stack writing assistant developed using Python, Reflex, and SingleStore, with a custom pipeline featuring three Groq-hosted LLMs for entity detection, story summarization, and prompt generation with voice integration via Cortesia.",
@@ -131,11 +152,6 @@ ninja.data = [{
           description: "Achieved 1st place on the CulTech 2025 hackathon among ~100 participants. This is a full-stack application, built using Python Flask and React.js with a MySQL database. The application allows users to explore local dishes by encouraging tourists to &quot;collect&quot; them through QR code scanning at partner restaurants.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/snapbite/";
-            },},{id: "projects-snek-in-c",
-          title: 'Snek in C',
-          description: "Modified Snake Game written in C with optimized memory",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/snek/";
             },},{id: "projects-hybrid-detection-of-vulnerabilities-in-smart-contracts",
           title: 'Hybrid Detection of Vulnerabilities in Smart Contracts',
           description: "A hybrid tool for auditing smart contracts using signature-based detection and machine learning, achieving highest score at UC Berkeley&#39;s Decentralized Finance Research Seminar.",
