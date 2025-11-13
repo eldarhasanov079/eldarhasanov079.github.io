@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Participated at Imperial's Learning Analytics Hackathon 2025 - built Imperium 
+Our project Imperium just won "Best Technical Implementation" at Imperial's Learning Analytics Hackathon 2025!
