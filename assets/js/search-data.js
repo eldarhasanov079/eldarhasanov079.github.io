@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "a hopefully growing list of my conference publications!",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
         },{id: "nav-cv",
           title: "cv",
           description: "",
@@ -33,9 +40,6 @@ ninja.data = [{
         },{id: "news-participated-in-sf-hacks-2025-we-built-an-ai-powered-web-accessibility-complience-platform",
           title: 'Participated in SF Hacks 2025 - We built an AI-powered web accessibility complience...',
           description: "",
-          section: "News",},{id: "news-accepted-an-offer-to-study-advanced-computing-at-imperial-college-london",
-          title: 'Accepted an offer to study Advanced Computing at Imperial College London',
-          description: "",
           section: "News",},{id: "news-just-graduated-from-uc-berkeley-with-a-b-a-in-computer-science",
           title: 'Just graduated from UC Berkeley with a B.A. in Computer Science!',
           description: "",
@@ -51,11 +55,11 @@ ninja.data = [{
           section: "News",},{id: "news-started-my-msc-at-imperial-college-today",
           title: 'Started my MSc at Imperial College today!',
           description: "",
-          section: "News",},{id: "news-participated-at-imperial-s-learning-analytics-hackathon-2025-built-imperium",
-          title: 'Participated at Imperial’s Learning Analytics Hackathon 2025 - built Imperium',
+          section: "News",},{id: "news-our-project-imperium-just-won-best-technical-implementation-at-imperial-s-learning-analytics-hackathon-2025",
+          title: 'Our project Imperium just won “Best Technical Implementation” at Imperial’s Learning Analytics Hackathon...',
           description: "",
-          section: "News",},{id: "news-an-instructor-dashboard-to-support-mastery-learning-was-accepted-for-publication-at-acm-sigcse-2026",
-          title: '“An Instructor Dashboard to Support Mastery Learning” was accepted for publication at ACM...',
+          section: "News",},{id: "news-an-instructor-dashboard-to-support-mastery-learning-was-accepted-for-publication-at-sigcse-2026",
+          title: '“An Instructor Dashboard to Support Mastery Learning” was accepted for publication at SIGCSE...',
           description: "",
           section: "News",},{id: "projects-aina-ai-powered-web-accessibility-platform",
           title: 'AIna - AI-powered Web Accessibility Platform',
@@ -147,6 +151,11 @@ ninja.data = [{
           description: "Fully secure end-to-end encrypted system for creating and sharing files through an insecure database",
           section: "Projects",handler: () => {
               window.location.href = "/projects/secure-file-sharing/";
+            },},{id: "projects-imperium-study-consistency-tracker",
+          title: 'Imperium - Study Consistency Tracker',
+          description: "Achieved 1st place in the &quot;Technical Implementation&quot; category at Imperial College&#39;s Learning Analytics Hackathon. Full stack application built in Python Fast API, React.js, Streamlit and Neon DB that integrates custom ML pipelines for analyzing learning habbits of students.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/snapbite%20copy/";
             },},{id: "projects-snapbite-web-app-for-cuisine-exploration",
           title: 'SnapBite - Web App for Cuisine Exploration',
           description: "Achieved 1st place on the CulTech 2025 hackathon among ~100 participants. This is a full-stack application, built using Python Flask and React.js with a MySQL database. The application allows users to explore local dishes by encouraging tourists to &quot;collect&quot; them through QR code scanning at partner restaurants.",
