@@ -101,6 +101,11 @@ ninja.data = [{
           description: "A high-performance SAT fuzzer built to uncover bugs and stability issues in C-based SAT solvers. The tool generates and mutates Boolean formulas in DIMACS CNF format, aggressively probing solvers for undefined behavior, logic inconsistencies, and sanitizer violations.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/fuzzer/";
+            },},{id: "projects-imperium-study-consistency-tracker",
+          title: 'Imperium - Study Consistency Tracker',
+          description: "Achieved 1st place in the &quot;Technical Implementation&quot; category at Imperial College&#39;s Learning Analytics Hackathon. Full stack application built in Python Fast API, React.js, Streamlit and Neon DB that integrates custom ML pipelines for analyzing learning habbits of students.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/imperium/";
             },},{id: "projects-gradeview-instructor-grade-analytics-dashboard",
           title: 'GradeView Instructor Grade Analytics Dashboard',
           description: "GCP-hosted instructor dashboard built with React, Node.js, Flask, and Redis to analyze grades and student trends. Deployed in UC Berkeley&#39;s CS10 for 3 semesters, serving 750+ students and 40+ staff with 94% satisfaction. Led development as research lead in CS Ed R&amp;D group at Berkeley.",
@@ -151,11 +156,6 @@ ninja.data = [{
           description: "Fully secure end-to-end encrypted system for creating and sharing files through an insecure database",
           section: "Projects",handler: () => {
               window.location.href = "/projects/secure-file-sharing/";
-            },},{id: "projects-imperium-study-consistency-tracker",
-          title: 'Imperium - Study Consistency Tracker',
-          description: "Achieved 1st place in the &quot;Technical Implementation&quot; category at Imperial College&#39;s Learning Analytics Hackathon. Full stack application built in Python Fast API, React.js, Streamlit and Neon DB that integrates custom ML pipelines for analyzing learning habbits of students.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/snapbite%20copy/";
             },},{id: "projects-snapbite-web-app-for-cuisine-exploration",
           title: 'SnapBite - Web App for Cuisine Exploration',
           description: "Achieved 1st place on the CulTech 2025 hackathon among ~100 participants. This is a full-stack application, built using Python Flask and React.js with a MySQL database. The application allows users to explore local dishes by encouraging tourists to &quot;collect&quot; them through QR code scanning at partner restaurants.",
