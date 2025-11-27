@@ -2,7 +2,7 @@
 # the commented lines are the default social media links supported by the template
 # the socials will be displayed in the order they are defined here
 
-acm_id: https://dl.acm.org/profile/99661520022
+acm_id: 99661520022
 # blogger_url: # your blogger URL
 # bluesky_url: # your bluesky URL
 # dblp_url: # your DBLP profile url
@@ -22,7 +22,7 @@ github_username: eldarhasanov079 # your GitHub user name
 # leetcode_id: # your LeetCode id
 linkedin_username: eldar-hasanov # your LinkedIn user name
 # mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-# medium_username: # your Medium username
+medium_username: eldarh079
 orcid_id: 0009-0008-2157-3867 # your ORCID ID
 # osf_id: # your OSF ID
 # pinterest_id: # your pinterest id
