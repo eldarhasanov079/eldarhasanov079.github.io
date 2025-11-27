@@ -61,6 +61,9 @@ ninja.data = [{
           section: "News",},{id: "news-an-instructor-dashboard-to-support-mastery-learning-was-accepted-for-publication-at-sigcse-2026",
           title: '“An Instructor Dashboard to Support Mastery Learning” was accepted for publication at SIGCSE...',
           description: "",
+          section: "News",},{id: "news-we-just-placed-5th-out-of-150-teams-at-uk-ai-agents-hackathon-by-building-clusy-io",
+          title: 'We just placed 5th out of 150+ teams at UK AI Agents Hackathon...',
+          description: "",
           section: "News",},{id: "projects-aina-ai-powered-web-accessibility-platform",
           title: 'AIna - AI-powered Web Accessibility Platform',
           description: "Built at SFHacks 2025, AIna is an AI-powered web accessibility platform that scans websites, analyzes HTML/CSS using Gemini Flash 2.0, and provides a 7-point WCAG-based accessibility grade with actionable feedback. Developed with React, TypeScript, Express, AWS and MongoDB Atlas, it features a public rankings dashboard, an accessible UI with high-contrast mode, and plans for blockchain-based compliance certificates.",
@@ -86,6 +89,11 @@ ninja.data = [{
           description: "Developed and presented at CalHacks 10.0, ClubHub is a full-stack web application engineered using React and Node.js, with Firebase Authentication for secure user management and Supabase as a scalable PostgreSQL-based backend-as-a-service. Codebase features custom RESTful APIs to handle club data operations, integrated real-time updates for event listings, and built dynamic filtering and search capabilities across 2000+ university clubs",
           section: "Projects",handler: () => {
               window.location.href = "/projects/clubhub/";
+            },},{id: "projects-clusy-io-skyscanner-for-ai-compute",
+          title: 'clusy.io - Skyscanner for AI Compute',
+          description: "Placed 5th out of 150+ teams at the UK AI Agents 2025 Hackathon sponsored by Google and Antropic. clusy.io is an AI-agent orchestration platform that routes and schedules ML/AI workloads across compute providers to minimize cost, duration and carbon footprint of AI workloads.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/clusyio/";
             },},{id: "projects-pipelined-cpu-in-logisim-circuits",
           title: 'Pipelined CPU in Logisim (Circuits)',
           description: "Pipelined version of logic circuit of a 1 clock cycle CPU",
@@ -176,7 +184,7 @@ ninja.data = [{
         title: 'ACM DL',
         section: 'Socials',
         handler: () => {
-          window.open("https://dl.acm.org/profile/https://dl.acm.org/profile/99661520022/", "_blank");
+          window.open("https://dl.acm.org/profile/99661520022/", "_blank");
         },
       },{
         id: 'social-email',
@@ -198,6 +206,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://www.linkedin.com/in/eldar-hasanov", "_blank");
+        },
+      },{
+        id: 'social-medium',
+        title: 'Medium',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://medium.com/@eldarh079", "_blank");
         },
       },{
         id: 'social-orcid',
