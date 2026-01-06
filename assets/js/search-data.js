@@ -64,6 +64,9 @@ ninja.data = [{
           section: "News",},{id: "news-we-just-placed-5th-out-of-150-teams-at-uk-ai-agents-hackathon-by-building-clusy-io",
           title: 'We just placed 5th out of 150+ teams at UK AI Agents Hackathon...',
           description: "",
+          section: "News",},{id: "news-our-team-starlabs-achieved-1st-place-out-of-150-teams-at-idda-hackathon-2",
+          title: 'Our team StarLabs achieved 1st place out of 150+ teams at IDDA Hackathon...',
+          description: "",
           section: "News",},{id: "projects-aina-ai-powered-web-accessibility-platform",
           title: 'AIna - AI-powered Web Accessibility Platform',
           description: "Built at SFHacks 2025, AIna is an AI-powered web accessibility platform that scans websites, analyzes HTML/CSS using Gemini Flash 2.0, and provides a 7-point WCAG-based accessibility grade with actionable feedback. Developed with React, TypeScript, Express, AWS and MongoDB Atlas, it features a public rankings dashboard, an accessible UI with high-contrast mode, and plans for blockchain-based compliance certificates.",
@@ -124,6 +127,11 @@ ninja.data = [{
           description: "Symbolic-execution workflow around KLEE with containerized runs, live Grafana telemetry, introducing a custom SymLoadSearcher heuristic that delivered higher instruction coverage with controlled memory growth.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/klee/";
+            },},{id: "projects-loanify-ai-ml-powered-credit-scoring",
+          title: 'loanify.ai - ML-Powered Credit Scoring',
+          description: "Placed 1st out of 150+ teams and 56 finalists at the IDDA Hackathon 2 organized by Tenity and IDDA. We built loanify.ai - a new trasaction behavior based scoring system, on average 10-12% more accurate than current credit risk assessment methods used in banks of Azerbaijan and Turkey.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/loanify/";
             },},{id: "projects-pacman-ai-agents",
           title: 'Pacman AI Agents',
           description: "Developed and trained a suite of intelligent agents for playing Pac-Man, making use of search algorithms, probabilistic reasoning, adversarial planning, and reinforcement learning",
