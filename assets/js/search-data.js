@@ -42,7 +42,7 @@ ninja.data = [{
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/bio/";
+            window.location.href = "/_pages/bio/";
           },
         },{id: "news-participated-in-sf-hacks-2025-we-built-an-ai-powered-web-accessibility-complience-platform",
           title: 'Participated in SF Hacks 2025 - We built an AI-powered web accessibility complience...',
