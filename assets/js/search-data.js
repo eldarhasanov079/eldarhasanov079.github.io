@@ -37,6 +37,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
+        },{id: "nav-bio",
+          title: "bio",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/bio/";
+          },
         },{id: "news-participated-in-sf-hacks-2025-we-built-an-ai-powered-web-accessibility-complience-platform",
           title: 'Participated in SF Hacks 2025 - We built an AI-powered web accessibility complience...',
           description: "",
@@ -66,6 +73,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-our-team-starlabs-achieved-1st-place-out-of-150-teams-at-idda-hackathon-2",
           title: 'Our team StarLabs achieved 1st place out of 150+ teams at IDDA Hackathon...',
+          description: "",
+          section: "News",},{id: "news-our-paper-with-nvidia-research-on-distributed-training-just-got-into-apnet-26",
+          title: 'Our paper with Nvidia Research on distributed training just got into APNet’26!',
           description: "",
           section: "News",},{id: "projects-aina-ai-powered-web-accessibility-platform",
           title: 'AIna - AI-powered Web Accessibility Platform',
@@ -182,11 +192,6 @@ ninja.data = [{
           description: "A hybrid tool for auditing smart contracts using signature-based detection and machine learning, achieving highest score at UC Berkeley&#39;s Decentralized Finance Research Seminar.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/soterio/";
-            },},{id: "projects-reliable-tcp-socket",
-          title: 'Reliable TCP Socket',
-          description: "A Python‑based transport-layer socket built atop the POX network simulator to implement a TCP-like protocol (3‑way handshake, byte-stream transfer, FIN teardown, retransmission strategy with RTT/RTO estimation, and flow-control)",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/tcp/";
             },},{
         id: 'social-acm',
         title: 'ACM DL',
