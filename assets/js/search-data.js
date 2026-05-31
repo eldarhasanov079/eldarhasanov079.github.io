@@ -134,7 +134,7 @@ ninja.data = [{
               window.location.href = "/projects/imperium/";
             },},{id: "projects-gradeview-instructor-analytics-dashboard",
           title: 'GradeView - Instructor Analytics Dashboard',
-          description: "Led development of a GCP-hosted grade analytics dashboard for UC Berkeley CS10, built with React, Node.js, Flask, and Redis. Deployed for 3 semesters to 750+ students and 40+ staff, earning 94% satisfaction.",
+          description: "Co-authored a SIGCSE 2026 paper and led development of a GCP-hosted grade analytics dashboard for UC Berkeley CS10, built with React, Node.js, Flask, and Redis. Deployed for 3 semesters to 750+ students and 40+ staff, earning 94% satisfaction.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/instructordash/";
             },},{id: "projects-symbolic-load-guided-klee",
