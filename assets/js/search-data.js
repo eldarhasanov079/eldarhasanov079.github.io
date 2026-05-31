@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-teaching",
           title: "teaching",
-          description: "",
+          description: "Teaching, mentoring, and tutoring roles at UC Berkeley",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
@@ -77,119 +77,114 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-with-nvidia-research-on-distributed-training-just-got-into-apnet-26",
           title: 'Our paper with Nvidia Research on distributed training just got into APNet’26!',
           description: "",
-          section: "News",},{id: "projects-aina-ai-powered-web-accessibility-platform",
-          title: 'AIna - AI-powered Web Accessibility Platform',
-          description: "Built at SFHacks 2025, AIna is an AI-powered web accessibility platform that scans websites, analyzes HTML/CSS using Gemini Flash 2.0, and provides a 7-point WCAG-based accessibility grade with actionable feedback. Developed with React, TypeScript, Express, AWS and MongoDB Atlas, it features a public rankings dashboard, an accessible UI with high-contrast mode, and plans for blockchain-based compliance certificates.",
+          section: "News",},{id: "projects-aina-ai-web-accessibility-platform",
+          title: 'AIna - AI Web Accessibility Platform',
+          description: "Built at SFHacks 2025, AIna scans websites and uses Gemini Flash 2.0 to grade accessibility against WCAG-style criteria. The React, TypeScript, Express, and MongoDB Atlas app includes actionable feedback, public rankings, and a high-contrast accessible UI.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/aina/";
-            },},{id: "projects-risc-v-classifier",
-          title: 'RISC-V Classifier',
-          description: "A RISC‑V assembly-based MNIST classifier that ingests image and weight files, executes a fully-connected neural net (matrix multiply → ReLU → matrix multiply → argmax), and outputs digit predictions",
+            },},{id: "projects-risc-v-assembly-inference-engine",
+          title: 'RISC-V Assembly Inference Engine',
+          description: "Built an end-to-end neural-network inference pipeline in RISC-V assembly. Implemented matrix I/O, dot product, matmul, ReLU, argmax, and classification routines with manual memory management and automated tests.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/assembly_project/";
-            },},{id: "projects-bearrank-course-reviews-and-ranking-platform",
-          title: 'BearRank - course reviews and ranking platform',
-          description: "Launched in 2025, this platform allows students at Berkeley to share their experiences about different classes. This was built in Python Fast API, React.js, Typescript and PostrgeSQL. The app is deployed on GCP through Cloud Run, featuring paginated REST APIs and CORS-safe architecture.",
+            },},{id: "projects-bearrank-berkeley-course-reviews",
+          title: 'BearRank - Berkeley Course Reviews',
+          description: "Launched a course review and ranking platform for UC Berkeley students to share class experiences and compare courses. Built with FastAPI, React, TypeScript, PostgreSQL, and GCP Cloud Run, with paginated REST APIs and a CORS-safe deployment architecture.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bearrank/";
-            },},{id: "projects-build-your-own-world",
-          title: 'Build Your Own World',
-          description: "2D Random World Generating Game in Java",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/byow/";
             },},{id: "projects-clubhub-student-clubs-social-network",
           title: 'ClubHub - Student Clubs Social Network',
-          description: "Developed and presented at CalHacks 10.0, ClubHub is a full-stack web application engineered using React and Node.js, with Firebase Authentication for secure user management and Supabase as a scalable PostgreSQL-based backend-as-a-service. Codebase features custom RESTful APIs to handle club data operations, integrated real-time updates for event listings, and built dynamic filtering and search capabilities across 2000+ university clubs",
+          description: "Built and presented at CalHacks 10.0, ClubHub helps UC Berkeley students discover clubs, events, and communities through search and filtering across 2,000+ organizations. Developed with React, Node.js, Firebase Auth, Supabase, and custom REST APIs.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/clubhub/";
-            },},{id: "projects-clusy-io-skyscanner-for-ai-compute",
-          title: 'clusy.io - Skyscanner for AI Compute',
-          description: "Placed 5th out of 150+ teams at the UK AI Agents 2025 Hackathon sponsored by Google and Antropic. clusy.io is an AI-agent orchestration platform that routes and schedules ML/AI workloads across compute providers to minimize cost, duration and carbon footprint of AI workloads.",
+            },},{id: "projects-clusy-io-ai-compute-marketplace",
+          title: 'clusy.io - AI Compute Marketplace',
+          description: "Placed 5th out of 150+ teams at the UK AI Agents 2025 Hackathon sponsored by Google and Anthropic. Built an AI-agent orchestration platform that routes ML workloads across compute providers to reduce cost, runtime, and carbon impact.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/clusyio/";
-            },},{id: "projects-pipelined-cpu-in-logisim-circuits",
-          title: 'Pipelined CPU in Logisim (Circuits)',
-          description: "Pipelined version of logic circuit of a 1 clock cycle CPU",
+            },},{id: "projects-risc-v-cpu-in-logisim",
+          title: 'RISC-V CPU in Logisim',
+          description: "Designed and tested a RISC-V-style CPU in Logisim, integrating ALU, register file, immediate generator, branch comparator, load/store logic, and program counter circuits. The processor runs RISC-V assembly programs through unit and integration harnesses.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cpu/";
-            },},{id: "projects-rookiedbms",
-          title: 'RookieDBMS',
-          description: "A lightweight, Java-based DBMS built throughout UC Berkeley’s CS 186 curriculum, implementing core systems concepts across projects 2–5—from B+ tree indexing and joins to concurrency control and ARIES-style crash recovery. It supports efficient query processing, ACID-compliant multi-transaction execution, and fast restart after failures.",
+            },},{id: "projects-rookiedb-java-database-system",
+          title: 'RookieDB - Java Database System',
+          description: "Built core components of a Java DBMS, including B+ tree indexing, join algorithms, query planning, multigranularity locking, and ARIES-style recovery. The system supports disk-backed storage, ACID transactions, and crash restart logic.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/dbms/";
-            },},{id: "projects-mutation-based-grammar-aware-fuzzer-for-sat-solvers",
-          title: 'Mutation-based Grammar Aware Fuzzer for SAT Solvers',
-          description: "A high-performance SAT fuzzer built to uncover bugs and stability issues in C-based SAT solvers. The tool generates and mutates Boolean formulas in DIMACS CNF format, aggressively probing solvers for undefined behavior, logic inconsistencies, and sanitizer violations.",
+            },},{id: "projects-dimacs-sat-solver-fuzzer",
+          title: 'DIMACS SAT Solver Fuzzer',
+          description: "Built a mutation-based, grammar-aware Python fuzzer for C SAT solvers that generates DIMACS CNF inputs, tracks gcov coverage, and buckets ASan/UBSan crashes. The engine saves unique bug-triggering cases and uses coverage-guided corpus management to explore solver behavior.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/fuzzer/";
             },},{id: "projects-imperium-study-consistency-tracker",
           title: 'Imperium - Study Consistency Tracker',
-          description: "Achieved 1st place in the &quot;Technical Implementation&quot; category at Imperial College&#39;s Learning Analytics Hackathon. Full stack application built in Python Fast API, React.js, Streamlit and Neon DB that integrates custom ML pipelines for analyzing learning habbits of students.",
+          description: "Won 1st place for Best Technical Execution at Imperial College&#39;s Learning Analytics Hackathon. Built a FastAPI, React, Streamlit, and SQL analytics platform that turns student activity traces into engagement insights and personalized study nudges.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/imperium/";
-            },},{id: "projects-gradeview-instructor-grade-analytics-dashboard",
-          title: 'GradeView Instructor Grade Analytics Dashboard',
-          description: "GCP-hosted instructor dashboard built with React, Node.js, Flask, and Redis to analyze grades and student trends. Deployed in UC Berkeley&#39;s CS10 for 3 semesters, serving 750+ students and 40+ staff with 94% satisfaction. Led development as research lead in CS Ed R&amp;D group at Berkeley.",
+            },},{id: "projects-gradeview-instructor-analytics-dashboard",
+          title: 'GradeView - Instructor Analytics Dashboard',
+          description: "Led development of a GCP-hosted grade analytics dashboard for UC Berkeley CS10, built with React, Node.js, Flask, and Redis. Deployed for 3 semesters to 750+ students and 40+ staff, earning 94% satisfaction.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/instructordash/";
-            },},{id: "projects-symbolic-execution-engine-extension-and-analysis-with-klee",
-          title: 'Symbolic Execution Engine Extension and Analysis with KLEE',
-          description: "Symbolic-execution workflow around KLEE with containerized runs, live Grafana telemetry, introducing a custom SymLoadSearcher heuristic that delivered higher instruction coverage with controlled memory growth.",
+            },},{id: "projects-symbolic-load-guided-klee",
+          title: 'Symbolic-Load Guided KLEE',
+          description: "Extended KLEE with symbolic-load instrumentation, a new global statistic, and a custom SymLoadSearcher scheduling heuristic. Built a reproducible symbolic-execution workflow with containerized runs, telemetry, and crash reproduction for evaluating coverage and memory tradeoffs.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/klee/";
-            },},{id: "projects-loanify-ai-ml-powered-credit-scoring",
-          title: 'loanify.ai - ML-Powered Credit Scoring',
-          description: "Placed 1st out of 150+ teams and 56 finalists at the IDDA Hackathon 2 organized by Tenity and IDDA. We built loanify.ai - a new trasaction behavior based scoring system, on average 10-12% more accurate than current credit risk assessment methods used in banks of Azerbaijan and Turkey.",
+            },},{id: "projects-loanify-ai-ml-credit-scoring",
+          title: 'Loanify.ai - ML Credit Scoring',
+          description: "Won 1st place out of 150+ teams at IDDA Hackathon 2 by Tenity and IDDA. Built a transaction-behavior credit scoring platform that tested 10-12% more accurate than incumbent bank risk models in Azerbaijan and Turkey.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/loanify/";
             },},{id: "projects-pacman-ai-agents",
           title: 'Pacman AI Agents',
-          description: "Developed and trained a suite of intelligent agents for playing Pac-Man, making use of search algorithms, probabilistic reasoning, adversarial planning, and reinforcement learning",
+          description: "Implemented a portfolio of AI agents for Pacman, covering graph search, adversarial planning, probabilistic ghost tracking, logic planning, and reinforcement learning. Included DFS/BFS/UCS/A*, minimax, alpha-beta, expectimax, particle filters, value iteration, Q-learning, and DQN models.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pacman/";
             },},{id: "projects-pintos-operating-system",
           title: 'PintOS Operating System',
-          description: "A fully functional single-coreoperating system in C for the x86 architecture. It supports multithreading, loading and running user programs, dynamic stack alloction, buffer cache and an inode-based FFS file system.",
+          description: "Implemented major PintOS components in C for x86, including priority scheduling, synchronization primitives, 25 system calls, user program loading, and dynamic stack growth. Extended the file system with inode-based storage and an LRU-style buffer cache.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pintos/";
-            },},{id: "projects-pl-graph-constructor",
-          title: 'pl-graph-constructor',
-          description: "A custom tool enabling students to build graphs in a simple interface and converts them into a DOT-language form for autograding. Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab, published at ACM CompEd 2025 Conference to be presented in San Francisco, USA and Gaborone, Botswana.",
+            },},{id: "projects-prairielearn-graph-constructor",
+          title: 'PrairieLearn Graph Constructor',
+          description: "Co-authored an ACM CompEd 2025 paper on a direct-manipulation PrairieLearn tool for constructing autogradable graphs. The open-source element lets students build graphs visually and exports DOT/Python representations for instant grading and feedback.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pl-graph-constructor/";
-            },},{id: "projects-pl-interactive-graph",
-          title: 'pl-interactive-graph',
-          description: "An Interactive Tool for Randomized Autogradable Graph Assessments + Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab and published by ACM at SIGCSE 2025 Technical Symposium in Pittsburgh, PA.",
+            },},{id: "projects-prairielearn-interactive-graph",
+          title: 'PrairieLearn Interactive Graph',
+          description: "Co-authored an ACM SIGCSE 2025 paper on an interactive PrairieLearn element for randomized, autogradable graph assessments. The tool supports graph algorithms from BFS/DFS to Dijkstra and Kruskal with visual interaction and automatic grading.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/pl-interactive-graph/";
-            },},{id: "projects-data-de-identification-for-public-health-analytics",
-          title: 'Data De-Identification for Public Health Analytics',
-          description: "A privacy-preserving data release applying k-anonymity, ℓ-diversity, and statistical disclosure control to a 150k-record health dataset, mitigating re-identification and inference attacks.",
+            },},{id: "projects-privacy-preserving-health-data-release",
+          title: 'Privacy-Preserving Health Data Release',
+          description: "Designed a de-identification workflow for a 150k-record health analytics dataset using direct identifier removal, quasi-identifier generalization, suppression, and diversity checks. Balanced k-anonymity-style privacy protections with utility for disease, fairness, and regional risk analysis.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/privacy/";
             },},{id: "projects-qalam-ai-intelligent-writing-assistant",
           title: 'Qalam AI - Intelligent Writing Assistant',
-          description: "BBuilt and presented at CalHacks 11.0, Qalam AI is a full-stack writing assistant developed using Python, Reflex, and SingleStore, with a custom pipeline featuring three Groq-hosted LLMs for entity detection, story summarization, and prompt generation with voice integration via Cortesia.",
+          description: "Built and presented at CalHacks 11.0, Qalam AI helps writers overcome blocks with context-aware questions instead of generated prose. The Python, Reflex, SingleStore, Groq, and Cartesia app uses three LLM pipelines for entity detection, story summarization, and creative prompt generation.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/qalamai/";
-            },},{id: "projects-scheme-interpreter",
-          title: 'Scheme Interpreter',
-          description: "A Python-based interpreter for a Scheme functional language, implementing a full read‑eval‑print loop and core language features (special forms, user-defined procedures, tokenization, and parsing).",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/scheme/";
             },},{id: "projects-secure-file-sharing-system",
           title: 'Secure File Sharing System',
-          description: "Fully secure end-to-end encrypted system for creating and sharing files through an insecure database",
+          description: "Built an end-to-end encrypted file sharing system in Go with secure storage, append, invitation sharing, delegated access, and revocation over an untrusted datastore. Used symmetric crypto, public-key encryption, signatures, MACs, and adversarial tests to protect confidentiality and integrity.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/secure-file-sharing/";
-            },},{id: "projects-snapbite-web-app-for-cuisine-exploration",
-          title: 'SnapBite - Web App for Cuisine Exploration',
-          description: "Achieved 1st place on the CulTech 2025 hackathon among ~100 participants. This is a full-stack application, built using Python Flask and React.js with a MySQL database. The application allows users to explore local dishes by encouraging tourists to &quot;collect&quot; them through QR code scanning at partner restaurants.",
+            },},{id: "projects-snapbite-cuisine-discovery-app",
+          title: 'SnapBite - Cuisine Discovery App',
+          description: "Won 1st place at the CulTech 2025 Hackathon among roughly 100 participants. Built a Flask, React, and MySQL app that helps tourists discover local dishes by collecting them through QR scans at partner restaurants.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/snapbite/";
-            },},{id: "projects-hybrid-detection-of-vulnerabilities-in-smart-contracts",
-          title: 'Hybrid Detection of Vulnerabilities in Smart Contracts',
-          description: "A hybrid tool for auditing smart contracts using signature-based detection and machine learning, achieving highest score at UC Berkeley&#39;s Decentralized Finance Research Seminar.",
+            },},{id: "projects-soterio-smart-contract-vulnerability-detection",
+          title: 'Soterio - Smart Contract Vulnerability Detection',
+          description: "Earned the highest score at UC Berkeley&#39;s Decentralized Finance Research Seminar for a hybrid smart-contract auditor. Combined signature-based detection with logistic regression and a fine-tuned BERT classifier over 36,670 contracts to flag vulnerabilities such as reentrancy and integer overflows.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/soterio/";
             },},{
