@@ -97,6 +97,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/byow/";
+            },},{id: "projects-checkwork-checkpoint-aware-ml-simulation",
+          title: 'CheckWork - Checkpoint-Aware ML Simulation',
+          description: "First-author paper accepted to APNet 2026. CheckWork is an open-source framework for generating checkpoint-aware execution traces in distributed ML training, enabling reproducible simulation of AI training checkpointing strategies without large GPU clusters.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/checkwork/";
             },},{id: "projects-clubhub-student-clubs-social-network",
           title: 'ClubHub - Student Clubs Social Network',
           description: "Built and presented at CalHacks 10.0, ClubHub helps UC Berkeley students discover clubs, events, and communities through search and filtering across 2,000+ organizations. Developed with React, Node.js, Firebase Auth, Supabase, and custom REST APIs.",
@@ -187,6 +192,11 @@ ninja.data = [{
           description: "Earned the highest score at UC Berkeley&#39;s Decentralized Finance Research Seminar for a hybrid smart-contract auditor. Combined signature-based detection with logistic regression and a fine-tuned BERT classifier over 36,670 contracts to flag vulnerabilities such as reentrancy and integer overflows.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/soterio/";
+            },},{id: "projects-moe-training-networks-msc-thesis",
+          title: 'MoE Training Networks - MSc Thesis',
+          description: "MSc thesis on making Mixture-of-Experts training communication more predictable and network-efficient. I’m exploring how MoE traffic patterns can inform better planning, routing, and resource allocation for large-scale AI training.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/thesis/";
             },},{
         id: 'social-acm',
         title: 'ACM DL',
