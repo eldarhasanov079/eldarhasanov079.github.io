@@ -1,7 +1,7 @@
 ---
 layout: page
-title: GradeView Instructor Grade Analytics Dashboard
-description: GCP-hosted instructor dashboard built with React, Node.js, Flask, and Redis to analyze grades and student trends. Deployed in UC Berkeley's CS10 for 3 semesters, serving 750+ students and 40+ staff with 94% satisfaction. Led development as research lead in CS Ed R&D group at Berkeley.
+title: GradeView - Instructor Analytics Dashboard
+description: Led development of a GCP-hosted grade analytics dashboard for UC Berkeley CS10, built with React, Node.js, Flask, and Redis. Deployed for 3 semesters to 750+ students and 40+ staff, earning 94% satisfaction.
 img: assets/img/gv.png
 redirect: https://gradeview.eecs.berkeley.edu/
 importance: 2

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: pl-interactive-graph
-description: An Interactive Tool for Randomized Autogradable Graph Assessments + Open-source contribution to PrairieLearn. Developed within UC Berkeley ACE Lab and published by ACM at SIGCSE 2025 Technical Symposium in Pittsburgh, PA.
+title: PrairieLearn Interactive Graph
+description: Co-authored an ACM SIGCSE 2025 paper on an interactive PrairieLearn element for randomized, autogradable graph assessments. The tool supports graph algorithms from BFS/DFS to Dijkstra and Kruskal with visual interaction and automatic grading.
 img: assets/img/sigcse.jpg
 redirect: https://github.com/eldarhasanov079/pl-interactive-graph-v2
 importance: 2

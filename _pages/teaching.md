@@ -2,35 +2,122 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: 
+description: Teaching, mentoring, and tutoring roles at UC Berkeley
 nav: true
 nav_order: 6
 ---
 
-**Course Staff**:
+I have supported students across computer science, engineering ethics, data structures, and security through course staff, mentorship, and department tutoring roles at UC Berkeley.
 
-Spring 2024: Teaching Assisstant for ENGIN 125 - Ethics, Engineering and Society (UC Berkeley)
+<div class="teaching-list">
+  <section class="teaching-card">
+    <div class="teaching-card-header">
+      <h2>Course Staff</h2>
+      <span class="teaching-term">Spring 2024</span>
+    </div>
+    <p>
+      <strong>Teaching Assistant</strong>, ENGIN 125 - Ethics, Engineering and Society
+      <span class="teaching-org">UC Berkeley</span>
+    </p>
+  </section>
 
+  <section class="teaching-card">
+    <div class="teaching-card-header">
+      <h2><a href="https://csmentors.studentorg.berkeley.edu/#/">Computer Science Mentors</a></h2>
+      <span class="teaching-term">Fall 2023 - Fall 2024</span>
+    </div>
+    <ul>
+      <li><strong>Senior Mentor</strong>, CSM 61B - Data Structures and Algorithms <span>Fall 2024</span></li>
+      <li><strong>Senior Mentor</strong>, CSM 61B - Data Structures and Algorithms <span>Spring 2024</span></li>
+      <li><strong>Junior Mentor</strong>, CSM 61B - Data Structures and Algorithms <span>Fall 2023</span></li>
+    </ul>
+  </section>
 
-**[Computer Science Mentors](https://csmentors.studentorg.berkeley.edu/#/)**:
+  <section class="teaching-card">
+    <div class="teaching-card-header">
+      <h2>Tutoring</h2>
+      <span class="teaching-term">Spring 2024 - Summer 2025</span>
+    </div>
+    <ul>
+      <li><strong>EECS Department Private Tutor</strong>, CS 161 - Computer Security <span>Summer 2025</span></li>
+      <li><strong>SEED Scholars Excellence Tutor</strong>, CS 161 - Computer Security <span>Spring 2025</span></li>
+      <li><strong>EECS Department Private Tutor</strong>, CS 61B - Data Structures and Algorithms <span>Fall 2024</span></li>
+      <li><strong>EECS Department Private Tutor</strong>, CS 61B - Data Structures and Algorithms <span>Spring 2024</span></li>
+    </ul>
+  </section>
+</div>
 
-Fall 2024: Spring 2024: Senior Mentor for CSM 61B - Data Structures and Algorithms (UC Berkeley)
+<style>
+  .teaching-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
 
-Spring 2024: Senior Mentor for CSM 61B - Data Structures and Algorithms (UC Berkeley)
+  .teaching-card {
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    background: var(--global-card-bg-color);
+  }
 
-Fall 2023: Junior Mentor for CSM 61B - Data Structures and Algorithms (UC Berkeley)
+  .teaching-card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
 
+  .teaching-card h2 {
+    font-size: 1.15rem;
+    margin: 0;
+  }
 
+  .teaching-card p,
+  .teaching-card ul {
+    margin-bottom: 0;
+  }
 
-**Tutoring**:
+  .teaching-card ul {
+    padding-left: 1.1rem;
+  }
 
-Summer 2025: CCS 161 - Computer Security - EECS Department Private Tutor (UC Berkeley)
+  .teaching-card li {
+    margin-bottom: 0.45rem;
+  }
 
-Spring 2025: CS 161 - Computer Security - SEED Scholars Exellence Tutor (UC Berkeley)
+  .teaching-card li:last-child {
+    margin-bottom: 0;
+  }
 
-Fall 2024: CS 61B - Data Structures and Algorithms - EECS Department Private Tutor (UC Berkeley)
+  .teaching-term,
+  .teaching-card li span,
+  .teaching-org {
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
 
-Spring 2024: CS 61B - Data Structures and Algorithms - EECS Department Private Tutor (UC Berkeley)
+  .teaching-org::before {
+    content: " - ";
+  }
 
+  @media (max-width: 576px) {
+    .teaching-card-header {
+      display: block;
+    }
 
+    .teaching-term,
+    .teaching-card li span,
+    .teaching-org {
+      display: block;
+      margin-top: 0.15rem;
+      white-space: normal;
+    }
 
+    .teaching-org::before {
+      content: "";
+    }
+  }
+</style>

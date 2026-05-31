@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Imperium - Study Consistency Tracker
-description: Achieved 1st place in the "Technical Implementation" category at Imperial College's Learning Analytics Hackathon. Full stack application built in Python Fast API, React.js, Streamlit and Neon DB that integrates custom ML pipelines for analyzing learning habbits of students.
+description: Won 1st place for Best Technical Execution at Imperial College's Learning Analytics Hackathon. Built a FastAPI, React, Streamlit, and SQL analytics platform that turns student activity traces into engagement insights and personalized study nudges.
 img:
+redirect: https://github.com/eldarhasanov079/imperium-learning-analytics
 importance: 1
 category: hackathon
 ---
