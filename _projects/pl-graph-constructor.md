@@ -5,5 +5,5 @@ description: Co-authored an ACM CompEd 2025 paper on a direct-manipulation Prair
 img: assets/img/plgraphconstructor.jpg
 redirect: https://github.com/eldarhasanov079/pl-graph-constructor
 importance: 1
-category: [research, highlighted]
+category: [cs-ed, highlighted]
 ---

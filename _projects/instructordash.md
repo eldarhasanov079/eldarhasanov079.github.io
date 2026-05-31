@@ -5,5 +5,5 @@ description: Led development of a GCP-hosted grade analytics dashboard for UC Be
 img: assets/img/gv.png
 redirect: https://gradeview.eecs.berkeley.edu/
 importance: 2
-category: [research, highlighted]
+category: [cs-ed, highlighted]
 ---

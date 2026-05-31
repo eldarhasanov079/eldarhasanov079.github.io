@@ -5,7 +5,7 @@ permalink: /projects/
 description: A collection of my highlighted software projects. Code and demos for most projects are available upon request. 
 nav: true
 nav_order: 2
-display_categories: [research, masters, undergraduate, hackathon, personal]
+display_categories: [research, cs-ed, masters, undergraduate, hackathon, personal]
 horizontal: false
 ---
 
@@ -15,7 +15,7 @@ horizontal: false
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
   <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
+    <h2 class="category">{{ category | replace: "-", " " }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}

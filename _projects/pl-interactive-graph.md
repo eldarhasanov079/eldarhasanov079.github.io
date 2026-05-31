@@ -5,5 +5,5 @@ description: Co-authored an ACM SIGCSE 2025 paper on an interactive PrairieLearn
 img: assets/img/sigcse.jpg
 redirect: https://github.com/eldarhasanov079/pl-interactive-graph-v2
 importance: 2
-category: [research, highlighted]
+category: [cs-ed, highlighted]
 ---
