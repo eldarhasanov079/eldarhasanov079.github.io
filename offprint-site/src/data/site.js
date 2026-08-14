@@ -93,11 +93,11 @@ export const links = [
 export const now = [
   {
     date: '2026',
-    body: 'Building <a href="/clusy/">Clusy</a>, an agent-native computational notebook for parallel experiments and large-space exploration, as part of Founders, Inc.',
+    body: 'Building <a href="/clusy/">Clusy</a>, an agent-native computational notebook for parallel experiments and large-space exploration, as part of <a href="https://f.inc/">Founders, Inc.</a>',
   },
   {
     date: '2026',
-    body: 'Completing my MSc thesis at Imperial College on LLM training systems under <a href="https://marioskogias.github.io/">Prof. Marios Kogias</a>, in collaboration with NVIDIA Research.',
+    body: 'Completing my MSc thesis at <a href="https://www.imperial.ac.uk/">Imperial College</a> on LLM training systems under <a href="https://marioskogias.github.io/">Prof. Marios Kogias</a>, in collaboration with NVIDIA Research.',
   },
 ];
 
