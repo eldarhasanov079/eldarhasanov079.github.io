@@ -1,0 +1,18 @@
+Third-party components bundled with this template
+=================================================
+
+Newsreader
+----------
+public/fonts/newsreader-roman.woff2
+public/fonts/newsreader-italic.woff2
+
+Copyright 2020 The Newsreader Project Authors
+(https://github.com/productiontype/Newsreader)
+
+Licensed under the SIL Open Font License, Version 1.1, not the MIT licence
+that covers the rest of this repository. The full text is in
+public/fonts/OFL.txt.
+
+In short: you may use, study, modify, and redistribute the font, including
+bundled with a website, and you may not sell it on its own. If you
+redistribute it, keep OFL.txt with it.

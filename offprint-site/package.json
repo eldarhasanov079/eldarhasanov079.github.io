@@ -1,0 +1,20 @@
+{
+  "name": "offprint",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A quiet, paper-textured Astro template for an academic homepage.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/external-links.mjs",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^5.6.1",
+    "sharp": "^0.34.1"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3"
+  }
+}

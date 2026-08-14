@@ -1,0 +1,45 @@
+---
+import { person, nav } from '../data/site.js';
+
+const { path = '/' } = Astro.props;
+const isHome = path === '/';
+---
+
+<header class="runhead">
+  {/* A running head names the book on every page but the first — on the front
+      page the title is already directly below, so the slot carries the
+      dateline instead of repeating it. */}
+  <span class="runhead__dateline">
+    {
+      isHome ? (
+        person.location
+      ) : (
+        <a class="runhead__name" href="/">
+          {person.name}
+        </a>
+      )
+    }
+  </span>
+  <nav class="runhead__nav">
+    {
+      nav.map((n) => (
+        <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>
+          {n.label}
+        </a>
+      ))
+    }
+  </nav>
+  {/* A printer's tint mark: the filled half swaps sides with the theme. */}
+  <button
+    class="theme-toggle"
+    id="theme-toggle"
+    type="button"
+    aria-label="Toggle colour theme"
+    title="Toggle colour theme"
+  >
+    <svg class="theme-toggle__mark" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+      <circle cx="8" cy="8" r="6.4" fill="none" stroke="currentColor" stroke-width="1.2" />
+      <path d="M8 1.6a6.4 6.4 0 0 1 0 12.8Z" fill="currentColor" />
+    </svg>
+  </button>
+</header>

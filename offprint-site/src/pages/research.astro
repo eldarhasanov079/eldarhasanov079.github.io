@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  path="/research/"
+  title="Research"
+  description="An overview of my research — networking for distributed ML training, and infrastructure for teaching computer science."
+>
+  <h1>Research</h1>
+
+  <div class="prose">
+    <h2>Systems for training large models</h2>
+    <p>
+      Training a large model is now clearly a distributed systems problem. Under
+      the latency and reliability demands of training, the network becomes the
+      bottleneck for synchronisation across thousands of GPUs. As model-size
+      requirements grow, Mixture-of-Experts (MoE) architectures, with sparse,
+      dynamic expert traffic, have emerged as a cost-efficient way to scale.
+    </p>
+    <p>
+      As a postgraduate researcher at Imperial College London, supervised by
+      <a href="https://marioskogias.github.io/">Prof. Marios Kogias</a>, my
+      thesis explores network planning for MoE training, looking for
+      opportunities to cut cost and latency at large scale.
+    </p>
+    <p>
+      A related problem is fault tolerance. Checkpointing is how thousand-GPU
+      jobs survive frequent failures, but different strategies impose very
+      different overheads. Measuring those overheads has almost always meant
+      real hardware runs on prohibitively expensive clusters.
+      <cite>CheckWork</cite>, our
+      <a href="https://doi.org/10.1145/3820441.3820476">framework</a> published
+      at APNet 2026, enables simulation instead: it augments training DAGs with
+      checkpoint operations to produce checkpoint-aware Chakra traces that
+      existing system simulators can replay realistically. Both this work and my
+      thesis are done with collaborators at NVIDIA Research.
+    </p>
+
+    <figure class="figure--media">
+      <img
+        src="/img/apnet.jpg"
+        alt="Presenting CheckWork at APNet 2026 in Singapore, title slide on screen with Imperial and NVIDIA affiliations"
+        width="1600"
+        height="1204"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        Presenting CheckWork at APNet 2026 in Singapore.
+      </figcaption>
+    </figure>
+
+    <h2>Systems for agentic execution environments</h2>
+    <p>
+      Separately, through
+      <a href="/clusy/">Clusy</a>, I work on the systems underneath agent-driven
+      executions, specifically for notebook interfaces. 
+      A notebook is not a script: cells run out of order, state
+      outlives the code that created it, and the kernel (not the source) is
+      the true execution substrate. It is quite important for our use case. 
+      The research question is how to make
+      interactive computational environments efficient enough for agents to
+      explore wide experimental spaces within reasonable cost.
+      
+      More on the dedicated <a href="/clusy/">Clusy</a> page.
+    </p>
+
+    <h2>Infrastructure for teaching computer science</h2>
+    <p>
+      Before London, I spent my Berkeley years in
+      <a href="https://people.eecs.berkeley.edu/~ddgarcia/">Prof. Dan
+      Garcia</a>'s CS Education R&amp;D Group and
+      <a href="https://acelab.berkeley.edu/">ACE Lab</a>. The recurring problem
+      was mastery learning — students getting multiple chances to show
+      understanding, on their own schedule — which ordinary university tooling
+      does not support.
+      <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/EECS-2025-127.html">GradeView</a>
+      is the group's answer: a cloud-native learning-analytics platform on GCP.
+      As R&amp;D lead I led a team of six designing and building its
+      <a href="https://doi.org/10.1145/3770761.3777343">instructor
+      dashboard</a> (SIGCSE TS 2026) — real-time views of grades, completion,
+      and score trends for course staff. It has run for three terms in CS10.
+    </p>
+
+    <figure class="figure--media">
+      <img
+        src="/img/instructordash.png"
+        alt="Conference poster for the instructor dashboard paper, showing the dashboard's assignments and students views, the data pipeline architecture, and the case for mastery learning"
+        width="2500"
+        height="1875"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        The SIGCSE TS 2026 poster for the GradeView instructor dashboard —
+        the data pipeline on the left, the assignments and students views on
+        the right.
+      </figcaption>
+    </figure>
+
+    <p>
+      The other thread is assessment. Graph questions — run BFS on this graph,
+      construct a counterexample to that claim — were stuck on paper because
+      nothing could autograde them, which meant no randomization, no instant
+      feedback, and a lot of manual grading. In ACE Lab I built two open-source
+      <a href="https://prairielearn.readthedocs.io/en/latest/">PrairieLearn</a>
+      elements for this:
+      <a href="https://doi.org/10.1145/3641555.3705123">An Interactive Tool
+      for Randomized Autogradable Graph Assessments</a> (SIGCSE TS 2025),
+      which generates randomized interactive graph questions with automatic
+      grading, and
+      <a href="https://doi.org/10.1145/3736251.3747306">A Direct Manipulation
+      User Interface for Constructing Autogradable Graphs</a> (CompEd 2025),
+      which lets students build graphs by direct manipulation and grades the
+      result automatically. Both were done with
+      <a href="https://people.eecs.berkeley.edu/~ddgarcia/">Prof. Dan
+      Garcia</a>,
+      <a href="https://www.armandofox.com/">Prof. Armando Fox</a>, and
+      <a href="https://nargesnorouzi.me/">Prof. Narges Norouzi</a>.
+    </p>
+
+    <figure class="figure--media">
+      <img
+        src="/img/plgraphconstructor.jpg"
+        alt="Conference poster for the PL Graph Constructor, showing the direct-manipulation graph editor, its parameters, and TA feedback from a usability study"
+        width="960"
+        height="540"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        Direct-manipulation graph constructor at CompEd 2025 in Gaborone —
+        autogradable graph assessments in PrairieLearn.
+      </figcaption>
+    </figure>
+
+    <figure class="figure--media">
+      <img
+        src="/img/sigcse2025.PNG"
+        alt="Presenting the interactive graph assessment poster at SIGCSE TS 2025 in Pittsburgh, talking with attendees"
+        width="3000"
+        height="2250"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        Presenting the interactive graph assessment tool at SIGCSE TS 2025 in
+        Pittsburgh — randomized, autogradable graph questions in PrairieLearn.
+      </figcaption>
+    </figure>
+
+    <h2>Earlier work</h2>
+    <p>
+      As a research assistant at the University of Southern California, I worked
+      on NLP with large language models, building classifiers that check writing
+      against style guides, from classical baselines through BERT and OpenAI
+      models, with parameter-efficient fine-tuning and synthetic data pipelines, ran on
+      HPC clusters.
+    </p>
+    <p>
+      Before that, as an undergraduate research assistant at the
+      <a href="https://www.ssl.berkeley.edu/">Space Sciences Laboratory</a>
+      (2021–2022), I worked on NASA's Stardust Mission: training TensorFlow
+      classifiers to find interstellar dust candidates in collector imagery, and
+      building an EDS autograder for particle identification.
+    </p>
+  </div>
+</Base>

@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import {
+  person,
+  experience,
+  education,
+  awards,
+  languages,
+  publications,
+  authorsHtml,
+  venueLine,
+} from '../data/site.js';
+---
+
+<Base
+  path="/curriculum-vitae/"
+  title="Curriculum vitae"
+  description={`Curriculum vitae of ${person.name} — education, experience, publications, and awards.`}
+>
+  <h1>Curriculum vitae</h1>
+
+  <section>
+    <h2 class="section-label">Education</h2>
+    <ul class="entries">
+      {
+        education.map((e) => (
+          <li class="entry dated">
+            <span class="dated__when">{e.when}</span>
+            <div>
+              <div class="entry__head">
+                <h3 class="entry__title">{e.org}</h3>
+                <span class="entry__where">{e.where}</span>
+              </div>
+              <p class="entry__body" set:html={`${e.what}. ${e.note}`} />
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="section-label">Experience</h2>
+    <ul class="entries">
+      {
+        experience.map((e) => (
+          <li class="entry dated">
+            <span class="dated__when">{e.when}</span>
+            <div>
+              <div class="entry__head">
+                <div class="entry__lead">
+                  <h3 class="entry__title">{e.role}</h3>
+                  <p class="entry__org">{e.org}</p>
+                </div>
+                <span class="entry__where">{e.where}</span>
+              </div>
+              <p class="entry__body" set:html={e.note} />
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="section-label">Publications</h2>
+    <ul class="entries">
+      {
+        publications.map((p) => (
+          <li class="pub">
+            <p class="pub__title">
+              {p.title}
+              {p.status === 'under review' && (
+                <span class="pub__status">under review</span>
+              )}
+            </p>
+            <p class="pub__authors" set:html={authorsHtml(p.authors)} />
+            <p class="pub__venue">{venueLine(p)}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="section-label">Awards</h2>
+    <ul class="entries">
+      {
+        awards.map((a) => (
+          <li class="entry dated">
+            <span class="dated__when">{a.year}</span>
+            <p class="entry__body" style="color:var(--text)">
+              {a.what}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    languages.length > 0 && (
+      <section>
+        <h2 class="section-label">Languages</h2>
+        <p>{languages.join(' · ')}</p>
+      </section>
+    )
+  }
+</Base>

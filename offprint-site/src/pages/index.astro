@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import { person, links, now } from '../data/site.js';
+---
+
+<Base path="/">
+  <header class="lead">
+    <div class="lead__text">
+      <h1>{person.name}</h1>
+      <p class="tagline">{person.tagline}</p>
+      <ul class="linkrow lead__links">
+        {
+          links.map((l) => (
+            <li>
+              <a href={l.href}>{l.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <figure class="lead__figure">
+      <img
+        src={person.photo.src}
+        alt={person.photo.alt}
+        width="3072"
+        height="2304"
+        loading="eager"
+        decoding="async"
+      />
+      <figcaption>{person.photo.caption}</figcaption>
+    </figure>
+  </header>
+
+  <section>
+    <h2 class="section-label">Now</h2>
+    <ul class="entries">
+      {
+        now.map((n) => (
+          <li class="entry dated">
+            <span class="dated__when">{n.date}</span>
+            <p class="entry__body" set:html={n.body} />
+          </li>
+        ))
+      }
+    </ul>
+    <p class="entry__meta" style="margin-top:1.1rem">
+      <a href="/research/">Research</a> ·
+      <a href="/publication/">Publications</a> ·
+      <a href="/curriculum-vitae/">CV</a> ·
+      <a href="/clusy/">Clusy</a> ·
+      <a href="/beyond/">Beyond</a>
+    </p>
+  </section>
+
+  <!-- Selected work section removed from homepage; restore from git history or site.js `work` if needed. -->
+</Base>

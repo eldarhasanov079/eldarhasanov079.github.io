@@ -1,0 +1,226 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import { site, person, links, template } from '../data/site.js';
+
+const { title, description, path = '/', noindex = false } = Astro.props;
+const fullTitle = path === '/' ? person.name : `${title} — ${person.name}`;
+const desc = description ?? site.description;
+const canonical = new URL(path, Astro.site).href;
+
+// An organisation in the structured data is a plain Organization unless it
+// says otherwise. Set `type: 'CollegeOrUniversity'` on a university and the
+// schema gets more specific, which is worth doing for a degree-granting body.
+const org = (o) => ({
+  '@type': o.type ?? 'Organization',
+  name: o.name,
+  ...(o.url ? { url: o.url } : {}),
+});
+
+// Anything left empty in site.js is dropped rather than emitted blank — a
+// JSON-LD field with nothing behind it is worse than a missing one.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: person.name,
+  url: site.url,
+  ...(person.email ? { email: `mailto:${person.email}` } : {}),
+  ...(person.orcid ? { identifier: `https://orcid.org/${person.orcid}` } : {}),
+  ...(person.jobTitle ? { jobTitle: person.jobTitle } : {}),
+  ...(person.affiliation?.length ? { affiliation: person.affiliation.map(org) } : {}),
+  ...(person.alumniOf?.length ? { alumniOf: person.alumniOf.map(org) } : {}),
+  ...(person.knowsAbout?.length ? { knowsAbout: person.knowsAbout } : {}),
+  sameAs: links.filter((l) => l.href.startsWith('http')).map((l) => l.href),
+};
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    {/* A 404 has no canonical URL of its own — pointing one at a page that
+        does not exist just invites it into the index. */}
+    {noindex ? <meta name="robots" content="noindex,follow" /> : <link rel="canonical" href={canonical} />}
+    {person.orcid && <link rel="author" href={`https://orcid.org/${person.orcid}`} />}
+
+    <link
+      rel="preload"
+      href="/fonts/newsreader-roman.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={person.name} />
+    <meta name="twitter:card" content="summary" />
+    {site.twitter && <meta name="twitter:creator" content={site.twitter} />}
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Set the theme before first paint so there is no flash. -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t) document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body>
+    <div class="paper-sheet">
+      <Header path={path} />
+
+      <main class="wrap">
+        <slot />
+
+        <footer>
+          {/* Rendered as HTML for the same reason the author list is: JSX would
+              put a space in front of the comma. `rel` is left off — the build
+              step stamps it onto every off-site link. */}
+          {
+            template && (
+              <span
+                class="colophon"
+                set:html={`Built with <a href="${template.href}">${template.name}</a>, an open template.`}
+              />
+            )
+          }
+          <span>Updated {person.cv.updated}</span>
+        </footer>
+      </main>
+    </div>
+
+    <script is:inline>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var root = document.documentElement;
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function active() {
+          return root.getAttribute('data-theme') || (media.matches ? 'dark' : 'light');
+        }
+
+        /* The mark shows the current theme; the label has to say what the
+           button will do, which is the opposite. */
+        function label() {
+          var next = active() === 'dark' ? 'light' : 'dark';
+          btn.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+          btn.setAttribute('title', 'Switch to ' + next + ' theme');
+        }
+
+        label();
+
+        /* Fence the change so no hover transition elsewhere animates a
+           theme-dependent colour on its own clock underneath the cross-fade.
+           Held until the fade is done, then released on a frame where nothing
+           is mid-change, so lifting it cannot itself start an animation. */
+        function apply(next) {
+          root.classList.add('theme-switching');
+          root.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+          label();
+        }
+
+        function release() {
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              root.classList.remove('theme-switching');
+            });
+          });
+        }
+
+        var fading = false;
+        var queued = null;
+
+        function swap(next) {
+          var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          /* Swap outright where a cross-fade is unavailable or unwanted. Half
+             the page animating and half snapping would be worse than neither. */
+          if (still || !document.startViewTransition) {
+            apply(next);
+            release();
+            return;
+          }
+
+          /* Starting a second transition while one runs makes the browser
+             abandon the first: it tears down the snapshot and cuts straight to
+             the finished theme before the new fade begins. So the click is kept
+             rather than acted on — only the last one matters — and it runs when
+             the current fade ends. That turns a cut into a queue. */
+          if (fading) {
+            queued = next;
+            return;
+          }
+
+          fading = true;
+          var vt = document.startViewTransition(function () {
+            apply(next);
+          });
+
+          var done = function () {
+            fading = false;
+            release();
+            if (queued !== null) {
+              var q = queued;
+              queued = null;
+              swap(q);
+            }
+          };
+
+          /* An abandoned transition rejects, and every promise must be caught
+             or it surfaces as an unhandled rejection. `ready` is the one that
+             rejects when a fade is cut short; catching only `finished` is not
+             enough. */
+          var quiet = function () {};
+          if (vt.ready) vt.ready.catch(quiet);
+          if (vt.updateCallbackDone) vt.updateCallbackDone.catch(quiet);
+          if (vt.finished) vt.finished.then(done, done);
+          else done();
+        }
+
+        btn.addEventListener('click', function () {
+          swap((queued !== null ? queued : active()) === 'dark' ? 'light' : 'dark');
+        });
+
+        /* Before a choice is made the page follows the OS; keep up if it flips. */
+        media.addEventListener('change', function () {
+          if (!root.getAttribute('data-theme')) label();
+        });
+
+        /* Restoring from bfcache replays neither the pre-paint script nor the
+           parse, so a theme chosen on another page since this one was cached
+           would not be reflected here. Re-read the choice and apply it without
+           a fade — nothing was on screen to fade from. */
+        window.addEventListener('pageshow', function (e) {
+          if (!e.persisted) return;
+          var stored = null;
+          try {
+            stored = localStorage.getItem('theme');
+          } catch (err) {}
+          if (stored && stored !== root.getAttribute('data-theme')) {
+            root.classList.add('theme-switching');
+            root.setAttribute('data-theme', stored);
+            release();
+          }
+          label();
+        });
+      })();
+    </script>
+  </body>
+</html>

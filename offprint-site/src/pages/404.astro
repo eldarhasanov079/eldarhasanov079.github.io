@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+import { person, nav } from '../data/site.js';
+
+// Built from the running head, plus home — a 404 should offer the whole site
+// rather than an apologetic link back to the front page. Add a `note` to an
+// entry in `nav` and it shows up here as the gloss.
+const destinations = [
+  { label: 'Front page', href: '/', note: 'Who I am and what I am working on now' },
+  ...nav,
+];
+---
+
+<Base
+  path="/404/"
+  title="Page not found"
+  description="That page does not exist."
+  noindex
+>
+  <div class="notfound">
+    <p class="notfound__kicker">Error 404</p>
+    <p class="notfound__folio" aria-hidden="true">404</p>
+
+    <h1>This page was never set.</h1>
+
+    <p class="tagline">
+      The link you followed points at something that isn’t here — mistyped,
+      long out of date, or retired when I rebuilt this site. Nothing is lost;
+      it just isn’t at this address.
+    </p>
+  </div>
+
+  <section>
+    <h2 class="notfound__heading">Try one of these</h2>
+    <ul class="entries notfound__list">
+      {
+        destinations.map((d) => (
+          <li>
+            <a href={d.href}>{d.label}</a>
+            {d.note && <span class="notfound__note">{d.note}</span>}
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="meta-line notfound__footnote">
+      If you think something should be here, tell me — <a
+        href={`mailto:${person.email}`}>{person.email}</a
+      >.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .notfound {
+    padding-block: 0.35rem clamp(1.6rem, 4vw, 2.6rem);
+    border-bottom: 4px double var(--rule);
+  }
+
+  .notfound__kicker {
+    font-size: var(--f--1);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0;
+  }
+
+  /* The numeral carries the page. Set as a folio — large, quiet, and sitting
+     in the margin of the text rather than shouting over it. */
+  .notfound__folio {
+    font-size: clamp(5.5rem, 3rem + 16vw, 11rem);
+    line-height: 0.82;
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: -0.045em;
+    font-weight: var(--head-weight);
+    color: color-mix(in srgb, var(--text) 13%, transparent);
+    margin: 0.15em 0 0.05em -0.055em;
+    user-select: none;
+  }
+
+  .notfound h1 {
+    max-width: 18ch;
+  }
+
+  .notfound .tagline {
+    color: var(--text-muted);
+    max-width: 46ch;
+  }
+
+  .notfound__heading {
+    font-size: var(--f--1);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: var(--head-weight);
+    margin-block: calc(var(--rhythm) * 1.1) calc(var(--rhythm) * 0.55);
+  }
+
+  .notfound__list > li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.75rem;
+  }
+
+  .notfound__list a {
+    font-size: var(--f-1);
+  }
+
+  .notfound__note {
+    color: var(--text-faint);
+    font-size: var(--f--1);
+  }
+
+  .notfound__footnote {
+    margin-block-start: calc(var(--rhythm) * 0.9);
+  }
+
+  @media (max-width: 34rem) {
+    .notfound__list > li {
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+  }
+</style>

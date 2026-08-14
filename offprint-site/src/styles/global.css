@@ -1,0 +1,1248 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   offprint
+   One family (Newsreader) at two optical sizes, one accent hue, warm paper.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/newsreader-roman.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/newsreader-italic.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Metric-matched fallback so the swap doesn't shift layout. */
+@font-face {
+  font-family: "Newsreader Fallback";
+  src: local("Iowan Old Style"), local("Georgia"), local("Times New Roman");
+  size-adjust: 103.5%;
+  ascent-override: 94%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --font-serif:
+    "Newsreader", "Newsreader Fallback", "Iowan Old Style", Georgia, serif;
+  --font-mono:
+    ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Type metrics are theme-independent on purpose. Weight, leading, and
+     tracking all change how text wraps, so varying them between light and
+     dark would reflow the page on every toggle. Dark mode earns its
+     legibility through colour and antialiasing instead — neither moves a
+     glyph. Do not move these into a theme block. */
+  --body-weight: 400;
+  --body-lh: 1.52;
+  --body-ls: 0em;
+  --head-weight: 600;
+
+  --measure: 43rem;
+  --measure-wide: 64rem;
+  --sheet: 74rem;
+  --rhythm: 1.72rem;
+
+  --f--1: 0.833rem;
+  --f-0: 1.1875rem;
+  --f-1: 1.425rem;
+  --f-2: 1.71rem;
+  --f-3: 2.052rem;
+  --f-4: 2.463rem;
+}
+
+/* ── Palettes ─────────────────────────────────────────────────────────────────
+   Colour only — no metrics, so switching themes repaints without reflowing.
+   Light is written once: for a root carrying data-theme="light" the grouped
+   selector matches at (0,2,0) and outranks the dark media query's :root. */
+
+:root,
+:root[data-theme="light"] {
+  --desk: #c8c0b2;
+  --desk-line: rgba(74, 62, 46, 0.045);
+  --desk-sheen: rgba(255, 255, 255, 0.24);
+  --bg: #f4eedf;
+  --bg-raised: #ebe1cd;
+  --paper-edge: #c8bda8;
+  --paper-glow: rgba(255, 252, 242, 0.78);
+  --paper-shadow: rgba(50, 39, 25, 0.24);
+  --paper-inset-glow: rgba(255, 255, 255, 0.55);
+  --paper-vignette: rgba(72, 52, 29, 0.2);
+  /* What a mount board mixes into the sheet to sit proud of it. Mixing in
+     plain white is a light-mode assumption — it greys out on a dark sheet. */
+  --paper-lift: #ffffff;
+  /* Ink sinks into the fibre: the scan darkens the sheet where it is dark. */
+  --paper-blend: multiply;
+  --paper-texture-opacity: 1;
+  --rule: #c9bda7;
+  --text: #29251e;
+  --text-muted: #61594d;
+  --text-faint: #7f7566;
+  --link: #285467;
+  --selection: #e2d5bd;
+  /* The scrollbar rides over the desk, not the sheet, so it is toned to it. */
+  --scroll-track: #bdb4a5;
+  --scroll-thumb: #8d8271;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --desk: #0b0907;
+    --desk-line: rgba(255, 244, 221, 0.018);
+    --desk-sheen: rgba(255, 238, 205, 0.035);
+    --bg: #141210;
+    --bg-raised: #1e1a15;
+    --paper-edge: #3c3429;
+    --paper-glow: rgba(111, 93, 67, 0.1);
+    --paper-shadow: rgba(0, 0, 0, 0.62);
+    --paper-inset-glow: rgba(255, 236, 200, 0.05);
+    --paper-vignette: rgba(0, 0, 0, 0.5);
+    /* Warm lamplight, never white: a mount must stay paper, not turn grey. */
+    --paper-lift: #8a7a5e;
+    /* Multiply would erase the grain against a dark sheet. Soft-light keeps the
+       same scan legible in both directions, and the low opacity keeps it grain
+       rather than a wash that would lift the sheet out of its own value range. */
+    --paper-blend: soft-light;
+    --paper-texture-opacity: 0.42;
+    --rule: #443b2f;
+    --text: #e9e2d5;
+    --text-muted: #aaa090;
+    --text-faint: #897f70;
+    --link: #8fc2d4;
+    --selection: #3a3227;
+    /* The scrollbar rides over the desk, not the sheet, so it is toned to it. */
+    --scroll-track: #100e0c;
+    --scroll-thumb: #3f372b;
+  }
+}
+
+/* The toggle stamps data-theme on <html>; it must win over the OS preference.
+   color-scheme follows so scrollbars and form controls do not stay on the OS
+   side of the switch. */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --desk: #0b0907;
+  --desk-line: rgba(255, 244, 221, 0.018);
+  --desk-sheen: rgba(255, 238, 205, 0.035);
+  --bg: #141210;
+  --bg-raised: #1e1a15;
+  --paper-edge: #3c3429;
+  --paper-glow: rgba(111, 93, 67, 0.1);
+  --paper-shadow: rgba(0, 0, 0, 0.62);
+  --paper-inset-glow: rgba(255, 236, 200, 0.05);
+  --paper-vignette: rgba(0, 0, 0, 0.5);
+  /* Warm lamplight, never white: a mount must stay paper, not turn grey. */
+  --paper-lift: #8a7a5e;
+  /* Multiply would erase the grain against a dark sheet. Soft-light keeps the
+     same scan legible in both directions, and the low opacity keeps it grain
+     rather than a wash that would lift the sheet out of its own value range. */
+  --paper-blend: soft-light;
+  --paper-texture-opacity: 0.42;
+  --rule: #443b2f;
+  --text: #e9e2d5;
+  --text-muted: #aaa090;
+  --text-faint: #897f70;
+  --link: #8fc2d4;
+  --selection: #3a3227;
+  /* The scrollbar rides over the desk, not the sheet, so it is toned to it. */
+  --scroll-track: #100e0c;
+  --scroll-thumb: #3f372b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--desk);
+  background-image:
+    radial-gradient(110% 75% at 50% -10%, var(--desk-sheen), transparent 58%),
+    repeating-linear-gradient(
+      92deg,
+      transparent 0,
+      transparent 3px,
+      var(--desk-line) 3px,
+      var(--desk-line) 4px
+    );
+  background-attachment: fixed;
+  color: var(--text);
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, var(--f-0));
+  font-weight: var(--body-weight);
+  line-height: var(--body-lh);
+  letter-spacing: var(--body-ls);
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+}
+
+/* Light text on a dark sheet renders too heavy without this. It is a
+   rasterisation hint only — advance widths are untouched, so it cannot shift
+   layout. The forced-light override matters: without it, choosing light on a
+   dark-OS machine would keep the dark weighting. */
+@media (prefers-color-scheme: dark) {
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+:root[data-theme="dark"] body {
+  -webkit-font-smoothing: antialiased;
+}
+:root[data-theme="light"] body {
+  -webkit-font-smoothing: auto;
+}
+
+/* ── Switching themes ─────────────────────────────────────────────────────────
+   A theme change repaints nearly every pixel: two dozen colour tokens, the
+   paper blend mode, cast shadows, and the text rasterisation hint. Animating a
+   few colour properties would move those few and snap all the rest — that
+   mismatch is what reads as a glitch. Instead the switch is wrapped in a view
+   transition, which cross-fades a snapshot of the whole page and puts every one
+   of those changes on one clock. Browsers without the API swap instantly, which
+   is honest rather than half-animated. */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.28s;
+  animation-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* Hover affordances elsewhere in this file legitimately transition colour — the
+   link underline, the toggle itself. Those same properties are theme-dependent,
+   so on a theme change they would run their own little animations underneath
+   the cross-fade and land after it. The switch is therefore fenced: JS holds
+   this class across the change, and for that instant nothing animates on its
+   own. Descendants only — :root keeps its own transition, which is the
+   scrollbar's, the one surface a snapshot cannot reach. */
+:root.theme-switching *,
+:root.theme-switching *::before,
+:root.theme-switching *::after {
+  transition: none !important;
+}
+
+/* The scrollbar is painted by the viewport, outside the captured snapshot, so
+   it alone would jump to the new palette a full 0.28s before the page arrived.
+   Colouring it by token puts it back under our control, and matching the fade's
+   duration and easing puts it back on the same clock. Gated so it animates only
+   where the cross-fade it is pacing against actually runs. */
+html {
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+@supports (view-transition-name: none) {
+  html {
+    transition: scrollbar-color 0.28s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    transition: none;
+  }
+}
+
+::selection {
+  background: var(--selection);
+}
+
+/* ── The sheet ────────────────────────────────────────────────────────────────
+   The page is a physical sheet rather than a full-bleed website. The generated
+   paper scan is deliberately quiet; the edge, inner highlight, and cast shadow
+   do the rest of the material work. */
+
+.paper-sheet {
+  position: relative;
+  isolation: isolate;
+  width: min(var(--sheet), calc(100% - clamp(1.5rem, 5vw, 4.5rem)));
+  min-height: calc(100svh - clamp(1.5rem, 5vw, 4.5rem));
+  margin: clamp(0.75rem, 2.5vw, 2.25rem) auto;
+  overflow: hidden;
+  background-color: var(--bg);
+  background-image: linear-gradient(
+    90deg,
+    rgba(79, 60, 36, 0.025),
+    transparent 2.2%,
+    transparent 97.8%,
+    rgba(79, 60, 36, 0.035)
+  );
+  border: 1px solid var(--paper-edge);
+  box-shadow:
+    0 1px 1px var(--paper-inset-glow) inset,
+    0 0.4rem 0.8rem -0.35rem var(--paper-shadow),
+    0 1.6rem 3.8rem -1.5rem var(--paper-shadow);
+}
+
+/* The scan rides on its own layer so each theme can pick a blend mode. A
+   negative z-index keeps it where a background-image was — above the sheet's
+   own fill, below every glyph — so the blend tints paper and never text.
+   `isolation` on the sheet keeps the blend from reaching the desk behind it. */
+.paper-sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("/img/paper-texture.jpg");
+  background-size: 780px 780px;
+  mix-blend-mode: var(--paper-blend);
+  opacity: var(--paper-texture-opacity);
+}
+
+.paper-sheet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow:
+    0 0 0 1px var(--paper-glow) inset,
+    1.25rem 0 2.8rem -2.8rem var(--paper-vignette) inset,
+    -1.25rem 0 2.8rem -2.8rem var(--paper-vignette) inset;
+}
+
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+
+.wrap {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2rem);
+}
+
+main {
+  padding-block: clamp(2.5rem, 6vw, 4.25rem) 0;
+}
+
+/* ── Running head ─────────────────────────────────────────────────────────────
+   A running head from a printed book, not a navbar: small caps, hairline rule,
+   no background, no shadow, nothing sticky.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.runhead {
+  max-width: var(--measure-wide);
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 3.6rem) clamp(1.25rem, 5vw, 2.25rem) 0.65rem;
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  font-size: var(--f--1);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.075em;
+  /* Hard double rule, edge to edge. A newspaper masthead never fades. */
+  border-top: 1px solid var(--rule);
+  border-bottom: 4px double var(--rule);
+}
+
+.runhead__name {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 550;
+}
+.runhead__name:hover {
+  color: var(--text);
+}
+
+.runhead__dateline {
+  color: var(--text-faint);
+  font-weight: 500;
+}
+
+.runhead__nav {
+  /* Pushed right so the nav and the theme mark read as one cluster. */
+  margin-inline-start: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.15rem;
+}
+.runhead__nav a {
+  color: var(--text-faint);
+  text-decoration: none;
+  font-weight: 500;
+}
+.runhead__nav a:hover {
+  color: var(--text);
+}
+.runhead__nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+/* ── Headings ─────────────────────────────────────────────────────────────── */
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--head-weight);
+  font-variant-numeric: lining-nums proportional-nums;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 1.5rem + 2.35vw, 3.15rem);
+  letter-spacing: -0.021em;
+  line-height: 1.08;
+}
+h2 {
+  font-size: var(--f-2);
+  letter-spacing: -0.017em;
+}
+h3 {
+  font-size: var(--f-1);
+  letter-spacing: -0.011em;
+  line-height: 1.25;
+}
+
+/* Space above a heading must dwarf the space below it — that's what binds a
+   heading to its own content instead of floating it between two blocks. */
+.prose h2 {
+  margin-block: calc(var(--rhythm) * 1.75) calc(var(--rhythm) * 0.4);
+}
+.prose h3 {
+  margin-block: calc(var(--rhythm) * 1.25) calc(var(--rhythm) * 0.3);
+}
+
+p {
+  margin-block: 0 var(--rhythm);
+  text-wrap: pretty;
+}
+
+/* ── Links ────────────────────────────────────────────────────────────────── */
+
+a {
+  color: var(--link);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 0.16em;
+  text-decoration-color: color-mix(in srgb, var(--link) 38%, transparent);
+  transition: text-decoration-color 120ms ease;
+}
+a:hover {
+  text-decoration-color: currentColor;
+}
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Section labels ───────────────────────────────────────────────────────── */
+
+.section-label {
+  font-size: var(--f--1);
+  font-variant-caps: all-small-caps;
+  font-variant-numeric: lining-nums;
+  letter-spacing: 0.075em;
+  font-weight: 550;
+  color: var(--text-muted);
+  margin: 0 0 calc(var(--rhythm) * 0.55);
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── Drop cap ─────────────────────────────────────────────────────────────────
+   Long-form pages only. Newsreader's optical sizing means the glyph needs a
+   slightly tighter line-box than a naive float gives it.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.prose > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.32em;
+  line-height: 0.82;
+  font-weight: 500;
+  padding: 0.06em 0.07em 0 0;
+  margin-right: 0.02em;
+  color: var(--text);
+  font-feature-settings: "lnum" 1;
+}
+
+/* Justified and hyphenated — the defining texture of a newspaper column.
+   `text-wrap: pretty` fights the justifier, so it is explicitly turned off. */
+.prose p {
+  text-align: justify;
+  text-wrap: initial;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+}
+
+/* Ragged right below the column width where justification produces rivers. */
+@media (max-width: 34rem) {
+  .prose p {
+    text-align: left;
+    hyphens: manual;
+  }
+}
+
+.prose > p:first-of-type {
+  text-indent: 0;
+}
+
+section {
+  margin-block-start: calc(var(--rhythm) * 2.25);
+}
+
+.lead + section {
+  margin-block-start: calc(var(--rhythm) * 1.2);
+}
+
+@media (min-width: 40.01rem) {
+  .lead + section {
+    margin-block-start: calc(var(--rhythm) * 0.8);
+  }
+
+  .lead + section .entries > li:not(:last-child) {
+    margin-bottom: calc(var(--rhythm) * 0.38);
+    padding-bottom: calc(var(--rhythm) * 0.38);
+  }
+
+  .lead + section .dated {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    column-gap: 0.65rem;
+  }
+}
+
+/* ── Masthead ─────────────────────────────────────────────────────────────── */
+
+/* Lead block: standfirst left, picture right, on the same measure as
+   everything below it. One left edge down the whole page. */
+.lead {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(1.5rem, 3.5vw, 2.5rem);
+  align-items: center;
+  padding-block: 0.35rem clamp(1.6rem, 4vw, 2.8rem);
+  border-bottom: 4px double var(--rule);
+}
+.linkrow.lead__links {
+  margin-top: 0;
+  font-size: 0.8rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.lead__links li:not(:last-child)::after {
+  margin-inline: 0.3rem;
+}
+.lead__text,
+.lead__figure {
+  min-width: 0;
+}
+.lead__figure {
+  margin: 0;
+  padding: 0.6rem 0.6rem 0.45rem;
+  background: color-mix(in srgb, var(--bg) 78%, var(--paper-lift) 22%);
+  border: 1px solid color-mix(in srgb, var(--rule) 76%, transparent);
+  box-shadow: 0.25rem 0.45rem 1.15rem rgba(55, 42, 25, 0.14);
+  transform: rotate(0.45deg);
+}
+.lead__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid color-mix(in srgb, var(--rule) 82%, transparent);
+  filter: saturate(0.86) contrast(0.98) sepia(0.05);
+}
+.lead__figure figcaption {
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 40rem) {
+  .lead {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+    padding-bottom: 2rem;
+  }
+
+  .lead__figure {
+    width: min(100%, 31rem);
+    justify-self: center;
+  }
+
+  .linkrow.lead__links {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+}
+
+.tagline {
+  font-size: clamp(var(--f-1), 1.25rem + 0.55vw, 1.72rem);
+  line-height: 1.34;
+  color: var(--text);
+  margin-block: 0.85rem 1rem;
+  text-wrap: pretty;
+}
+
+.meta-line {
+  font-size: var(--f--1);
+  color: var(--text-muted);
+  font-variant-numeric: lining-nums;
+}
+
+/* ── Inline link row ──────────────────────────────────────────────────────── */
+
+.linkrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--f--1);
+}
+.linkrow li:not(:last-child)::after {
+  content: "·";
+  color: var(--text-faint);
+  margin-inline: 0.5rem;
+}
+
+/* ── Entry lists (now / work / publications / experience) ─────────────────── */
+
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.entries > li:not(:last-child) {
+  margin-bottom: calc(var(--rhythm) * 0.5);
+  padding-bottom: calc(var(--rhythm) * 0.5);
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 58%, transparent);
+}
+.entry {
+  margin-bottom: calc(var(--rhythm) * 0.95);
+}
+.entry:last-child {
+  margin-bottom: 0;
+}
+.entry__title {
+  font-size: var(--f-0);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+}
+.entry__body {
+  margin: 0.28rem 0 0;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+.entry__meta {
+  margin: 0.3rem 0 0;
+  font-size: var(--f--1);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "zero" 1;
+  font-variant-ligatures: none;
+  letter-spacing: -0.01em;
+}
+
+.entry__note {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--f--1);
+  letter-spacing: 0;
+}
+
+/* Title on the left, place on the right — the standard CV axis. */
+.entry__head {
+  display: flex;
+  gap: 0.5rem 1.25rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+/* Role and organisation stack, so a long pairing never wraps mid-phrase. */
+.entry__lead {
+  flex: 1 1 auto;
+}
+/* Regular weight against the bold role, full-strength colour against the
+   muted note below — so the three lines read as a hierarchy, not a block. */
+.entry__org {
+  margin: 0.08rem 0 0;
+  line-height: 1.3;
+}
+.entry__where {
+  flex: 0 1 auto;
+  font-size: var(--f--1);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  text-align: right;
+  text-wrap: nowrap;
+}
+@media (max-width: 34rem) {
+  .entry__head {
+    display: block;
+  }
+  .entry__where {
+    display: block;
+    margin-top: 0.1rem;
+  }
+}
+
+/* Dated rows: label left, content right; stacks on narrow screens. */
+.dated {
+  display: grid;
+  /* Wide enough for a full "2025 – 2026" range, so the date never crowds
+     the title. Fixed (not max-content) to keep the column aligned across rows. */
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0 1.5rem;
+  align-items: baseline;
+}
+@media (max-width: 34rem) {
+  .dated {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
+.dated__when {
+  font-size: var(--f--1);
+  color: var(--text-faint);
+  font-variant-numeric: lining-nums tabular-nums;
+  white-space: nowrap;
+}
+
+/* ── Publications ─────────────────────────────────────────────────────────── */
+
+.pub {
+  margin-bottom: calc(var(--rhythm) * 0.95);
+}
+.pub:last-child {
+  margin-bottom: 0;
+}
+.pub__title {
+  margin: 0;
+  font-size: var(--f-0);
+  font-weight: 500;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+.pub__authors,
+.pub__venue {
+  margin: 0.2rem 0 0;
+  font-size: var(--f--1);
+  color: var(--text-muted);
+}
+.pub__venue {
+  font-style: italic;
+}
+.pub__me {
+  font-weight: 700;
+  color: var(--text);
+}
+.pub__status {
+  display: inline-block;
+  font-size: var(--f--1);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 0 0.4em;
+  margin-left: 0.45em;
+  vertical-align: 0.08em;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+
+footer {
+  margin-block-start: calc(var(--rhythm) * 2.75);
+  padding-block: calc(var(--rhythm) * 1.1) calc(var(--rhythm) * 2.2);
+  border-top: 1px solid var(--rule);
+  font-size: var(--f--1);
+  color: var(--text-faint);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+  align-items: baseline;
+}
+footer a {
+  color: var(--text-muted);
+}
+
+/* The printer's note, set a shade back from the date it sits opposite — it is
+   an acknowledgement, not a piece of the site's own information. */
+.colophon {
+  color: color-mix(in srgb, var(--text-faint) 82%, transparent);
+}
+
+/* ── Theme toggle ─────────────────────────────────────────────────────────────
+   A printer's tint mark in the running head. No box, no label, no background —
+   the sheet already has enough furniture. The hit target is larger than the
+   mark and pulled back with negative margins so it never grows the head. */
+
+.theme-toggle {
+  flex: none;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-block: -0.55rem;
+  margin-inline-end: -0.42rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.18s ease;
+}
+.theme-toggle:hover {
+  color: var(--text);
+}
+.theme-toggle:focus-visible {
+  outline: 1px solid var(--link);
+  outline-offset: 1px;
+}
+
+/* The mark does not animate its own rotation. Its transform changes only on a
+   theme change, and on that change the whole page is already cross-fading — a
+   400ms spin underneath a 280ms fade finishes after it, and on a browser with
+   no view transitions it would be the one thing moving while everything else
+   snapped. Either way it is the mismatch this file exists to avoid. */
+.theme-toggle__mark {
+  display: block;
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+/* The filled half swaps sides with the theme — the only state the mark shows. */
+@media (prefers-color-scheme: dark) {
+  .theme-toggle__mark {
+    transform: rotate(180deg);
+  }
+}
+:root[data-theme="light"] .theme-toggle__mark {
+  transform: rotate(0deg);
+}
+:root[data-theme="dark"] .theme-toggle__mark {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-toggle__mark {
+    transition: none;
+  }
+}
+
+/* ── Back link ────────────────────────────────────────────────────────────── */
+
+.back {
+  display: inline-block;
+  font-size: var(--f--1);
+  color: var(--text-muted);
+  margin-bottom: calc(var(--rhythm) * 0.9);
+}
+
+.lede {
+  color: var(--text-muted);
+  margin-block: 0.85rem calc(var(--rhythm) * 1.25);
+  text-wrap: pretty;
+}
+
+figure {
+  margin: calc(var(--rhythm) * 1.2) 0;
+}
+figure img,
+figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--bg-raised);
+}
+
+/* Breaks out of the text column symmetrically. Clamped to the viewport. */
+.figure--wide {
+  --fw: min(var(--measure-wide), calc(100vw - 2.5rem));
+  width: var(--fw);
+  margin-inline: calc(50% - var(--fw) / 2);
+}
+
+/* Video and photos sit exactly on the column, framed like a newspaper cut.
+   Overhanging the measure by a little reads as a mistake, not as emphasis. */
+.figure--media {
+  margin-block: calc(var(--rhythm) * 1.3);
+  padding: 0.55rem 0.55rem 0.45rem;
+  background: color-mix(in srgb, var(--bg) 78%, var(--paper-lift) 22%);
+  border: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+  box-shadow: 0.2rem 0.35rem 1rem rgba(55, 42, 25, 0.1);
+}
+.figure--media video,
+.figure--media img {
+  border: 1px solid var(--rule);
+  background: #14120f;
+}
+
+/* The map is a third-party embed and will not follow the theme, so it is
+   framed like a pasted-in plate rather than pretending to be part of the
+   page. Sized by ratio so it never has to be measured in viewport units. */
+.figure--media iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--rule);
+  background: var(--bg-raised);
+}
+@media (max-width: 32rem) {
+  .figure--media iframe {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.figure__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+@media (max-width: 32rem) {
+  .figure__grid {
+    grid-template-columns: 1fr;
+  }
+}
+.figure--pair img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+/* Phone photos come out portrait. Cropping them to 4/3 cuts the subject in
+   half, so the pair keeps their orientation instead. */
+.figure--portrait img {
+  aspect-ratio: 3 / 4;
+}
+
+/* Three across, but only above the 40rem breakpoint where the grid stops
+   stacking. Guarded by min-width rather than left to the cascade: this
+   outranks the max-width `.figure__grid` rules on specificity, so without the
+   guard it would hold three columns on a phone. */
+@media (min-width: 40.01rem) {
+  .figure--trio .figure__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+figcaption {
+  font-size: var(--f--1);
+  color: var(--text-faint);
+  margin-top: 0.55rem;
+  text-align: left;
+  max-width: var(--measure);
+}
+
+@media print {
+  .theme-toggle,
+  .back {
+    display: none;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .paper-sheet {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  /* Real paper does not need a picture of paper. */
+  .paper-sheet::before,
+  .paper-sheet::after {
+    display: none;
+  }
+}
+
+@media (max-width: 48rem) {
+  .paper-sheet {
+    width: 100%;
+    min-height: 100svh;
+    margin: 0;
+    border-inline: 0;
+    box-shadow: none;
+  }
+}
+
+/* ── Mobile paper layout ─────────────────────────────────────────────────────
+   On a small screen the sheet becomes the viewport. Navigation and social
+   links turn into compact printed indexes, while dated/CV rows stack so the
+   reading column never has to compete with a narrow metadata rail. */
+
+@media (max-width: 40rem) {
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+
+  .paper-sheet::before {
+    background-size: 560px 560px;
+  }
+
+  .wrap {
+    padding-left: max(1.15rem, env(safe-area-inset-left));
+    padding-right: max(1.15rem, env(safe-area-inset-right));
+  }
+
+  main {
+    padding-block-start: 1.9rem;
+  }
+
+  .runhead {
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-right: max(1.15rem, env(safe-area-inset-right));
+    padding-bottom: 0.55rem;
+    padding-left: max(1.15rem, env(safe-area-inset-left));
+    /* Dateline and tint mark share the top line; the nav takes the row below
+       at full width. Explicit areas because DOM order is dateline, nav, mark. */
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.055em;
+  }
+
+  .runhead__dateline {
+    grid-area: 1 / 1;
+    line-height: 1.2;
+  }
+
+  .theme-toggle {
+    grid-area: 1 / 2;
+    justify-self: end;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-block: -0.8rem;
+    margin-inline-end: -0.7rem;
+  }
+
+  .runhead__nav {
+    grid-area: 2 / 1 / 3 / 3;
+    margin-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    border-top: 1px solid color-mix(in srgb, var(--rule) 65%, transparent);
+  }
+
+  .runhead__nav a {
+    display: flex;
+    min-width: 0;
+    min-height: 2.75rem;
+    padding-inline: 0.15rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .runhead__nav a + a {
+    border-left: 1px solid color-mix(in srgb, var(--rule) 52%, transparent);
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 11vw, 2.8rem);
+  }
+
+  h2 {
+    font-size: clamp(1.45rem, 7vw, var(--f-2));
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  section {
+    margin-block-start: calc(var(--rhythm) * 1.65);
+  }
+
+  .lead + section {
+    margin-block-start: calc(var(--rhythm) * 1.05);
+  }
+
+  .lead {
+    gap: 1.2rem;
+    padding-block: 0.15rem 1.5rem;
+  }
+
+  .tagline {
+    margin-block: 0.7rem 0.9rem;
+    font-size: clamp(1.3rem, 6.2vw, 1.55rem);
+    line-height: 1.32;
+  }
+
+  .linkrow.lead__links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    border-block: 1px solid color-mix(in srgb, var(--rule) 72%, transparent);
+    font-size: 0.78rem;
+  }
+
+  .lead__links li {
+    min-width: 0;
+    text-align: center;
+  }
+
+  .lead__links li:not(:nth-child(3n)) {
+    border-right: 1px solid color-mix(in srgb, var(--rule) 52%, transparent);
+  }
+
+  .lead__links li:nth-child(-n + 3) {
+    border-bottom: 1px solid color-mix(in srgb, var(--rule) 52%, transparent);
+  }
+
+  .lead__links li:not(:last-child)::after {
+    content: none;
+  }
+
+  .lead__links a {
+    display: flex;
+    min-height: 2.75rem;
+    padding: 0.35rem 0.2rem;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: anywhere;
+  }
+
+  .lead__figure {
+    width: 100%;
+    padding: 0.45rem 0.45rem 0.35rem;
+    transform: none;
+    box-shadow: 0.15rem 0.3rem 0.8rem rgba(55, 42, 25, 0.1);
+  }
+
+  .lead__figure figcaption {
+    margin-top: 0.3rem;
+  }
+
+  .section-label {
+    margin-bottom: calc(var(--rhythm) * 0.45);
+  }
+
+  .entries > li:not(:last-child) {
+    margin-bottom: calc(var(--rhythm) * 0.45);
+    padding-bottom: calc(var(--rhythm) * 0.45);
+  }
+
+  .dated {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .dated__when {
+    font-size: 0.78rem;
+    letter-spacing: 0.035em;
+  }
+
+  .entry__head {
+    display: block;
+  }
+
+  .entry__where {
+    display: block;
+    margin-top: 0.1rem;
+    text-align: left;
+    text-wrap: pretty;
+    white-space: normal;
+  }
+
+  .entry__body {
+    margin-top: 0.2rem;
+  }
+
+  .entry__meta,
+  .pub__title,
+  .pub__authors,
+  .pub__venue {
+    overflow-wrap: anywhere;
+  }
+
+  .pub__status {
+    margin-top: 0.25rem;
+    margin-left: 0;
+  }
+
+  .prose h2 {
+    margin-block: calc(var(--rhythm) * 1.35) calc(var(--rhythm) * 0.35);
+  }
+
+  .prose > p:first-of-type::first-letter {
+    font-size: 2.95em;
+  }
+
+  .figure--media {
+    margin-block: var(--rhythm);
+    padding: 0.35rem 0.35rem 0.3rem;
+    box-shadow: 0.12rem 0.25rem 0.7rem rgba(55, 42, 25, 0.08);
+  }
+
+  .figure__grid {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  figcaption {
+    margin-top: 0.4rem;
+    line-height: 1.35;
+  }
+
+  footer {
+    margin-block-start: calc(var(--rhythm) * 2);
+    padding-block: var(--rhythm) max(2rem, env(safe-area-inset-bottom));
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 22rem) {
+  .runhead__nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .runhead__nav a + a {
+    border-left: 0;
+  }
+
+  .runhead__nav a:nth-child(even) {
+    border-left: 1px solid color-mix(in srgb, var(--rule) 52%, transparent);
+  }
+
+  .runhead__nav a:nth-child(n + 3) {
+    border-top: 1px solid color-mix(in srgb, var(--rule) 52%, transparent);
+  }
+}

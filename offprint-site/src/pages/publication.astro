@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import { publications, links, authorsHtml, venueLine } from '../data/site.js';
+
+const published = publications.filter((p) => p.status === 'published');
+const inReview = publications.filter((p) => p.status === 'under review');
+
+// Whichever profile links you kept in site.js — no point hard-coding Scholar
+// here for someone who doesn't use it.
+const profiles = links.filter((l) => ['Scholar', 'ORCID', 'arXiv'].includes(l.label));
+---
+
+<Base
+  path="/publication/"
+  title="Publications"
+  description="Peer-reviewed publications, preprints, and manuscripts under review."
+>
+  <h1>Publications</h1>
+  {
+    profiles.length > 0 && (
+      <p class="lede">
+        Also on{' '}
+        {profiles.map((l, i) => (
+          <>
+            {i > 0 && (i === profiles.length - 1 ? ' and ' : ', ')}
+            <a href={l.href}>{l.label}</a>
+          </>
+        ))}
+        .
+      </p>
+    )
+  }
+
+  <section>
+    <h2 class="section-label">Peer-reviewed</h2>
+    <ul class="entries">
+      {
+        published.map((p) => (
+          <li class="pub">
+            <p class="pub__title">{p.title}</p>
+            <p class="pub__authors" set:html={authorsHtml(p.authors)} />
+            <p class="pub__venue">{venueLine(p)}</p>
+            <p class="entry__meta">
+              {p.linkset.map((l, i) => (
+                <>
+                  {i > 0 && ' · '}
+                  <a href={l.href}>{l.label}</a>
+                </>
+              ))}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  {
+    inReview.length > 0 && (
+      <section>
+        <h2 class="section-label">Under review</h2>
+        <ul class="entries">
+          {inReview.map((p) => (
+            <li class="pub">
+              <p class="pub__title">{p.title}</p>
+              <p class="pub__authors" set:html={authorsHtml(p.authors)} />
+              <p class="pub__venue">Manuscript under review</p>
+              <p class="entry__meta">
+                {p.linkset.map((l, i) => (
+                  <>
+                    {i > 0 && ' · '}
+                    <a href={l.href}>{l.label}</a>
+                  </>
+                ))}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>

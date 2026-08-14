@@ -1,0 +1,128 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  path="/clusy/"
+  title="Clusy"
+  description="Clusy — an agent-native notebook for ML and data science."
+>
+  <h1>Clusy</h1>
+
+  <div class="prose">
+    <p>
+      This page is about a project that got out of hand and became a company.
+      Clusy started as a hackathon idea. We then took 6 months of intense
+      engineering work to build it as a tool for ourselves. Then people started
+      using it, Founders, Inc. took us into Off-Season II, and the pet project
+      turned into the thing we spend most of our time on. Live at
+      <a href="https://www.clusy.io/">clusy.io</a>.
+    </p>
+
+    <figure class="figure--media">
+      <img
+        src="/img/clusy-team.jpg"
+        alt="Three instant-film portraits of the Clusy founders laid on a wooden table, linked by red beads"
+        width="1280"
+        height="819"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        The Clusy founding team, left to right:
+        <a href="https://www.linkedin.com/in/fouzilali">Fouzil Ali</a> (CPO),
+        <a href="https://julin.org/">Ju Lin</a> (CEO), and me (CTO).
+      </figcaption>
+    </figure>
+
+    <h2>The problem</h2>
+    <p>
+      All three of us have worked in computational research across different
+      fields: astrophysics, finance, signal processing, security, robotics, and
+      more. For years, we watched domain experts doing data work in outdated
+      tooling such as Jupyter Notebook. We were frustrated with standard
+      Jupyter-style interfaces for two main reasons.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <strong>Notebooks are linear, but research is not.</strong> In a
+          research setting it is common to try approaches in parallel, change
+          earlier assumptions, iterate on methods, and explore a wide variety
+          of approaches. Research is not only deep but also wide, so the
+          linearity of notebooks, requiring you to run everything in order,
+          limits parallelisation and wider exploration.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Notebooks work badly with LLMs.</strong> If you have tried
+          Gemini on Colab, or Cursor and Claude Code against notebooks in
+          VSCode, you know this already. The <code>.ipynb</code> format is hard
+          to parse in general — push a Jupyter notebook to GitHub and you
+          cannot even preview it. In a world where you can make a website or an
+          app in one or two prompts, the lack of agentic workflows in
+          data-analysis tooling felt like a huge gap.
+        </p>
+      </li>
+    </ol>
+
+    <h2>What we built</h2>
+    <p>
+      <a href="https://www.clusy.io/">Clusy</a> is a better notebook with an
+      agent built into it. You describe the experiment in chat; the agent plans,
+      finds data, writes notebook cells, runs them, reads the output, and
+      decides what to do next. GPU-powered sandboxes let it handle long,
+      compute-intensive requests such as model training and fine-tuning. It is
+      still a real notebook — cells, a running kernel, and output under each
+      cell — so you can edit anything by hand, take over mid-run, or leave the
+      agent to work autonomously.
+    </p>
+    <p>
+      Most of our optimisation work lives in the runtime. Unlike a normal
+      Python script, notebook cells can run in any order and any number of
+      times; deleting code does not erase the state it produced. The source of
+      truth is therefore <em>the kernel state, not only the code</em>. This is
+      why traditional coding copilots often underperform with notebooks.
+    </p>
+    <p>We build on the Jupyter kernel with three system-level improvements:</p>
+    <ol>
+      <li>
+        <p>
+          <strong>Kernel snapshotting.</strong> We periodically capture and
+          persist the kernel state, so work is not lost and can finally be
+          shared, restored, and version-controlled.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Cell branching.</strong> You can branch from any cell and run
+          workloads in parallel — for example, training three architectures or
+          parameter sets and comparing the results. Snapshotting lets child
+          branches inherit the same state, turning the notebook from a linear
+          document into an <u>experiment graph</u> without duplicating work.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>A kernel-aware harness.</strong> The agent does more than
+          read and complete code: it understands and works directly with the
+          kernel state. It can configure sandboxes, install dependencies,
+          attach GPUs, search the web, pull datasets, and call APIs — enough to
+          carry long-running data-science workflows from prompt to result.
+        </p>
+      </li>
+    </ol>
+    <p>
+      Try it at <a href="https://clusy.io/">clusy.io</a>.
+    </p>
+
+    <h2>Where it stands</h2>
+    <p>
+      We joined Founders, Inc.'s Off-Season II, launched, and the thing that
+      used to live in a weekend hackathon now has thousands of people on it
+      from around the world. We ship every week. The company is based in San
+      Francisco, and the next chapter is still being written there.
+    </p>
+  </div>
+</Base>

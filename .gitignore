@@ -11,3 +11,9 @@ assets/libs/
 node_modules/
 vendor
 .idea
+
+# Offprint (Astro) build artifacts
+offprint-site/node_modules/
+offprint-site/dist/
+offprint-site/.astro/
+offprint-site/.vercel/
