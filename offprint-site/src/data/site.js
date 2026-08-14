@@ -84,6 +84,7 @@ export const links = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/eldar-hasanov' },
   { label: 'X', href: 'https://x.com/eldar_hsnv' },
   { label: 'Scholar', href: 'https://scholar.google.com/citations?user=hHGun0IAAAAJ' },
+  { label: 'Book a call', href: 'https://www.clusy.io/meet/eldar' },
 ];
 
 // ── Now ─────────────────────────────────────────────────────────────────────

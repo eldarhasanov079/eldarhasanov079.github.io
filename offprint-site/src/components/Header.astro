@@ -5,7 +5,7 @@ const { path = '/' } = Astro.props;
 const isHome = path === '/';
 ---
 
-<header class="runhead">
+<header class="runhead" id="runhead">
   {/* A running head names the book on every page but the first — on the front
       page the title is already directly below, so the slot carries the
       dateline instead of repeating it. */}
@@ -20,7 +20,7 @@ const isHome = path === '/';
       )
     }
   </span>
-  <nav class="runhead__nav">
+  <nav class="runhead__nav" id="site-nav">
     {
       nav.map((n) => (
         <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>
@@ -29,17 +29,59 @@ const isHome = path === '/';
       ))
     }
   </nav>
-  {/* A printer's tint mark: the filled half swaps sides with the theme. */}
-  <button
-    class="theme-toggle"
-    id="theme-toggle"
-    type="button"
-    aria-label="Toggle colour theme"
-    title="Toggle colour theme"
-  >
-    <svg class="theme-toggle__mark" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-      <circle cx="8" cy="8" r="6.4" fill="none" stroke="currentColor" stroke-width="1.2" />
-      <path d="M8 1.6a6.4 6.4 0 0 1 0 12.8Z" fill="currentColor" />
-    </svg>
-  </button>
+  <div class="runhead__tools">
+    {/* A printer's tint mark: the filled half swaps sides with the theme. */}
+    <button
+      class="theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Toggle colour theme"
+      title="Toggle colour theme"
+    >
+      <svg class="theme-toggle__mark" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+        <circle cx="8" cy="8" r="6.4" fill="none" stroke="currentColor" stroke-width="1.2" />
+        <path d="M8 1.6a6.4 6.4 0 0 1 0 12.8Z" fill="currentColor" />
+      </svg>
+    </button>
+    <button
+      class="runhead__menu"
+      id="nav-toggle"
+      type="button"
+      aria-controls="site-nav"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >
+      <span class="runhead__menu-bars" aria-hidden="true"></span>
+    </button>
+  </div>
 </header>
+
+<script>
+  const head = document.getElementById('runhead');
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('site-nav');
+  if (head && toggle && nav) {
+    const setOpen = (open) => {
+      head.classList.toggle('is-nav-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!head.classList.contains('is-nav-open'));
+    });
+    nav.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => setOpen(false));
+    });
+    document.addEventListener('click', (e) => {
+      if (!head.classList.contains('is-nav-open')) return;
+      if (!head.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    });
+    window.matchMedia('(min-width: 40.01rem)').addEventListener('change', (e) => {
+      if (e.matches) setOpen(false);
+    });
+  }
+</script>
