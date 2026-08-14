@@ -574,6 +574,23 @@ section {
   margin-top: 0.4rem;
 }
 
+/* Prose that wraps around a floated portrait (Beyond “route here”). */
+.route {
+  overflow: auto;
+}
+.route__figure {
+  float: right;
+  width: min(42%, 14rem);
+  margin: 0.15rem 0 0.85rem 1.25rem;
+}
+@media (max-width: 40rem) {
+  .route__figure {
+    float: none;
+    width: min(72%, 16rem);
+    margin: 0 auto 1rem;
+  }
+}
+
 @media (max-width: 40rem) {
   .lead {
     grid-template-columns: 1fr;
