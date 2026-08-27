@@ -16,6 +16,9 @@ export const site = {
     'Personal site of Eldar Hasanov — software systems engineer, postgraduate researcher at Imperial College London, and co-founder of Clusy. Working on networking for distributed ML training and tools for computer science education.',
   // For twitter:creator, with the @. Set to null to leave the tag off.
   twitter: '@eldar_hsnv',
+  // GoatCounter site code → https://CODE.goatcounter.com (create at goatcounter.com).
+  // Set to null to disable analytics.
+  goatcounter: 'eldarhasanov',
 };
 
 export const person = {
