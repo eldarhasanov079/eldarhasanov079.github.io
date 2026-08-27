@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Research — Eldar Hasanov</title><meta name="description" content="An overview of my research — networking for distributed ML training, and infrastructure for teaching computer science."><link rel="canonical" href="https://eldarhasanov079.github.io/research/"><link rel="author" href="https://orcid.org/0009-0008-2157-3867"><link rel="preload" href="/fonts/newsreader-roman.woff2" as="font" type="font/woff2" crossorigin><meta property="og:type" content="website"><meta property="og:title" content="Research — Eldar Hasanov"><meta property="og:description" content="An overview of my research — networking for distributed ML training, and infrastructure for teaching computer science."><meta property="og:url" content="https://eldarhasanov079.github.io/research/"><meta property="og:site_name" content="Eldar Hasanov"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="@eldar_hsnv"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/sitemap-index.xml"><!-- Set the theme before first paint so there is no flash. --><script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t) document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Eldar Hasanov","url":"https://eldarhasanov079.github.io","email":"mailto:eldarh079@clusy.io","identifier":"https://orcid.org/0009-0008-2157-3867","jobTitle":"Software Systems Engineer","affiliation":[{"@type":"CollegeOrUniversity","name":"Imperial College London","url":"https://www.imperial.ac.uk/"},{"@type":"Organization","name":"Clusy Inc.","url":"https://www.clusy.io/"}],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of California, Berkeley"}],"knowsAbout":["Distributed systems","Networking for machine learning training","Computer science education","Computer security","Fault tolerance"],"sameAs":["https://github.com/eldarhasanov079","https://www.linkedin.com/in/eldar-hasanov","https://x.com/eldar_hsnv","https://scholar.google.com/citations?user=hHGun0IAAAAJ","https://www.clusy.io/meet/eldar"]}</script><link rel="stylesheet" href="/_astro/beyond-beyond.CulrpyWT.css"></head> <body> <div class="paper-sheet"> <header class="runhead" id="runhead">  <span class="runhead__dateline"> <a class="runhead__name" href="/"> Eldar Hasanov </a> </span> <nav class="runhead__nav" id="site-nav"> <a href="/research/" aria-current="page"> Research </a><a href="/publication/"> Publications </a><a href="/curriculum-vitae/"> CV </a><a href="/clusy/"> Clusy </a><a href="/beyond/"> Beyond </a> </nav> <div class="runhead__tools">  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme" title="Toggle colour theme"> <svg class="theme-toggle__mark" viewBox="0 0 16 16" aria-hidden="true" focusable="false"> <circle cx="8" cy="8" r="6.4" fill="none" stroke="currentColor" stroke-width="1.2"></circle> <path d="M8 1.6a6.4 6.4 0 0 1 0 12.8Z" fill="currentColor"></path> </svg> </button> <button class="runhead__menu" id="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"> <span class="runhead__menu-bars" aria-hidden="true"></span> </button> </div> </header> <script type="module">const n=document.getElementById("runhead"),a=document.getElementById("nav-toggle"),s=document.getElementById("site-nav");if(n&&a&&s){const t=e=>{n.classList.toggle("is-nav-open",e),a.setAttribute("aria-expanded",e?"true":"false"),a.setAttribute("aria-label",e?"Close menu":"Open menu")};a.addEventListener("click",e=>{e.stopPropagation(),t(!n.classList.contains("is-nav-open"))}),s.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>t(!1))}),document.addEventListener("click",e=>{n.classList.contains("is-nav-open")&&(n.contains(e.target)||t(!1))}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t(!1)}),window.matchMedia("(min-width: 40.01rem)").addEventListener("change",e=>{e.matches&&t(!1)})}</script> <main class="wrap">  <h1>Research</h1> <div class="prose"> <h2>Systems for training large models</h2> <p>
+Training a large model is now clearly a distributed systems problem. Under
+      the latency and reliability demands of training, the network becomes the
+      bottleneck for synchronisation across thousands of GPUs. As model-size
+      requirements grow, Mixture-of-Experts (MoE) architectures, with sparse,
+      dynamic expert traffic, have emerged as a cost-efficient way to scale.
+</p> <p>
+As a postgraduate researcher at Imperial College London, supervised by
+<a href="https://marioskogias.github.io/" target="_blank" rel="noopener noreferrer">Prof. Marios Kogias</a>, my
+      thesis explores network planning for MoE training, looking for
+      opportunities to cut cost and latency at large scale.
+</p> <p>
+A related problem is fault tolerance. Checkpointing is how thousand-GPU
+      jobs survive frequent failures, but different strategies impose very
+      different overheads. Measuring those overheads has almost always meant
+      real hardware runs on prohibitively expensive clusters.
+<cite>CheckWork</cite>, our
+<a href="https://doi.org/10.1145/3820441.3820476" target="_blank" rel="noopener noreferrer">framework</a> published
+      at APNet 2026, enables simulation instead: it augments training DAGs with
+      checkpoint operations to produce checkpoint-aware Chakra traces that
+      existing system simulators can replay realistically. Both this work and my
+      thesis are done with collaborators at NVIDIA Research.
+</p> <figure class="figure--media"> <img src="/img/apnet.jpg" alt="Presenting CheckWork at APNet 2026 in Singapore, title slide on screen with Imperial and NVIDIA affiliations" width="1600" height="1204" loading="lazy" decoding="async"> <figcaption>
+Presenting CheckWork at APNet 2026 in Singapore.
+</figcaption> </figure> <h2>Systems for agentic execution environments</h2> <p>
+Separately, through
+<a href="/clusy/">Clusy</a>, I work on the systems underneath agent-driven
+      executions, specifically for notebook interfaces. 
+      A notebook is not a script: cells run out of order, state
+      outlives the code that created it, and the kernel (not the source) is
+      the true execution substrate. It is quite important for our use case. 
+      The research question is how to make
+      interactive computational environments efficient enough for agents to
+      explore wide experimental spaces within reasonable cost.
+      
+      More on the dedicated <a href="/clusy/">Clusy</a> page.
+</p> <h2>Infrastructure for teaching computer science</h2> <p>
+Before London, I spent my Berkeley years in
+<a href="https://people.eecs.berkeley.edu/~ddgarcia/" target="_blank" rel="noopener noreferrer">Prof. Dan
+      Garcia</a>'s CS Education R&amp;D Group and
+<a href="https://acelab.berkeley.edu/" target="_blank" rel="noopener noreferrer">ACE Lab</a>. The recurring problem
+      was mastery learning — students getting multiple chances to show
+      understanding, on their own schedule — which ordinary university tooling
+      does not support.
+<a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/EECS-2025-127.html" target="_blank" rel="noopener noreferrer">GradeView</a>
+is the group's answer: a cloud-native learning-analytics platform on GCP.
+      As R&amp;D lead I led a team of six designing and building its
+<a href="https://doi.org/10.1145/3770761.3777343" target="_blank" rel="noopener noreferrer">instructor
+      dashboard</a> (SIGCSE TS 2026) — real-time views of grades, completion,
+      and score trends for course staff. It has run for three terms in CS10.
+</p> <figure class="figure--media"> <img src="/img/instructordash.png" alt="Conference poster for the instructor dashboard paper, showing the dashboard's assignments and students views, the data pipeline architecture, and the case for mastery learning" width="2500" height="1875" loading="lazy" decoding="async"> <figcaption>
+The SIGCSE TS 2026 poster for the GradeView instructor dashboard —
+        the data pipeline on the left, the assignments and students views on
+        the right.
+</figcaption> </figure> <p>
+The other thread is assessment. Graph questions — run BFS on this graph,
+      construct a counterexample to that claim — were stuck on paper because
+      nothing could autograde them, which meant no randomization, no instant
+      feedback, and a lot of manual grading. In ACE Lab I built two open-source
+<a href="https://prairielearn.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">PrairieLearn</a>
+elements for this:
+<a href="https://doi.org/10.1145/3641555.3705123" target="_blank" rel="noopener noreferrer">An Interactive Tool
+      for Randomized Autogradable Graph Assessments</a> (SIGCSE TS 2025),
+      which generates randomized interactive graph questions with automatic
+      grading, and
+<a href="https://doi.org/10.1145/3736251.3747306" target="_blank" rel="noopener noreferrer">A Direct Manipulation
+      User Interface for Constructing Autogradable Graphs</a> (CompEd 2025),
+      which lets students build graphs by direct manipulation and grades the
+      result automatically. Both were done with
+<a href="https://people.eecs.berkeley.edu/~ddgarcia/" target="_blank" rel="noopener noreferrer">Prof. Dan
+      Garcia</a>,
+<a href="https://www.armandofox.com/" target="_blank" rel="noopener noreferrer">Prof. Armando Fox</a>, and
+<a href="https://nargesnorouzi.me/" target="_blank" rel="noopener noreferrer">Prof. Narges Norouzi</a>.
+</p> <figure class="figure--media"> <img src="/img/plgraphconstructor.jpg" alt="Conference poster for the PL Graph Constructor, showing the direct-manipulation graph editor, its parameters, and TA feedback from a usability study" width="960" height="540" loading="lazy" decoding="async"> <figcaption>
+Direct-manipulation graph constructor at CompEd 2025 in Gaborone —
+        autogradable graph assessments in PrairieLearn.
+</figcaption> </figure> <figure class="figure--media"> <img src="/img/sigcse2025.PNG" alt="Presenting the interactive graph assessment poster at SIGCSE TS 2025 in Pittsburgh, talking with attendees" width="3000" height="2250" loading="lazy" decoding="async"> <figcaption>
+Presenting the interactive graph assessment tool at SIGCSE TS 2025 in
+        Pittsburgh — randomized, autogradable graph questions in PrairieLearn.
+</figcaption> </figure> <h2>Earlier work</h2> <p>
+As a research assistant at the University of Southern California, I worked
+      on NLP with large language models, building classifiers that check writing
+      against style guides, from classical baselines through BERT and OpenAI
+      models, with parameter-efficient fine-tuning and synthetic data pipelines, ran on
+      HPC clusters.
+</p> <p>
+Before that, as an undergraduate research assistant at the
+<a href="https://www.ssl.berkeley.edu/" target="_blank" rel="noopener noreferrer">Space Sciences Laboratory</a>
+(2021–2022), I worked on NASA's Stardust Mission: training TensorFlow
+      classifiers to find interstellar dust candidates in collector imagery, and
+      building an EDS autograder for particle identification.
+</p> </div>  <footer>  <span class="colophon">Built with <a href="https://github.com/ada-jl4025/offprint" target="_blank" rel="noopener noreferrer">offprint</a>, an open template.</span> <span>Updated October 2025</span> </footer> </main> </div> <script>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var root = document.documentElement;
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function active() {
+          return root.getAttribute('data-theme') || (media.matches ? 'dark' : 'light');
+        }
+
+        /* The mark shows the current theme; the label has to say what the
+           button will do, which is the opposite. */
+        function label() {
+          var next = active() === 'dark' ? 'light' : 'dark';
+          btn.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+          btn.setAttribute('title', 'Switch to ' + next + ' theme');
+        }
+
+        label();
+
+        /* Fence the change so no hover transition elsewhere animates a
+           theme-dependent colour on its own clock underneath the cross-fade.
+           Held until the fade is done, then released on a frame where nothing
+           is mid-change, so lifting it cannot itself start an animation. */
+        function apply(next) {
+          root.classList.add('theme-switching');
+          root.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+          label();
+        }
+
+        function release() {
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              root.classList.remove('theme-switching');
+            });
+          });
+        }
+
+        var fading = false;
+        var queued = null;
+
+        function swap(next) {
+          var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          /* Swap outright where a cross-fade is unavailable or unwanted. Half
+             the page animating and half snapping would be worse than neither. */
+          if (still || !document.startViewTransition) {
+            apply(next);
+            release();
+            return;
+          }
+
+          /* Starting a second transition while one runs makes the browser
+             abandon the first: it tears down the snapshot and cuts straight to
+             the finished theme before the new fade begins. So the click is kept
+             rather than acted on — only the last one matters — and it runs when
+             the current fade ends. That turns a cut into a queue. */
+          if (fading) {
+            queued = next;
+            return;
+          }
+
+          fading = true;
+          var vt = document.startViewTransition(function () {
+            apply(next);
+          });
+
+          var done = function () {
+            fading = false;
+            release();
+            if (queued !== null) {
+              var q = queued;
+              queued = null;
+              swap(q);
+            }
+          };
+
+          /* An abandoned transition rejects, and every promise must be caught
+             or it surfaces as an unhandled rejection. `ready` is the one that
+             rejects when a fade is cut short; catching only `finished` is not
+             enough. */
+          var quiet = function () {};
+          if (vt.ready) vt.ready.catch(quiet);
+          if (vt.updateCallbackDone) vt.updateCallbackDone.catch(quiet);
+          if (vt.finished) vt.finished.then(done, done);
+          else done();
+        }
+
+        btn.addEventListener('click', function () {
+          swap((queued !== null ? queued : active()) === 'dark' ? 'light' : 'dark');
+        });
+
+        /* Before a choice is made the page follows the OS; keep up if it flips. */
+        media.addEventListener('change', function () {
+          if (!root.getAttribute('data-theme')) label();
+        });
+
+        /* Restoring from bfcache replays neither the pre-paint script nor the
+           parse, so a theme chosen on another page since this one was cached
+           would not be reflected here. Re-read the choice and apply it without
+           a fade — nothing was on screen to fade from. */
+        window.addEventListener('pageshow', function (e) {
+          if (!e.persisted) return;
+          var stored = null;
+          try {
+            stored = localStorage.getItem('theme');
+          } catch (err) {}
+          if (stored && stored !== root.getAttribute('data-theme')) {
+            root.classList.add('theme-switching');
+            root.setAttribute('data-theme', stored);
+            release();
+          }
+          label();
+        });
+      })();
+    </script> <script async src="https://gc.zgo.at/count.js" data-goatcounter="https://eldarhasanov.goatcounter.com/count"></script> </body> </html>

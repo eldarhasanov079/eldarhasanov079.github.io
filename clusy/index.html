@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Clusy — Eldar Hasanov</title><meta name="description" content="Clusy — an agent-native notebook for ML and data science."><link rel="canonical" href="https://eldarhasanov079.github.io/clusy/"><link rel="author" href="https://orcid.org/0009-0008-2157-3867"><link rel="preload" href="/fonts/newsreader-roman.woff2" as="font" type="font/woff2" crossorigin><meta property="og:type" content="website"><meta property="og:title" content="Clusy — Eldar Hasanov"><meta property="og:description" content="Clusy — an agent-native notebook for ML and data science."><meta property="og:url" content="https://eldarhasanov079.github.io/clusy/"><meta property="og:site_name" content="Eldar Hasanov"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="@eldar_hsnv"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/sitemap-index.xml"><!-- Set the theme before first paint so there is no flash. --><script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t) document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Eldar Hasanov","url":"https://eldarhasanov079.github.io","email":"mailto:eldarh079@clusy.io","identifier":"https://orcid.org/0009-0008-2157-3867","jobTitle":"Software Systems Engineer","affiliation":[{"@type":"CollegeOrUniversity","name":"Imperial College London","url":"https://www.imperial.ac.uk/"},{"@type":"Organization","name":"Clusy Inc.","url":"https://www.clusy.io/"}],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of California, Berkeley"}],"knowsAbout":["Distributed systems","Networking for machine learning training","Computer science education","Computer security","Fault tolerance"],"sameAs":["https://github.com/eldarhasanov079","https://www.linkedin.com/in/eldar-hasanov","https://x.com/eldar_hsnv","https://scholar.google.com/citations?user=hHGun0IAAAAJ","https://www.clusy.io/meet/eldar"]}</script><link rel="stylesheet" href="/_astro/beyond-beyond.CulrpyWT.css"></head> <body> <div class="paper-sheet"> <header class="runhead" id="runhead">  <span class="runhead__dateline"> <a class="runhead__name" href="/"> Eldar Hasanov </a> </span> <nav class="runhead__nav" id="site-nav"> <a href="/research/"> Research </a><a href="/publication/"> Publications </a><a href="/curriculum-vitae/"> CV </a><a href="/clusy/" aria-current="page"> Clusy </a><a href="/beyond/"> Beyond </a> </nav> <div class="runhead__tools">  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme" title="Toggle colour theme"> <svg class="theme-toggle__mark" viewBox="0 0 16 16" aria-hidden="true" focusable="false"> <circle cx="8" cy="8" r="6.4" fill="none" stroke="currentColor" stroke-width="1.2"></circle> <path d="M8 1.6a6.4 6.4 0 0 1 0 12.8Z" fill="currentColor"></path> </svg> </button> <button class="runhead__menu" id="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"> <span class="runhead__menu-bars" aria-hidden="true"></span> </button> </div> </header> <script type="module">const n=document.getElementById("runhead"),a=document.getElementById("nav-toggle"),s=document.getElementById("site-nav");if(n&&a&&s){const t=e=>{n.classList.toggle("is-nav-open",e),a.setAttribute("aria-expanded",e?"true":"false"),a.setAttribute("aria-label",e?"Close menu":"Open menu")};a.addEventListener("click",e=>{e.stopPropagation(),t(!n.classList.contains("is-nav-open"))}),s.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>t(!1))}),document.addEventListener("click",e=>{n.classList.contains("is-nav-open")&&(n.contains(e.target)||t(!1))}),document.addEventListener("keydown",e=>{e.key==="Escape"&&t(!1)}),window.matchMedia("(min-width: 40.01rem)").addEventListener("change",e=>{e.matches&&t(!1)})}</script> <main class="wrap">  <h1>Clusy</h1> <div class="prose"> <p>
+This page is about a project that got out of hand and became a company.
+      Clusy started as a hackathon idea. We then took 6 months of intense
+      engineering work to build it as a tool for ourselves. Then people started
+      using it, Founders, Inc. took us into Off-Season II, and the pet project
+      turned into the thing we spend most of our time on. Live at
+<a href="https://www.clusy.io/" target="_blank" rel="noopener noreferrer">clusy.io</a>.
+</p> <figure class="figure--media"> <img src="/img/clusy-team.jpg" alt="Three instant-film portraits of the Clusy founders laid on a wooden table, linked by red beads" width="1280" height="819" loading="lazy" decoding="async"> <figcaption>
+The Clusy founding team, left to right:
+<a href="https://www.linkedin.com/in/fouzilali" target="_blank" rel="noopener noreferrer">Fouzil Ali</a> (CPO),
+<a href="https://julin.org/" target="_blank" rel="noopener noreferrer">Ju Lin</a> (CEO), and me (CTO).
+</figcaption> </figure> <h2>The problem</h2> <p>
+All three of us have worked in computational research across different
+      fields: astrophysics, finance, signal processing, security, robotics, and
+      more. For years, we watched domain experts doing data work in outdated
+      tooling such as Jupyter Notebook. We were frustrated with standard
+      Jupyter-style interfaces for two main reasons.
+</p> <ol> <li> <p> <strong>Notebooks are linear, but research is not.</strong> In a
+          research setting it is common to try approaches in parallel, change
+          earlier assumptions, iterate on methods, and explore a wide variety
+          of approaches. Research is not only deep but also wide, so the
+          linearity of notebooks, requiring you to run everything in order,
+          limits parallelisation and wider exploration.
+</p> </li> <li> <p> <strong>Notebooks work badly with LLMs.</strong> If you have tried
+          Gemini on Colab, or Cursor and Claude Code against notebooks in
+          VSCode, you know this already. The <code>.ipynb</code> format is hard
+          to parse in general — push a Jupyter notebook to GitHub and you
+          cannot even preview it. In a world where you can make a website or an
+          app in one or two prompts, the lack of agentic workflows in
+          data-analysis tooling felt like a huge gap.
+</p> </li> </ol> <h2>What we built</h2> <p> <a href="https://www.clusy.io/" target="_blank" rel="noopener noreferrer">Clusy</a> is a better notebook with an
+      agent built into it. You describe the experiment in chat; the agent plans,
+      finds data, writes notebook cells, runs them, reads the output, and
+      decides what to do next. GPU-powered sandboxes let it handle long,
+      compute-intensive requests such as model training and fine-tuning. It is
+      still a real notebook — cells, a running kernel, and output under each
+      cell — so you can edit anything by hand, take over mid-run, or leave the
+      agent to work autonomously.
+</p> <p>
+Most of our optimisation work lives in the runtime. Unlike a normal
+      Python script, notebook cells can run in any order and any number of
+      times; deleting code does not erase the state it produced. The source of
+      truth is therefore <em>the kernel state, not only the code</em>. This is
+      why traditional coding copilots often underperform with notebooks.
+</p> <p>We build on the Jupyter kernel with three system-level improvements:</p> <ol> <li> <p> <strong>Kernel snapshotting.</strong> We periodically capture and
+          persist the kernel state, so work is not lost and can finally be
+          shared, restored, and version-controlled.
+</p> </li> <li> <p> <strong>Cell branching.</strong> You can branch from any cell and run
+          workloads in parallel — for example, training three architectures or
+          parameter sets and comparing the results. Snapshotting lets child
+          branches inherit the same state, turning the notebook from a linear
+          document into an <u>experiment graph</u> without duplicating work.
+</p> </li> <li> <p> <strong>A kernel-aware harness.</strong> The agent does more than
+          read and complete code: it understands and works directly with the
+          kernel state. It can configure sandboxes, install dependencies,
+          attach GPUs, search the web, pull datasets, and call APIs — enough to
+          carry long-running data-science workflows from prompt to result.
+</p> </li> </ol> <p>
+Try it at <a href="https://clusy.io/" target="_blank" rel="noopener noreferrer">clusy.io</a>.
+</p> <h2>Where it stands</h2> <p>
+We joined Founders, Inc.'s Off-Season II, launched, and the thing that
+      used to live in a weekend hackathon now has thousands of people on it
+      from around the world. We ship every week. The company is based in San
+      Francisco, and the next chapter is still being written there.
+</p> </div>  <footer>  <span class="colophon">Built with <a href="https://github.com/ada-jl4025/offprint" target="_blank" rel="noopener noreferrer">offprint</a>, an open template.</span> <span>Updated October 2025</span> </footer> </main> </div> <script>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var root = document.documentElement;
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function active() {
+          return root.getAttribute('data-theme') || (media.matches ? 'dark' : 'light');
+        }
+
+        /* The mark shows the current theme; the label has to say what the
+           button will do, which is the opposite. */
+        function label() {
+          var next = active() === 'dark' ? 'light' : 'dark';
+          btn.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+          btn.setAttribute('title', 'Switch to ' + next + ' theme');
+        }
+
+        label();
+
+        /* Fence the change so no hover transition elsewhere animates a
+           theme-dependent colour on its own clock underneath the cross-fade.
+           Held until the fade is done, then released on a frame where nothing
+           is mid-change, so lifting it cannot itself start an animation. */
+        function apply(next) {
+          root.classList.add('theme-switching');
+          root.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+          label();
+        }
+
+        function release() {
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              root.classList.remove('theme-switching');
+            });
+          });
+        }
+
+        var fading = false;
+        var queued = null;
+
+        function swap(next) {
+          var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          /* Swap outright where a cross-fade is unavailable or unwanted. Half
+             the page animating and half snapping would be worse than neither. */
+          if (still || !document.startViewTransition) {
+            apply(next);
+            release();
+            return;
+          }
+
+          /* Starting a second transition while one runs makes the browser
+             abandon the first: it tears down the snapshot and cuts straight to
+             the finished theme before the new fade begins. So the click is kept
+             rather than acted on — only the last one matters — and it runs when
+             the current fade ends. That turns a cut into a queue. */
+          if (fading) {
+            queued = next;
+            return;
+          }
+
+          fading = true;
+          var vt = document.startViewTransition(function () {
+            apply(next);
+          });
+
+          var done = function () {
+            fading = false;
+            release();
+            if (queued !== null) {
+              var q = queued;
+              queued = null;
+              swap(q);
+            }
+          };
+
+          /* An abandoned transition rejects, and every promise must be caught
+             or it surfaces as an unhandled rejection. `ready` is the one that
+             rejects when a fade is cut short; catching only `finished` is not
+             enough. */
+          var quiet = function () {};
+          if (vt.ready) vt.ready.catch(quiet);
+          if (vt.updateCallbackDone) vt.updateCallbackDone.catch(quiet);
+          if (vt.finished) vt.finished.then(done, done);
+          else done();
+        }
+
+        btn.addEventListener('click', function () {
+          swap((queued !== null ? queued : active()) === 'dark' ? 'light' : 'dark');
+        });
+
+        /* Before a choice is made the page follows the OS; keep up if it flips. */
+        media.addEventListener('change', function () {
+          if (!root.getAttribute('data-theme')) label();
+        });
+
+        /* Restoring from bfcache replays neither the pre-paint script nor the
+           parse, so a theme chosen on another page since this one was cached
+           would not be reflected here. Re-read the choice and apply it without
+           a fade — nothing was on screen to fade from. */
+        window.addEventListener('pageshow', function (e) {
+          if (!e.persisted) return;
+          var stored = null;
+          try {
+            stored = localStorage.getItem('theme');
+          } catch (err) {}
+          if (stored && stored !== root.getAttribute('data-theme')) {
+            root.classList.add('theme-switching');
+            root.setAttribute('data-theme', stored);
+            release();
+          }
+          label();
+        });
+      })();
+    </script> <script async src="https://gc.zgo.at/count.js" data-goatcounter="https://eldarhasanov.goatcounter.com/count"></script> </body> </html>
