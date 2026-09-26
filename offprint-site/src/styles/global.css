@@ -1329,6 +1329,56 @@ figcaption {
     letter-spacing: 0.035em;
   }
 
+  /* Once the date sits above the sentence, "2025 to 2026" reads as one line. */
+  .dated--span {
+    align-items: start;
+  }
+
+  .dated--span .entry__body {
+    margin-top: 0.2rem;
+  }
+
+  .dated__span {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    width: auto;
+    gap: 0.35rem;
+    line-height: 1.2;
+  }
+
+  .dated__to {
+    line-height: inherit;
+  }
+
+  /* Socials leave the hero and sit under the page. display:contents lets the
+     link row order against the sections without a second copy of the list. */
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home > .lead,
+  .home .lead__text {
+    display: contents;
+  }
+
+  .home .lead__figure {
+    order: 3;
+    margin-top: 0.45rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 4px double var(--rule);
+  }
+
+  .home > section {
+    order: 4;
+  }
+
+  .home .lead__links {
+    order: 5;
+    margin-top: calc(var(--rhythm) * 1.75);
+  }
+
   .entry__head {
     display: block;
   }
