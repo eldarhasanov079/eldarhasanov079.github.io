@@ -12,7 +12,6 @@ import Base from '../layouts/Base.astro';
   <div class="prose">
     <p>
       This page has nothing to do with professional things and was left out for fun. I will populate it more with favorite things and personal stories.
-      <a href="/beyond/">Beyond</a>.
     </p>
 
     <h2>Favorites</h2>
@@ -22,15 +21,27 @@ import Base from '../layouts/Base.astro';
 
     <h3>Books</h3>
     <ul>
-      <li>One-storied America - Ilf and Petrov</li>
-      <li>A Movable Feast - Ernest Hemingway</li>
-      <li>The Little Prince - Antoine de Saint-Exupéry</li>
-      <li>Beşmərtəbəli Evin Altıncı Mərtəbəsi  - Anar</li>
-      <li>Kürk Mantolu Madonna  - Sabahattin Ali</li>
+      <li class="odyssey" tabindex="0" aria-describedby="odyssey-note">
+        <span class="odyssey__line">
+          The Odyssey — Homer, c. 8th century BCE
+          <span class="odyssey__cloud" id="odyssey-note" role="tooltip">
+            check out my <a
+              href="https://docs.google.com/document/d/1Ebp32C9xgwyJ5jnaz-JhfIgR5sdpoQ01yDvBx3Jzz-s/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer">interpretation from freshman year</a>
+          </span>
+        </span>
+      </li>
+      <li>One-storied America — Ilf and Petrov, 1937</li>
+      <li>The Little Prince — Antoine de Saint-Exupéry, 1943</li>
+      <li>Kürk Mantolu Madonna — Sabahattin Ali, 1943</li>
+      <li>A Movable Feast — Ernest Hemingway, 1964</li>
+      <li>Beşmərtəbəli Evin Altıncı Mərtəbəsi — Anar, 1981</li>
     </ul>
 
     <h3>Films</h3>
     <ul>
+      <li>12 Angry Men — Sidney Lumet, 1957</li>
       <li>After Hours — Martin Scorsese, 1985</li>
       <li>Good Will Hunting — Gus Van Sant, 1997</li>
       <li>Memento — Christopher Nolan, 2000</li>
@@ -40,6 +51,7 @@ import Base from '../layouts/Base.astro';
 
     <h3>Albums</h3>
     <ul>
+      <li>Bringing It All Back Home — Bob Dylan, 1965</li>
       <li>Abbey Road — The Beatles, 1969</li>
       <li>Artaud — Pescado Rabioso, 1973</li>
       <li>Rumours — Fleetwood Mac, 1977</li>
@@ -52,3 +64,175 @@ import Base from '../layouts/Base.astro';
     </p>
   </div>
 </Base>
+
+<style>
+  .odyssey {
+    position: relative;
+  }
+
+  .odyssey:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .odyssey__line {
+    position: relative;
+  }
+
+  .odyssey__cloud {
+    --cloud: color-mix(in srgb, var(--paper-lift) 84%, var(--bg));
+    --cloud-ink: color-mix(in srgb, var(--text) 78%, var(--paper-edge));
+    position: absolute;
+    z-index: 3;
+    left: calc(100% + 0.7rem);
+    top: 50%;
+    width: 13.5rem;
+    padding: 0.65rem 0.8rem;
+    background: var(--cloud);
+    border: 1.5px solid var(--cloud-ink);
+    color: var(--text);
+    font-size: var(--f--1);
+    line-height: 1.35;
+    text-align: left;
+    hyphens: manual;
+    opacity: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .odyssey__cloud.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    animation: odyssey-drift 2.4s ease-out forwards;
+  }
+
+  .odyssey__cloud.is-leaving {
+    pointer-events: none;
+    animation: odyssey-fade 0.45s ease forwards;
+  }
+
+  @keyframes odyssey-drift {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: translateY(calc(-50% - 0.45rem));
+    }
+  }
+
+  @keyframes odyssey-fade {
+    from {
+      opacity: 1;
+      transform: translateY(calc(-50% - 0.45rem));
+    }
+    to {
+      opacity: 0;
+      transform: translateY(calc(-50% - 0.9rem));
+    }
+  }
+
+  @media (max-width: 52rem) {
+    .odyssey__cloud {
+      left: 0;
+      top: calc(100% + 0.4rem);
+      width: min(13.5rem, 100%);
+      transform: none;
+    }
+
+    .odyssey__cloud.is-open {
+      animation-name: odyssey-drift-stack;
+    }
+
+    .odyssey__cloud.is-leaving {
+      animation-name: odyssey-fade-stack;
+    }
+
+    @keyframes odyssey-drift-stack {
+      from {
+        transform: none;
+      }
+      to {
+        transform: translateY(-0.35rem);
+      }
+    }
+
+    @keyframes odyssey-fade-stack {
+      from {
+        opacity: 1;
+        transform: translateY(-0.35rem);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-0.7rem);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .odyssey__cloud.is-open,
+    .odyssey__cloud.is-leaving {
+      animation: none;
+    }
+
+    .odyssey__cloud.is-open {
+      transform: translateY(-50%);
+    }
+
+    .odyssey__cloud.is-leaving {
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  const egg = document.querySelector('.odyssey');
+  const cloud = egg?.querySelector('.odyssey__cloud');
+
+  if (egg && cloud) {
+    let timer = 0;
+    const hold = 2200;
+
+    const show = () => {
+      window.clearTimeout(timer);
+      cloud.classList.remove('is-leaving');
+      cloud.classList.add('is-open');
+      timer = window.setTimeout(dismiss, hold);
+    };
+
+    const dismiss = () => {
+      if (cloud.matches(':hover') || cloud.contains(document.activeElement)) {
+        timer = window.setTimeout(dismiss, 600);
+        return;
+      }
+      cloud.classList.remove('is-open');
+      cloud.classList.add('is-leaving');
+    };
+
+    egg.addEventListener('mouseenter', show);
+    egg.addEventListener('focusin', show);
+    egg.addEventListener('mouseleave', () => {
+      if (!cloud.classList.contains('is-open')) return;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(dismiss, hold);
+    });
+    egg.addEventListener('focusout', () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(dismiss, hold);
+    });
+    cloud.addEventListener('animationend', (event) => {
+      if (event.animationName.startsWith('odyssey-fade')) {
+        cloud.classList.remove('is-leaving');
+      }
+    });
+
+    const hoverFine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!hoverFine) {
+      egg.addEventListener('click', (event) => {
+        const target = event.target;
+        if (target instanceof Element && target.closest('a')) return;
+        show();
+      });
+    }
+  }
+</script>

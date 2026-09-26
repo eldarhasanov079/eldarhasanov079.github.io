@@ -101,7 +101,18 @@ export const now = [
   },
   {
     date: '2026',
-    body: 'Completing my MSc thesis at <a href="https://www.imperial.ac.uk/">Imperial College</a> on LLM training systems under <a href="https://marioskogias.github.io/">Prof. Marios Kogias</a>, in collaboration with NVIDIA Research.',
+    body: 'Researching distributed agentic execution environments.',
+  },
+];
+
+export const past = [
+  {
+    years: ['2025', 'to', '2026'],
+    body: 'Completed my MSc at <a href="https://www.imperial.ac.uk/">Imperial College</a> on LLM training systems under <a href="https://marioskogias.github.io/">Prof. Marios Kogias</a>, in collaboration with NVIDIA Research.',
+  },
+  {
+    years: ['2021', 'to', '2025'],
+    body: 'Studied computer science at <a href="https://eecs.berkeley.edu/">UC Berkeley</a>. Worked in research labs across ACE Lab, NASA, and the Information Sciences Institute at USC.',
   },
 ];
 

@@ -590,8 +590,8 @@ section {
     padding-bottom: calc(var(--rhythm) * 0.38);
   }
 
-  .lead + section .dated {
-    grid-template-columns: 3rem minmax(0, 1fr);
+  .lead ~ section .dated {
+    grid-template-columns: minmax(3rem, 3rem) minmax(0, 1fr);
     column-gap: 0.65rem;
   }
 }
@@ -604,7 +604,7 @@ section {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: clamp(1.5rem, 3.5vw, 2.5rem);
-  align-items: center;
+  align-items: start;
   padding-block: 0.35rem clamp(1.6rem, 4vw, 2.8rem);
   border-bottom: 4px double var(--rule);
 }
@@ -794,23 +794,47 @@ section {
 /* Dated rows: label left, content right; stacks on narrow screens. */
 .dated {
   display: grid;
-  /* Wide enough for a full "2025 – 2026" range, so the date never crowds
-     the title. Fixed (not max-content) to keep the column aligned across rows. */
-  grid-template-columns: 6.5rem 1fr;
+  /* Exactly 6.5rem. A plain length still grows to fit nowrap content, which
+     is what made "2021 to 2025" widen the row as if it were one line. */
+  grid-template-columns: minmax(6.5rem, 6.5rem) minmax(0, 1fr);
   gap: 0 1.5rem;
   align-items: baseline;
 }
 @media (max-width: 34rem) {
   .dated {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.2rem;
   }
+}
+.dated > * {
+  min-width: 0;
 }
 .dated__when {
   font-size: var(--f--1);
   color: var(--text-faint);
   font-variant-numeric: lining-nums tabular-nums;
   white-space: nowrap;
+}
+/* 2021 / to / 2025 stacks inside the fixed column; "to" is centered on the years. */
+.dated--span {
+  align-items: center;
+}
+.dated--span .entry__body {
+  margin: 0;
+}
+.dated--span .dated__when {
+  white-space: normal;
+}
+.dated__span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min-content;
+  max-width: 100%;
+  line-height: 1.05;
+}
+.dated__to {
+  line-height: 1.2;
 }
 
 /* ── Publications ─────────────────────────────────────────────────────────── */
@@ -1326,14 +1350,6 @@ figcaption {
   .pub__authors,
   .pub__venue {
     overflow-wrap: anywhere;
-  }
-
-  .site-links {
-    font-size: 0.68rem;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
-    overflow-wrap: normal;
-    word-break: normal;
   }
 
   .pub__status {
