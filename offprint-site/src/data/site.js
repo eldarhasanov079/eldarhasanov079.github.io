@@ -64,7 +64,7 @@ export const person = {
 // Keeping it is appreciated, never required.
 export const template = {
   name: 'offprint',
-  href: 'https://github.com/ada-jl4025/offprint',
+  href: 'https://github.com/Thorkee/offprint',
 };
 
 // The running head. Drop an entry and the page stops being linked; delete the

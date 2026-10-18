@@ -15,7 +15,7 @@ is for: the tidy copy of your work you hand to someone who asked.
 Press **Use this template** at the top of this page, or deploy it first and
 clone what Vercel makes for you:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fada-jl4025%2Foffprint&project-name=offprint&repository-name=offprint)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FThorkee%2Foffprint&project-name=offprint&repository-name=offprint)
 
 Either way, then:
 
@@ -37,7 +37,7 @@ and paste this:
 
 ```text
 This repo is built from "offprint", an academic homepage template:
-https://github.com/ada-jl4025/offprint — read its README first, it documents
+https://github.com/Thorkee/offprint — read its README first, it documents
 where every piece of content lives. Everything currently in this repo is
 placeholder content, and your job is to replace it with mine.
 
@@ -161,7 +161,7 @@ motion.
 
 Static output, so anywhere will do.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fada-jl4025%2Foffprint&project-name=offprint&repository-name=offprint)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FThorkee%2Foffprint&project-name=offprint&repository-name=offprint)
 
 The button clones this repo into your own account and deploys it — no
 configuration, since Astro is detected and `vercel.json` only carries cache and
