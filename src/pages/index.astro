@@ -1,0 +1,36 @@
+---
+import Page from '../layouts/Page.astro';
+import { name, profiles, email, call } from '../data/site.js';
+---
+<Page title="About" showTitle={false}>
+  <h1 class="visually-hidden">{name}</h1>
+  <figure class="portrait">
+    <a href="/photos/berkeley.webp"><img src="/photos/berkeley.webp" width="840" height="630" alt="Me in my graduation gown, eating a doughnut in Berkeley" /></a>
+    <figcaption>KingPin Donuts, Berkeley.</figcaption>
+  </figure>
+
+  <p>I’m Eldar. I grew up in <a href="/beyond/#baku">Baku</a> and now split my time between San Francisco and London.
+    I’m the co-founder and CTO of <a href="/clusy/">Clusy</a>. We’re building
+    <a href="https://portal.clusy.io/">Portal</a> so companies can grow their use of AI faster than they grow their infrastructure budgets and energy needs.</p>
+
+  <p>I studied computer science at <a href="https://eecs.berkeley.edu/">UC Berkeley</a>
+    and completed my MSc at <a href="https://www.imperial.ac.uk/">Imperial College London</a>.
+    I worked with <a href="https://marioskogias.github.io/">Marios Kogias</a> and
+    <a href="https://research.nvidia.com/">NVIDIA Research</a> on the networks that connect GPUs during training.</p>
+
+  <p>You can reach me at <a href={`mailto:${email}`}>{email}</a> or <a href={call}>book a call</a>.</p>
+
+  <h2>Things I work on</h2>
+  <ul>
+    <li><strong>Portable computation.</strong> What does a program need to take with it when it moves? At Clusy we’ve moved a running Python loop from AWS to Lambda and back. The arrays and the loop counter came along. <a href="https://portal.clusy.io/cases">How the run went</a>.</li>
+    <li><strong>Tools for experiments.</strong> In <a href="https://www.clusy.io/notebook">Clusy Notebook</a>, you can branch from a cell and try three ideas on separate kernels. I’m interested in how much more ground a researcher and an agent can cover that way.</li>
+    <li><strong>Computer science education.</strong> At Berkeley I helped build <a href="/research/#teaching">GradeView and two graph assessment tools</a>. They grew out of teaching data structures and seeing how long students waited for feedback on a hand-drawn graph.</li>
+  </ul>
+
+  <h2>Writing</h2>
+  <p>I write about the systems behind this work. <a href="https://www.clusy.io/blog/a-brief-history-of-portable-computing">A brief history of portable computing</a> is a good place to start. There’s more on the <a href="/writing/">writing page</a>.</p>
+
+  <h2>Elsewhere</h2>
+  <p><a href={profiles.github}>GitHub</a>, <a href={profiles.x}>X</a>, <a href={profiles.linkedin}>LinkedIn</a>,
+    and <a href={profiles.scholar}>Google Scholar</a>. I also keep a list of <a href="/beyond-beyond/">favorite books, films, and albums</a>.</p>
+</Page>

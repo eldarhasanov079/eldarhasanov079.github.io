@@ -1,0 +1,56 @@
+---
+import '../styles/site.css';
+import { name, description as defaultDescription, navigation, profiles, email } from '../data/site.js';
+
+// Markdown pages pass their settings in frontmatter. Astro pages pass props directly.
+const { title, description = defaultDescription, showTitle = true, noindex = false } = Astro.props.frontmatter ?? Astro.props;
+const path = Astro.url.pathname;
+const pageTitle = path === '/' ? name : `${title} · ${name}`;
+const canonical = new URL(path, Astro.site);
+const profile = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name,
+  url: Astro.site.href,
+  email: `mailto:${email}`,
+  jobTitle: 'Co-founder and CTO',
+  worksFor: { '@type': 'Organization', name: 'Clusy', url: 'https://www.clusy.io/' },
+  sameAs: Object.values(profiles),
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={path === '/' ? 'profile' : 'website'} />
+    <meta property="og:url" content={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="author" href={profiles.orcid} />
+    {path === '/' && <script type="application/ld+json" set:html={JSON.stringify(profile)} />}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="page">
+      <header class="directory">
+        <a class="signature" href="/">{name}</a>
+        <nav aria-label="Site">
+          <ul>
+            {navigation.map(({ label, href }) => (
+              <li><a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+      <main id="main" tabindex="-1">
+        {showTitle && <h1>{title}</h1>}
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+---
+import Page from '../layouts/Page.astro';
+import Publications from '../components/Publications.astro';
+import { profiles } from '../data/site.js';
+---
+<Page title="Publications" description="Peer-reviewed papers and posters by Eldar Hasanov and collaborators.">
+  <p>Peer-reviewed papers and posters. Also on <a href={profiles.scholar}>Google Scholar</a> and <a href={profiles.orcid}>ORCID</a>.</p>
+  <Publications />
+</Page>

@@ -1,0 +1,20 @@
+---
+import Page from '../layouts/Page.astro';
+import { articles } from '../data/writing.js';
+import { profiles } from '../data/site.js';
+const formatDate = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const newestFirst = [...articles].sort((a, b) => b.date.localeCompare(a.date));
+---
+<Page title="Writing" description="Essays by Eldar Hasanov on portable computing, notebooks, and how agents do science.">
+  <p>Essays on portable computing and the tools we use to do research. I publish them on <a href={`${profiles.x}/articles`}>X</a> and the <a href="https://www.clusy.io/blog">Clusy blog</a>.</p>
+  <ul class="listing">
+    {newestFirst.map(article => (
+      <li>
+        <time class="writing-date" datetime={article.date}>{formatDate.format(new Date(article.date))}</time>
+        <h2><a href={article.href}>{article.title}</a></h2>
+        {article.note && <p>{article.note}</p>}
+        {article.clusy && <a class="edition" href={article.clusy} aria-label={`Read ${article.title} on Clusy`}>Read on Clusy</a>}
+      </li>
+    ))}
+  </ul>
+</Page>

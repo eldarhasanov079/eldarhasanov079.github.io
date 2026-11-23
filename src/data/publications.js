@@ -1,0 +1,77 @@
+// Used by Publications and the CV. Give each author their affiliation on that paper.
+export const publications = [
+  {
+    title: 'SOMA: Transactional Migration of Live Python Sessions across Heterogeneous Runtimes (Industry Track)',
+    authors: [
+      { name: 'Eldar Hasanov', affiliation: 'Clusy' },
+      { name: 'Ju Lin', affiliation: 'Clusy' },
+      { name: 'Mohamed Fouzil Ali Syed Ali', affiliation: 'Clusy' },
+    ],
+    venue: '27th ACM International Middleware Conference (Middleware 2026)',
+    links: [{ label: 'Conference', href: 'https://middleware-conf.github.io/2026/' }],
+  },
+  {
+    title: 'CheckWork: Enabling Trace-Driven Analysis of Checkpointing Overhead in Distributed ML Training',
+    authors: [
+      { name: 'E. Hasanov', affiliation: 'Imperial College' },
+      { name: 'A. Sefiane', affiliation: 'NVIDIA & Imperial College' },
+      { name: 'A. Farshin', affiliation: 'NVIDIA' },
+      { name: 'M. Kogias', affiliation: 'Imperial College' },
+    ],
+    venue: 'Proceedings of the 10th Asia-Pacific Workshop on Networking (APNet)',
+    detail: 'Singapore',
+    year: 2026,
+    doi: 'https://doi.org/10.1145/3820441.3820476',
+    links: [{ label: 'Code', href: 'https://github.com/eldarhasanov079/checkwork' }],
+  },
+  {
+    title: 'An Instructor Dashboard to Support Mastery Learning',
+    authors: [
+      { name: 'S. Mantripragada', affiliation: 'UC Berkeley' },
+      { name: 'E. Hasanov', affiliation: 'UC Berkeley' },
+      { name: 'A. Hacker', affiliation: 'UC Berkeley' },
+      { name: 'W. Zhang', affiliation: 'UC Berkeley' },
+      { name: 'S. Hilkey', affiliation: 'UC Berkeley' },
+      { name: 'J. Ponce de Leon', affiliation: 'UC Berkeley' },
+      { name: 'D. Garcia', affiliation: 'UC Berkeley' },
+    ],
+    venue: 'Proceedings of the 57th ACM Technical Symposium on Computer Science Education (SIGCSE TS), vol. 2',
+    detail: 'pp. 1443–1444',
+    year: 2026,
+    doi: 'https://doi.org/10.1145/3770761.3777343',
+    links: [{ label: 'Poster', href: '/photos/gradeview-poster.webp' }],
+  },
+  {
+    title: 'A Direct Manipulation User Interface for Constructing Autogradable Graphs',
+    authors: [
+      { name: 'C. Rau', affiliation: 'TU Braunschweig' },
+      { name: 'E. Hasanov', affiliation: 'UC Berkeley' },
+      { name: 'N. Norouzi', affiliation: 'UC Berkeley' },
+      { name: 'D. Garcia', affiliation: 'UC Berkeley' },
+      { name: 'A. Fox', affiliation: 'UC Berkeley' },
+    ],
+    venue: 'Proceedings of the ACM Global Computing Education Conference (CompEd), vol. 2',
+    detail: 'Gaborone, Botswana, pp. 390–391',
+    year: 2025,
+    doi: 'https://doi.org/10.1145/3736251.3747306',
+    links: [
+      { label: 'Code', href: 'https://github.com/eldarhasanov079/pl-graph-constructor' },
+      { label: 'Poster', href: '/photos/graph-constructor.webp' },
+    ],
+  },
+  {
+    title: 'An Interactive Tool for Randomized Autogradable Graph Assessments',
+    authors: [
+      { name: 'E. Hasanov', affiliation: 'UC Berkeley' },
+      { name: 'D. Ahluwalia', affiliation: 'UC Berkeley' },
+      { name: 'D. Garcia', affiliation: 'UC Berkeley' },
+      { name: 'N. Norouzi', affiliation: 'UC Berkeley' },
+      { name: 'A. Fox', affiliation: 'UC Berkeley' },
+    ],
+    venue: 'Proceedings of the 56th ACM Technical Symposium on Computer Science Education (SIGCSE TS), vol. 2',
+    detail: 'Pittsburgh, PA, pp. 1471–1472',
+    year: 2025,
+    doi: 'https://doi.org/10.1145/3641555.3705123',
+    links: [{ label: 'Code', href: 'https://github.com/eldarhasanov079/pl-interactive-graph-v2' }],
+  },
+];

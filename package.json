@@ -1,6 +1,20 @@
 {
+  "name": "eldar-personal-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Eldar Hasanov\u2019s personal website.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
   "devDependencies": {
-    "@shopify/prettier-plugin-liquid": "1.4.0",
-    "prettier": "3.1.1"
+    "astro": "^5.6.1",
+    "sharp": "^0.34.1"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3"
   }
 }

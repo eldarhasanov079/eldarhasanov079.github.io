@@ -1,0 +1,39 @@
+---
+import { publications } from '../data/publications.js';
+import { name } from '../data/site.js';
+---
+<ul class="listing">
+  {publications.map(paper => {
+    const citation = [paper.venue, paper.detail, paper.year].filter(Boolean).join(', ');
+    const links = [
+      ...(paper.doi ? [{ label: 'DOI', href: paper.doi }] : []),
+      ...(paper.links ?? []),
+    ];
+    return (
+      <li>
+        {paper.doi
+          ? <a class="paper-title" href={paper.doi}>{paper.title}</a>
+          : <span class="paper-title">{paper.title}</span>}
+        <p class="paper-authors">
+          {paper.authors.map((author, i) => (
+            <Fragment>
+              {i > 0 && ' '}
+              <span class="paper-author">
+                {author.name === name || author.name === 'E. Hasanov' ? <strong>{author.name}</strong> : author.name}
+                {' '}<span class="affiliation">[{author.affiliation}]</span>{i < paper.authors.length - 1 && ','}
+              </span>
+            </Fragment>
+          ))}
+        </p>
+        {paper.status && <p><strong>{paper.status}</strong></p>}
+        {citation && <p class="meta">{citation}.</p>}
+        {paper.authorNote && <p class="meta">{paper.authorNote}</p>}
+        {links.length > 0 && (
+          <p class="meta">
+            {links.map((link, i) => <Fragment>{i > 0 && ' · '}<a href={link.href}>{link.label}</a></Fragment>)}
+          </p>
+        )}
+      </li>
+    );
+  })}
+</ul>
