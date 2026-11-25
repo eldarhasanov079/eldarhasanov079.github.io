@@ -12,7 +12,7 @@ export const education = [
 export const experience = [
   {
     period: '2025–present', role: 'Co-founder and CTO', org: 'Clusy Inc.', href: '/clusy/', location: 'San Francisco, CA',
-    detail: 'Building Clusy Notebook and Portal, our runtime for moving Python jobs between machines and clouds.',
+    detail: 'Building Clusy Notebook and Fluid, our runtime for moving Python jobs between machines and clouds.',
   },
   {
     period: 'From 2025', role: 'Postgraduate Researcher', org: 'Imperial College London', href: '/research/', location: 'London, UK',

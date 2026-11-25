@@ -15,7 +15,7 @@ A related question was how much training time goes into saving checkpoints. Our 
   <figcaption>Presenting CheckWork at APNet 2026, Singapore.</figcaption>
 </figure>
 
-Compute should get cheaper in two ways. Engineers can build better chips, and the rest of us can get more useful work out of every chip they build. [Portal](/clusy/#portal) is our bet on the second.
+Compute should get cheaper in two ways. Engineers can build better chips, and the rest of us can get more useful work out of every chip they build. [Fluid](/clusy/#fluid) is our bet on the second.
 
 ## Execution environments for agents
 
